@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import Models.PackageInformation;
 

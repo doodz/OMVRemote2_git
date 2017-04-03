@@ -20,7 +20,7 @@ import com.dev.doods.omvremote2.HostManagerActivity;
 import com.dev.doods.omvremote2.LogsActivity;
 import com.dev.doods.omvremote2.PackagesInfomationActivity;
 import com.dev.doods.omvremote2.PluginsActivity;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.dev.doods.omvremote2.omv_extrasActivity;
 import com.google.android.gms.ads.AdView;
 
@@ -41,7 +41,7 @@ public class NavigationBaseActivity extends AppCompatBaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MetricsManager.register(getApplication(),"7076800147a94538934dfa2e5e0ee2ad");
+        MetricsManager.register(getApplication());
     }
     @Override
     public void setContentView(@LayoutRes int layoutResID) {

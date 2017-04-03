@@ -38,19 +38,19 @@ public class UpdateActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_update);
+        setContentView(R.layout.activity_update);
 
         controller = new UpdateController(this);
         handler= new Handler();
         //mOutputController.AddListener(this);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //getSupportActionBar().setTitle("My title");
 
-        NavigationView navigationView = (NavigationView) findViewById(com.dev.doods.base.R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +98,7 @@ public class UpdateActivity extends AppCompatActivity
     {
 
         //ListView listView = (ListView) findViewById(R.id.LstPackageInformation);
-        mRecyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.RecyclerPackageInformation);
+        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerPackageInformation);
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
@@ -107,7 +107,7 @@ public class UpdateActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new RecyclerViewPackageInformationAdapter(lst, com.dev.doods.base.R.layout.row_packageinformation);
+        mAdapter = new RecyclerViewPackageInformationAdapter(lst, R.layout.row_packageinformation);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,15 +131,15 @@ public class UpdateActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        if(id == com.dev.doods.base.R.id.nav_home)
+        if(id == R.id.nav_home)
         {
             startActivity(new Intent(UpdateActivity.this, HomeActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_plugin)
+        else if(id == R.id.nav_plugin)
         {
             startActivity(new Intent(UpdateActivity.this, PluginsActivity.class));
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(com.dev.doods.base.R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

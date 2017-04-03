@@ -48,12 +48,12 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
     private RecyclerView recyclerViewSSL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_certificate;
+        NavigationId = R.id.nav_certificate;
         super.onCreate(savedInstanceState);
 
-        setContentView(com.dev.doods.base.R.layout.activity_certificate);
+        setContentView(R.layout.activity_certificate);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         GetViews();
         GetSshList();
@@ -99,8 +99,8 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
     private void GetViews()
     {
 
-        mRecyclerViewSSH = (RecyclerView)findViewById(com.dev.doods.base.R.id.RecyclerViewSSH);
-        mRecyclerViewSSL = (RecyclerView)findViewById(com.dev.doods.base.R.id.RecyclerViewSSL);
+        mRecyclerViewSSH = (RecyclerView)findViewById(R.id.RecyclerViewSSH);
+        mRecyclerViewSSL = (RecyclerView)findViewById(R.id.RecyclerViewSSL);
 
         mCertificateAdapter = new CertificateAdapter(this,lstCertificate,mController);
         mRecyclerViewSSL.setAdapter(mCertificateAdapter);
@@ -117,7 +117,7 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
         mRecyclerViewSSL.setItemAnimator(new DefaultItemAnimator());
 
 
-        com.github.clans.fab.FloatingActionButton fab_add_certificate_SSH = (com.github.clans.fab.FloatingActionButton)findViewById(com.dev.doods.base.R.id.fab_add_certificate_SSH);
+        com.github.clans.fab.FloatingActionButton fab_add_certificate_SSH = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.fab_add_certificate_SSH);
 
         fab_add_certificate_SSH.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +127,7 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
             }
         });
 
-        com.github.clans.fab.FloatingActionButton fab_add_certificate_SSL = (com.github.clans.fab.FloatingActionButton)findViewById(com.dev.doods.base.R.id.fab_add_certificate_SSL);
+        com.github.clans.fab.FloatingActionButton fab_add_certificate_SSL = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.fab_add_certificate_SSL);
 
         fab_add_certificate_SSL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,7 +156,7 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.certificate, menu);
+        getMenuInflater().inflate(R.menu.certificate, menu);
         return true;
     }
 
@@ -165,39 +165,39 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id == com.dev.doods.base.R.id.nav_home)
+        if(id == R.id.nav_home)
         {
             startActivity(new Intent(CertificateActivity.this, HomeActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_update)
+        else if(id == R.id.nav_update)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.PackagesInfomationActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_disk)
+        else if(id == R.id.nav_disk)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.FileSystemsActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_plugin)
+        else if(id == R.id.nav_plugin)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.PluginsActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_extra)
+        else if(id == R.id.nav_extra)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.omv_extrasActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_host)
+        else if(id == R.id.nav_host)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.HostManagerActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_about)
+        else if(id == R.id.nav_about)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.AboutActivity.class));
         }
-        else if (id == com.dev.doods.base.R.id.nav_logs)
+        else if (id == R.id.nav_logs)
         {
             startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.LogsActivity.class));
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(com.dev.doods.base.R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

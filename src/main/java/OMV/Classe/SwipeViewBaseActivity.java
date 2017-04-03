@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

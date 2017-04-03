@@ -26,7 +26,7 @@ import Models.Errors;
 import Models.OmvUser;
 import OMV.Classe.openmediavault_default;
 import utils.SnackBarError;
-
+import com.dev.doods.omvremote2.R;
 public class AddEditeCronActivity extends AppCompatActivity {
 
     Switch swithEnable;
@@ -50,11 +50,11 @@ public class AddEditeCronActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_add_edite_cron);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_add_edite_cron);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Bundle bundle = getIntent().getExtras();
-        fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +91,7 @@ public class AddEditeCronActivity extends AppCompatActivity {
 
         if(bundle!= null && bundle.containsKey("Cron"))
         {
-            setTitle(getString(com.dev.doods.base.R.string.edite_Cron));
+            setTitle(getString(R.string.edite_Cron));
             mCron = (Cron)bundle.getSerializable("Cron");
         }
         else {
@@ -123,26 +123,26 @@ public class AddEditeCronActivity extends AppCompatActivity {
     ArrayAdapter<OmvUser> spinnerUserAdapter;
     private void BindViews()
     {
-        swithEnable = (Switch)findViewById(com.dev.doods.base.R.id.swithEnable);
-        spinnerTimeExec = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerTimeExec);
+        swithEnable = (Switch)findViewById(R.id.swithEnable);
+        spinnerTimeExec = (Spinner)findViewById(R.id.spinnerTimeExec);
 
-        spinnerMinute = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerMinute);
-        swithEveryNMinute= (Switch)findViewById(com.dev.doods.base.R.id.swithEveryNMinute);
+        spinnerMinute = (Spinner)findViewById(R.id.spinnerMinute);
+        swithEveryNMinute= (Switch)findViewById(R.id.swithEveryNMinute);
 
-        spinnerHour = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerHour);
-        swithEveryNHour = (Switch)findViewById(com.dev.doods.base.R.id.swithEveryNHour);
+        spinnerHour = (Spinner)findViewById(R.id.spinnerHour);
+        swithEveryNHour = (Switch)findViewById(R.id.swithEveryNHour);
 
-        spinnerDayMonth = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerDayMonth);
-        swithEveryNDayMonth = (Switch)findViewById(com.dev.doods.base.R.id.swithEveryNDayMonth);
+        spinnerDayMonth = (Spinner)findViewById(R.id.spinnerDayMonth);
+        swithEveryNDayMonth = (Switch)findViewById(R.id.swithEveryNDayMonth);
 
-        spinnerMonth = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerMonth);
-        spinnerDayWeek = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerDayWeek);
+        spinnerMonth = (Spinner)findViewById(R.id.spinnerMonth);
+        spinnerDayWeek = (Spinner)findViewById(R.id.spinnerDayWeek);
 
-        spinnerUser = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerUser);
-        etCommand = (EditText)findViewById(com.dev.doods.base.R.id.etCommand);
+        spinnerUser = (Spinner)findViewById(R.id.spinnerUser);
+        etCommand = (EditText)findViewById(R.id.etCommand);
 
-        swithEmail = (Switch)findViewById(com.dev.doods.base.R.id.swithEmail);
-        etComment = (EditText)findViewById(com.dev.doods.base.R.id.etComment);
+        swithEmail = (Switch)findViewById(R.id.swithEmail);
+        etComment = (EditText)findViewById(R.id.etComment);
         spinnerUserAdapter = new ArrayAdapter<OmvUser>(this, android.R.layout.simple_spinner_item, mUsers);
         spinnerUser.setAdapter(spinnerUserAdapter);
     }

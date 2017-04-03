@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import com.android.internal.util.Predicate;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import net.hockeyapp.android.Constants;
 import net.hockeyapp.android.utils.*;

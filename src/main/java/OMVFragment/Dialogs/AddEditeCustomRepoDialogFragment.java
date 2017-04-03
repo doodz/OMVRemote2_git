@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import org.apache.commons.lang3.StringUtils;
 

@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;

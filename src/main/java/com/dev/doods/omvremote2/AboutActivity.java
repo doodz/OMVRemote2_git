@@ -44,7 +44,7 @@ import utils.CallBackAsyncTask;
 import utils.CallBackTask;
 import utils.SendLogsTask;
 import utils.SnackBarError;
-
+import com.dev.doods.omvremote2.R;
 //import static org.acra.ACRA.LOG_TAG;
 
 public class AboutActivity extends AppCompatBaseActivity {
@@ -59,14 +59,14 @@ public class AboutActivity extends AppCompatBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_about);
+        setContentView(com.dev.doods.omvremote2.R.layout.activity_about);
 
-        FeedbackManager.register(this,"7076800147a94538934dfa2e5e0ee2ad");
+        FeedbackManager.register(this);
 
-        mVersionView = (TextView)  findViewById(com.dev.doods.base.R.id.tvVersion);
-        mVersionCodeView= (TextView)  findViewById(com.dev.doods.base.R.id.tvCodeVersion);
-        mSendLogBtn = (Button) findViewById(com.dev.doods.base.R.id.SendLogBtn);
-        mSendFeedbackBtn =(Button) findViewById(com.dev.doods.base.R.id.SendFeedbackBtn);
+        mVersionView = (TextView)  findViewById(R.id.tvVersion);
+        mVersionCodeView= (TextView)  findViewById(R.id.tvCodeVersion);
+        mSendLogBtn = (Button) findViewById(R.id.SendLogBtn);
+        mSendFeedbackBtn =(Button) findViewById(R.id.SendFeedbackBtn);
 
         mSendLogBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +83,7 @@ public class AboutActivity extends AppCompatBaseActivity {
             }
         });
 
-        mWebView = (WebView) findViewById(com.dev.doods.base.R.id.webView);
+        mWebView = (WebView) findViewById(R.id.webView);
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
@@ -95,10 +95,10 @@ public class AboutActivity extends AppCompatBaseActivity {
 
     private void setClickableSpan()
     {
-        TextView translate = (TextView)  findViewById(com.dev.doods.base.R.id.click_translate);
+        TextView translate = (TextView)  findViewById(R.id.click_translate);
 
 
-        SpannableString spannableString = new SpannableString(getString(com.dev.doods.base.R.string.action_click_translate));
+        SpannableString spannableString = new SpannableString(getString(R.string.action_click_translate));
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View textView) {
@@ -111,10 +111,10 @@ public class AboutActivity extends AppCompatBaseActivity {
         translate.setMovementMethod(LinkMovementMethod.getInstance());
 
 
-        translate = (TextView)  findViewById(com.dev.doods.base.R.id.click_forum);
+        translate = (TextView)  findViewById(R.id.click_forum);
 
 
-        spannableString = new SpannableString(getString(com.dev.doods.base.R.string.action_click_forum));
+        spannableString = new SpannableString(getString(R.string.action_click_forum));
         clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View textView) {
@@ -224,7 +224,7 @@ public class AboutActivity extends AppCompatBaseActivity {
     private void sendFeedback()
     {
         if (!Util.isConnectedToNetwork(this)) {
-            Snackbar.make(mSendLogBtn,  com.dev.doods.base.R.string.error_no_network_message, Snackbar.LENGTH_LONG)
+            Snackbar.make(mSendLogBtn,R.string.error_no_network_message, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
 
             return;
@@ -240,7 +240,7 @@ public class AboutActivity extends AppCompatBaseActivity {
 
             @Override
             public void handleFinich() {
-                Snackbar.make(mSendLogBtn,  com.dev.doods.base.R.string.send, Snackbar.LENGTH_LONG)
+                Snackbar.make(mSendLogBtn,R.string.send, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         }).run();

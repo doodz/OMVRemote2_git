@@ -65,13 +65,13 @@ public class LogsActivity extends NavigationBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_logs;
+        NavigationId = R.id.nav_logs;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_logs);
+        setContentView(R.layout.activity_logs);
 
         mLogsId = (mController.GetApiVersion() == 3)?LogsController.LogsIdsV3:LogsController.LogsIds;
         // Setup spinner
-        Spinner spinner = (Spinner) findViewById(com.dev.doods.base.R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new MyAdapter(
                 _Toolbar.getContext(),mLogsId));
 
@@ -90,7 +90,7 @@ public class LogsActivity extends NavigationBaseActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,7 +127,7 @@ public class LogsActivity extends NavigationBaseActivity {
         });
 
 
-        mRecyclerLogs = (RecyclerView) findViewById(com.dev.doods.base.R.id.RecyclerLogs);
+        mRecyclerLogs = (RecyclerView) findViewById(R.id.RecyclerLogs);
         mLogRowAdapter = new LogRowAdapter(this,lst);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         mRecyclerLogs.setLayoutManager(mLayoutManager);
@@ -204,7 +204,7 @@ public class LogsActivity extends NavigationBaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.menu_logs, menu);
+        getMenuInflater().inflate(R.menu.menu_logs, menu);
         return true;
     }
 
@@ -216,7 +216,7 @@ public class LogsActivity extends NavigationBaseActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 
@@ -290,9 +290,9 @@ public class LogsActivity extends NavigationBaseActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(com.dev.doods.base.R.layout.fragment_logs, container, false);
-            TextView textView = (TextView) rootView.findViewById(com.dev.doods.base.R.id.section_label);
-            textView.setText(getString(com.dev.doods.base.R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView = inflater.inflate(R.layout.fragment_logs, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }

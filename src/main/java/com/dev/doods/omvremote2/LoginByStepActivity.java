@@ -54,11 +54,11 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_login_by_step);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_login_by_step);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,23 +109,23 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
     }
     private void BindViews()
     {
-        mCardPort = (CardView)findViewById(com.dev.doods.base.R.id.card_port);
-        mCardHost = (CardView)findViewById(com.dev.doods.base.R.id.card_host);
-        mCardUser = (CardView)findViewById(com.dev.doods.base.R.id.card_user);
-        mCardWol = (CardView)findViewById(com.dev.doods.base.R.id.card_wol);
-        mHostNameView = (EditText) findViewById(com.dev.doods.base.R.id.hostName);
-        mUrlView = (EditText) findViewById(com.dev.doods.base.R.id.host);
+        mCardPort = (CardView)findViewById(R.id.card_port);
+        mCardHost = (CardView)findViewById(R.id.card_host);
+        mCardUser = (CardView)findViewById(R.id.card_user);
+        mCardWol = (CardView)findViewById(R.id.card_wol);
+        mHostNameView = (EditText) findViewById(R.id.hostName);
+        mUrlView = (EditText) findViewById(R.id.host);
 
-        mLoginView = (AutoCompleteTextView) findViewById(com.dev.doods.base.R.id.login);
-        mPasswordView = (EditText) findViewById(com.dev.doods.base.R.id.password);
-        mPortView = (EditText) findViewById(com.dev.doods.base.R.id.etPort);
+        mLoginView = (AutoCompleteTextView) findViewById(R.id.login);
+        mPasswordView = (EditText) findViewById(R.id.password);
+        mPortView = (EditText) findViewById(R.id.etPort);
 
         mPortView.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
-        mSSLView= (Switch) findViewById(com.dev.doods.base.R.id.swithEnableSSL);
+        mSSLView= (Switch) findViewById(R.id.swithEnableSSL);
 
-        mWolPortView = (EditText) findViewById(com.dev.doods.base.R.id.etWolPort);
+        mWolPortView = (EditText) findViewById(R.id.etWolPort);
         mWolPortView.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
-        mMacView = (EditText) findViewById(com.dev.doods.base.R.id.etMac);
+        mMacView = (EditText) findViewById(R.id.etMac);
     }
 
 
@@ -149,7 +149,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
                     DialogFragment dialog = new YesNoDialog();
                     Bundle args = new Bundle();
                     args.putString("title", error.getMessage());
-                    args.putString("message", getString(com.dev.doods.base.R.string.Continue));
+                    args.putString("message", getString(R.string.Continue));
                     dialog.setArguments(args);
                     //dialog.setTargetFragment(OMVSystemActivity.this, YesNoDialog.YES_NO_CALL);
                     dialog.show(getSupportFragmentManager(), "tag");
@@ -222,7 +222,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
             public void handleFinich() {
                 mCardWol.setVisibility(View.VISIBLE);
 
-                fab.setImageResource(com.dev.doods.base.R.drawable.ic_save_black_24dp);
+                fab.setImageResource(R.drawable.ic_save_black_24dp);
                 mCanSAve = true;
             }
         }).run();
@@ -239,13 +239,13 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
             String hostname = mHostNameView.getText().toString();
 
             if (TextUtils.isEmpty(hostname)) {
-                mHostNameView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+                mHostNameView.setError(getString(R.string.error_field_required));
                 mHostNameView.requestFocus();;
                 return false;
             }
             String url = mUrlView.getText().toString();
             if (TextUtils.isEmpty(url)) {
-                mUrlView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+                mUrlView.setError(getString(R.string.error_field_required));
                 mUrlView.requestFocus();;
                 return false;
             }
@@ -256,7 +256,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
 
           String port = mPortView.getText().toString();
             if (TextUtils.isEmpty(port)) {
-                mPortView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+                mPortView.setError(getString(R.string.error_field_required));
                 mPortView.requestFocus();
                 return false;
             }
@@ -267,12 +267,12 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
             String password = mPasswordView.getText().toString();
 
             if (TextUtils.isEmpty(login)) {
-                mLoginView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+                mLoginView.setError(getString(R.string.error_field_required));
                 mLoginView.requestFocus();
                 return false;
             }
             if (TextUtils.isEmpty(password)) {
-                mPasswordView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+                mPasswordView.setError(getString(R.string.error_field_required));
                 mPasswordView.requestFocus();
                 return false;
             }

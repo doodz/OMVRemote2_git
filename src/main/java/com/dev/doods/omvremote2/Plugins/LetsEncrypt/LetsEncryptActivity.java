@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;

@@ -32,15 +32,15 @@ public class AddRepoV3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_add_repo_v3);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_add_repo_v3);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         BindViews();
         Bundle bundle = getIntent().getExtras();
         if(bundle!= null && bundle.containsKey("RepoV3"))
         {
-            setTitle(getString(com.dev.doods.base.R.string.edite_Repo));
+            setTitle(getString(R.string.edite_Repo));
             mRepo = (RepoV3)bundle.getSerializable("RepoV3");
             populateViews();
         }
@@ -53,7 +53,7 @@ public class AddRepoV3Activity extends AppCompatActivity {
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,29 +122,29 @@ public class AddRepoV3Activity extends AppCompatActivity {
     private void BindViews()
     {
 
-        mSwithEnable = (Switch) findViewById(com.dev.doods.base.R.id.swithEnable);
-        etNameView = (EditText)  findViewById(com.dev.doods.base.R.id.etName);
-        etCommentView = (EditText)  findViewById(com.dev.doods.base.R.id.etComment);
+        mSwithEnable = (Switch) findViewById(R.id.swithEnable);
+        etNameView = (EditText)  findViewById(R.id.etName);
+        etCommentView = (EditText)  findViewById(R.id.etComment);
 
-        etRepo1View = (EditText)  findViewById(com.dev.doods.base.R.id.etRepo1);
-        etKey1View = (EditText)  findViewById(com.dev.doods.base.R.id.etKey1);
-        etPackage1View = (EditText)  findViewById(com.dev.doods.base.R.id.etPackage1);
-        etPin1View = (EditText)  findViewById(com.dev.doods.base.R.id.etPin1);
-        etPriority1View = (EditText)  findViewById(com.dev.doods.base.R.id.etPriority1);
+        etRepo1View = (EditText)  findViewById(R.id.etRepo1);
+        etKey1View = (EditText)  findViewById(R.id.etKey1);
+        etPackage1View = (EditText)  findViewById(R.id.etPackage1);
+        etPin1View = (EditText)  findViewById(R.id.etPin1);
+        etPriority1View = (EditText)  findViewById(R.id.etPriority1);
 
-        etRepo2View = (EditText)  findViewById(com.dev.doods.base.R.id.etRepo2);
-        etKey2View = (EditText)  findViewById(com.dev.doods.base.R.id.etKey2);
-        etPackage2View = (EditText)  findViewById(com.dev.doods.base.R.id.etPackage2);
-        etPin2View = (EditText)  findViewById(com.dev.doods.base.R.id.etPin2);
-        etPriority2View = (EditText)  findViewById(com.dev.doods.base.R.id.etPriority2);
+        etRepo2View = (EditText)  findViewById(R.id.etRepo2);
+        etKey2View = (EditText)  findViewById(R.id.etKey2);
+        etPackage2View = (EditText)  findViewById(R.id.etPackage2);
+        etPin2View = (EditText)  findViewById(R.id.etPin2);
+        etPriority2View = (EditText)  findViewById(R.id.etPriority2);
 
-        etRepo3View = (EditText)  findViewById(com.dev.doods.base.R.id.etRepo3);
-        etKey3View = (EditText)  findViewById(com.dev.doods.base.R.id.etKey3);
-        etPackage3View = (EditText)  findViewById(com.dev.doods.base.R.id.etPackage3);
-        etPin3View = (EditText)  findViewById(com.dev.doods.base.R.id.etPin3);
-        etPriority3View = (EditText)  findViewById(com.dev.doods.base.R.id.etPriority3);
+        etRepo3View = (EditText)  findViewById(R.id.etRepo3);
+        etKey3View = (EditText)  findViewById(R.id.etKey3);
+        etPackage3View = (EditText)  findViewById(R.id.etPackage3);
+        etPin3View = (EditText)  findViewById(R.id.etPin3);
+        etPriority3View = (EditText)  findViewById(R.id.etPriority3);
 
-        swithPermanentView = (Switch) findViewById(com.dev.doods.base.R.id.swithPermanent);
+        swithPermanentView = (Switch) findViewById(R.id.swithPermanent);
     }
 
 

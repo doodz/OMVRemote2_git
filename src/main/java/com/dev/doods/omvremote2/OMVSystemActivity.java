@@ -56,19 +56,19 @@ public class OMVSystemActivity extends AppCompatActivity implements OnFragmentIn
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_omv_system);
+        setContentView(R.layout.activity_omv_system);
 
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(com.dev.doods.base.R.id.container);
+        mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(com.dev.doods.base.R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
         mConfigController.isDirty(new Callback() {
@@ -102,8 +102,8 @@ public class OMVSystemActivity extends AppCompatActivity implements OnFragmentIn
 
         DialogFragment dialog = new YesNoDialog();
         Bundle args = new Bundle();
-        args.putString("title", getString(com.dev.doods.base.R.string.ApplyChanges));
-        args.putString("message", getString(com.dev.doods.base.R.string.ApplyChangesMessage));
+        args.putString("title", getString(R.string.ApplyChanges));
+        args.putString("message", getString(R.string.ApplyChangesMessage));
         dialog.setArguments(args);
         //dialog.setTargetFragment(OMVSystemActivity.this, YesNoDialog.YES_NO_CALL);
         dialog.show(getSupportFragmentManager(), "tag");
@@ -115,7 +115,7 @@ public class OMVSystemActivity extends AppCompatActivity implements OnFragmentIn
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.menu_omvsystem, menu);
+        getMenuInflater().inflate(R.menu.menu_omvsystem, menu);
         return true;
     }
 
@@ -127,7 +127,7 @@ public class OMVSystemActivity extends AppCompatActivity implements OnFragmentIn
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

@@ -11,7 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.FileProvider;
 import android.webkit.MimeTypeMap;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import java.io.File;
 import java.util.Random;

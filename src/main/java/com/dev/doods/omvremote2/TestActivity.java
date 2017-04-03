@@ -35,10 +35,10 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_test);
+        setContentView(R.layout.activity_test);
 
 
-        SharesDeserializerBtn = (Button) findViewById(com.dev.doods.base.R.id.SharesDeserializerBtn);
+        SharesDeserializerBtn = (Button) findViewById(R.id.SharesDeserializerBtn);
 
         SharesDeserializerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class TestActivity extends AppCompatActivity {
             }
         });
 
-        SharedFolderNFSBtn = (Button) findViewById(com.dev.doods.base.R.id.SharedFolderNFSBtn);
+        SharedFolderNFSBtn = (Button) findViewById(R.id.SharedFolderNFSBtn);
 
         SharedFolderNFSBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,7 @@ public class TestActivity extends AppCompatActivity {
             }
         });
 
-        LongParsingBtn = (Button) findViewById(com.dev.doods.base.R.id.LongParsingBtn);
+        LongParsingBtn = (Button) findViewById(R.id.LongParsingBtn);
 
         LongParsingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +72,11 @@ public class TestActivity extends AppCompatActivity {
         });
 
 
-        LinearLayoutTest = (LinearLayout) findViewById(com.dev.doods.base.R.id.LinearLayoutTest);
+        LinearLayoutTest = (LinearLayout) findViewById(R.id.LinearLayoutTest);
 
 
 
-        final AdView adView1 = (AdView) findViewById(com.dev.doods.base.R.id.banner1);
+        final AdView adView1 = (AdView) findViewById(R.id.banner1);
         adView1.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
@@ -86,7 +86,7 @@ public class TestActivity extends AppCompatActivity {
         });
 
         adView1.loadAd(MyApplicationBase.mAdRequest);
-        final NativeExpressAdView adView2 = (NativeExpressAdView) findViewById(com.dev.doods.base.R.id.banner2);
+        final NativeExpressAdView adView2 = (NativeExpressAdView) findViewById(R.id.banner2);
         adView2.loadAd(MyApplicationBase.mAdRequest);
 
     }

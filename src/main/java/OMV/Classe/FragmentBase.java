@@ -7,7 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import Interfaces.IHandlerCallback;
 import utils.SnackBarError;

@@ -45,9 +45,9 @@ public class omv_extrasActivity extends NavigationBaseActivity
     private omvExtrasController controller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_extra;
+        NavigationId = R.id.nav_extra;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_omv_extras);
+        setContentView(R.layout.activity_omv_extras);
 
         this.controller = new omvExtrasController(this);
         mHandler= new Handler();
@@ -63,13 +63,13 @@ public class omv_extrasActivity extends NavigationBaseActivity
                     public void run() {
 
 
-                com.github.clans.fab.FloatingActionMenu menu = (com.github.clans.fab.FloatingActionMenu )findViewById(com.dev.doods.base.R.id.menu);
+                com.github.clans.fab.FloatingActionMenu menu = (com.github.clans.fab.FloatingActionMenu )findViewById(R.id.menu);
                 menu.setVisibility(View.GONE);
 
-                ListView listView = (ListView) findViewById(com.dev.doods.base.R.id.LstRepo);
+                ListView listView = (ListView) findViewById(R.id.LstRepo);
                 listView.setVisibility(View.GONE);
 
-                TextView mNoOMVExtra= (TextView) findViewById(com.dev.doods.base.R.id.No_OMV_Extra);
+                TextView mNoOMVExtra= (TextView) findViewById(R.id.No_OMV_Extra);
                 mNoOMVExtra.setVisibility(View.VISIBLE);
                     }
                 });
@@ -82,12 +82,12 @@ public class omv_extrasActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton save = (com.github.clans.fab.FloatingActionButton )findViewById(com.dev.doods.base.R.id.fab_Save);
+        com.github.clans.fab.FloatingActionButton save = (com.github.clans.fab.FloatingActionButton )findViewById(R.id.fab_Save);
 
         if(controller.GetApiVersion() == 3)
         {
-            save.setImageResource(com.dev.doods.base.R.drawable.ic_add_box_black_24dp);
-            save.setLabelText(getString(com.dev.doods.base.R.string.Add_Repo));
+            save.setImageResource(R.drawable.ic_add_box_black_24dp);
+            save.setLabelText(getString(R.string.Add_Repo));
             save.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
@@ -117,7 +117,7 @@ public class omv_extrasActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton aptClean = (com.github.clans.fab.FloatingActionButton )findViewById(com.dev.doods.base.R.id.fab_AptClean);
+        com.github.clans.fab.FloatingActionButton aptClean = (com.github.clans.fab.FloatingActionButton )findViewById(R.id.fab_AptClean);
         aptClean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,7 +138,7 @@ public class omv_extrasActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton refresh = (com.github.clans.fab.FloatingActionButton )findViewById(com.dev.doods.base.R.id.fab_Refresh);
+        com.github.clans.fab.FloatingActionButton refresh = (com.github.clans.fab.FloatingActionButton )findViewById(R.id.fab_Refresh);
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -231,10 +231,10 @@ public class omv_extrasActivity extends NavigationBaseActivity
             }
         });
 
-        ListView listView = (ListView) findViewById(com.dev.doods.base.R.id.LstRepo);
+        ListView listView = (ListView) findViewById(R.id.LstRepo);
         listView.setVisibility(View.GONE);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.LstRepoV3);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.LstRepoV3);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -289,8 +289,8 @@ public class omv_extrasActivity extends NavigationBaseActivity
 
         _lst = lst2;
 
-        ListView listView = (ListView) findViewById(com.dev.doods.base.R.id.LstRepo);
-        RecyclerView recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.LstRepoV3);
+        ListView listView = (ListView) findViewById(R.id.LstRepo);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.LstRepoV3);
         recyclerView.setVisibility(View.GONE);
         listView.setAdapter(new PinnedSectionRepoAdapter(omv_extrasActivity.this,_lst));
     }
@@ -298,7 +298,7 @@ public class omv_extrasActivity extends NavigationBaseActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.omv_extras, menu);
+        getMenuInflater().inflate(R.menu.omv_extras, menu);
         return true;
     }
 
@@ -310,7 +310,7 @@ public class omv_extrasActivity extends NavigationBaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id ==R.id.action_settings) {
 
 
             startActivity(new Intent(omv_extrasActivity.this, OMV_ExtraSettingsTabbedActivity.class));

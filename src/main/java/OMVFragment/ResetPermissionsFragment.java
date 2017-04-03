@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Switch;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;

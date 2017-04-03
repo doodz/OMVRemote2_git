@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.dev.doods.omvremote2.HostManagerActivity;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import java.io.IOException;
 

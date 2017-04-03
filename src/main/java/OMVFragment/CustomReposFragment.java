@@ -18,7 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;

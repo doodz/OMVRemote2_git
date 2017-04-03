@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.gson.reflect.TypeToken;

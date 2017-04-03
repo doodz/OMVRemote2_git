@@ -66,18 +66,18 @@ public class BindableActivity extends AppCompatActivity implements LoaderCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_bindable);
+        setContentView(R.layout.activity_bindable);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(com.dev.doods.base.R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
-        mPasswordView = (EditText) findViewById(com.dev.doods.base.R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == com.dev.doods.base.R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == R.id.login || id == EditorInfo.IME_NULL) {
                     attemptLogin();
                     return true;
                 }
@@ -85,7 +85,7 @@ public class BindableActivity extends AppCompatActivity implements LoaderCallbac
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(com.dev.doods.base.R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,8 +93,8 @@ public class BindableActivity extends AppCompatActivity implements LoaderCallbac
             }
         });
 
-        mLoginFormView = findViewById(com.dev.doods.base.R.id.login_form);
-        mProgressView = findViewById(com.dev.doods.base.R.id.login_progress);
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
     }
 
     private void populateAutoComplete() {
@@ -113,7 +113,7 @@ public class BindableActivity extends AppCompatActivity implements LoaderCallbac
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, com.dev.doods.base.R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
@@ -342,7 +342,7 @@ public class BindableActivity extends AppCompatActivity implements LoaderCallbac
             if (success) {
                 finish();
             } else {
-                mPasswordView.setError(getString(com.dev.doods.base.R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
             }
         }

@@ -20,8 +20,8 @@ public class EditeCertificateSshActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_edite_certificate_ssh);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_edite_certificate_ssh);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Bundle bundle = getIntent().getExtras();
@@ -32,7 +32,7 @@ public class EditeCertificateSshActivity extends AppCompatActivity {
 
         setViews();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,9 +52,9 @@ public class EditeCertificateSshActivity extends AppCompatActivity {
     EditText CommentView;
     private void setViews()
     {
-        PrivateKeyView = (EditText) findViewById(com.dev.doods.base.R.id.Et_Private_key);
-        PublicKeyView = (EditText) findViewById(com.dev.doods.base.R.id.Et_Public_key);
-        CommentView = (EditText) findViewById(com.dev.doods.base.R.id.Et_Comment);
+        PrivateKeyView = (EditText) findViewById(R.id.Et_Private_key);
+        PublicKeyView = (EditText) findViewById(R.id.Et_Public_key);
+        CommentView = (EditText) findViewById(R.id.Et_Comment);
 
 
         PrivateKeyView.setText(CertificateSsh.getPrivatekey());

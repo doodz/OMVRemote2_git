@@ -35,8 +35,8 @@ public class HostManagerActivity extends AppCompatActivity  implements RecyclerI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_host_manager);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_host_manager);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         datasource = new HostsDAO(this);
@@ -65,7 +65,7 @@ public class HostManagerActivity extends AppCompatActivity  implements RecyclerI
         mHosts = datasource.getAllHosts();
         //mAdapter = new HostAdapter(HostManagerActivity.this,mHosts);
         //mLstHostView.setAdapter(mAdapter);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +91,7 @@ public class HostManagerActivity extends AppCompatActivity  implements RecyclerI
         };
 
 
-        recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mAdapter = new HostAdapter(HostManagerActivity.this,mHosts,listener);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
@@ -162,25 +162,25 @@ public class HostManagerActivity extends AppCompatActivity  implements RecyclerI
 
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             mode.setTitle(mHost.getName());
-            mode.getMenuInflater().inflate(com.dev.doods.base.R.menu.row_host_menu, menu);
+            mode.getMenuInflater().inflate(R.menu.row_host_menu, menu);
             return true;
         }
 
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 
-            if(item.getItemId() == com.dev.doods.base.R.id.action_delete)
+            if(item.getItemId() == R.id.action_delete)
             {
                 DeleteHost();
                 mode.finish();
                 return true;
             }
-            else if(item.getItemId() == com.dev.doods.base.R.id.action_select)
+            else if(item.getItemId() == R.id.action_select)
             {
                 SelectHost();
                 mode.finish();
                 return true;
             }
-            else if(item.getItemId() == com.dev.doods.base.R.id.action_edite)
+            else if(item.getItemId() == R.id.action_edite)
             {
 
                 EditeHost();

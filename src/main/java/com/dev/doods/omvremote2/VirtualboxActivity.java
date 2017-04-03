@@ -63,13 +63,13 @@ public class VirtualboxActivity extends AppCompatBaseActivity implements OutputL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_virtualbox);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_virtualbox);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         new CheckDirty(this).Check();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -222,12 +222,12 @@ public class VirtualboxActivity extends AppCompatBaseActivity implements OutputL
     private void bindViews()
     {
 
-        swithEnable=(Switch) findViewById(com.dev.doods.base.R.id.swithEnable);
-        spinnerSharedFolder=(Spinner) findViewById(com.dev.doods.base.R.id.spinnerSharedFolder);
-        btnFixModulKernel=(Button) findViewById(com.dev.doods.base.R.id.btnFixModulKernel);
-        swithAdvancedConfig=(Switch) findViewById(com.dev.doods.base.R.id.swithAdvancedConfig);
-        swithShowTab=(Switch) findViewById(com.dev.doods.base.R.id.swithShowTab);
-        LstVirtualMachines=(RecyclerView) findViewById(com.dev.doods.base.R.id.LstVirtualMachines);
+        swithEnable=(Switch) findViewById(R.id.swithEnable);
+        spinnerSharedFolder=(Spinner) findViewById(R.id.spinnerSharedFolder);
+        btnFixModulKernel=(Button) findViewById(R.id.btnFixModulKernel);
+        swithAdvancedConfig=(Switch) findViewById(R.id.swithAdvancedConfig);
+        swithShowTab=(Switch) findViewById(R.id.swithShowTab);
+        LstVirtualMachines=(RecyclerView) findViewById(R.id.LstVirtualMachines);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         LstVirtualMachines.setLayoutManager(mLayoutManager);

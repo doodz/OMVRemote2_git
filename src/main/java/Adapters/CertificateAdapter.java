@@ -18,7 +18,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.dev.doods.omvremote2.EditeCertificateActivity;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
 //import org.acra.ACRA;

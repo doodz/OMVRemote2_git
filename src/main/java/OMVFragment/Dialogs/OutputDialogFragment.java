@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dev.doods.omvremote2.MyApplicationBase;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.NativeExpressAdView;
 

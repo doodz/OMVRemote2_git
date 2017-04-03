@@ -28,8 +28,8 @@ public class EditeCertificateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_edite_certificate);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_edite_certificate);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Bundle bundle = getIntent().getExtras();
@@ -62,7 +62,7 @@ public class EditeCertificateActivity extends AppCompatActivity {
             });
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,9 +83,9 @@ public class EditeCertificateActivity extends AppCompatActivity {
     EditText CommentView;
     private void setViews()
     {
-        PrivateKeyView = (EditText) findViewById(com.dev.doods.base.R.id.Et_Private_key);
-        CertificateView = (EditText) findViewById(com.dev.doods.base.R.id.Et_Certificate);
-        CommentView = (EditText) findViewById(com.dev.doods.base.R.id.Et_Comment);
+        PrivateKeyView = (EditText) findViewById(R.id.Et_Private_key);
+        CertificateView = (EditText) findViewById(R.id.Et_Certificate);
+        CommentView = (EditText) findViewById(R.id.Et_Comment);
 
         PrivateKeyView.setText(CertificateSsl.getPrivatekey());
         CertificateView.setText(CertificateSsl.getCertificate());

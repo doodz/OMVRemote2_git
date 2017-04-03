@@ -54,8 +54,8 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_add_edite_shared_folder);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_add_edite_shared_folder);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
@@ -64,14 +64,14 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
         Bundle bundle = getIntent().getExtras();
 
 
-        mFolderNameView = (EditText) findViewById(com.dev.doods.base.R.id.etFolderName);
-        mVolumeView = (Spinner) findViewById(com.dev.doods.base.R.id.spinnerVolume);
+        mFolderNameView = (EditText) findViewById(R.id.etFolderName);
+        mVolumeView = (Spinner) findViewById(R.id.spinnerVolume);
 
 
 
         if(bundle!= null && bundle.containsKey("SharedFolder"))
         {
-            setTitle(getString(com.dev.doods.base.R.string.edite_folder));
+            setTitle(getString(R.string.edite_folder));
             mFolder = (SharedFolder)bundle.getSerializable("SharedFolder");
             mFolderNameView.setEnabled(false);
 
@@ -79,7 +79,7 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
         else
             mFolder = new SharedFolder();
 
-        fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setEnabled(false);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
             }
         });
 
-        fab_FolderBrowser = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_FolderBrowser);
+        fab_FolderBrowser = (FloatingActionButton) findViewById(R.id.fab_FolderBrowser);
 
         fab_FolderBrowser.setEnabled(false);
 
@@ -103,14 +103,14 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
                 android.R.layout.simple_spinner_item, mDevices);
         mVolumeView.setAdapter(mAdapterVolume);
 
-        mFolferPathView = (EditText) findViewById(com.dev.doods.base.R.id.etFolderPath);
-        mPermissionView = (Spinner) findViewById(com.dev.doods.base.R.id.spinnerPermissions);
+        mFolferPathView = (EditText) findViewById(R.id.etFolderPath);
+        mPermissionView = (Spinner) findViewById(R.id.spinnerPermissions);
 
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(AddEditeSharedFolderActivity.this,
                 android.R.layout.simple_spinner_item, ShareMgmtController.PermissionsType);
         mPermissionView.setAdapter(mAdapter);
 
-        mFolderCommentView = (EditText) findViewById(com.dev.doods.base.R.id.etFolderComment);
+        mFolderCommentView = (EditText) findViewById(R.id.etFolderComment);
 
         mController.getCandidates(new Callback() {
             @Override
@@ -174,7 +174,7 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
         else
         {
             Snackbar snackbar = Snackbar
-                    .make(fab_FolderBrowser, getString(com.dev.doods.base.R.string.not_volumes),
+                    .make(fab_FolderBrowser, getString(R.string.not_volumes),
                             Snackbar.LENGTH_INDEFINITE);
             snackbar.show();
         }
@@ -225,7 +225,7 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
         String tmp = mFolderNameView.getText().toString();
         if(StringUtils.isEmpty(tmp))
         {
-            mFolderNameView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+            mFolderNameView.setError(getString(R.string.error_field_required));
             return;
         }
         else
@@ -234,7 +234,7 @@ public class AddEditeSharedFolderActivity extends AppCompatActivity implements N
         tmp = mFolferPathView.getText().toString();
         if(StringUtils.isEmpty(tmp))
         {
-            mFolferPathView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+            mFolferPathView.setError(getString(R.string.error_field_required));
             return;
         }
         else

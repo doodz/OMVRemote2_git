@@ -56,7 +56,7 @@ public class OMV_ExtraSettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.app_bar_omv_extra_settings);
+        setContentView(R.layout.app_bar_omv_extra_settings);
 
 
         mController = new omvExtrasController(this);
@@ -64,12 +64,12 @@ public class OMV_ExtraSettingsActivity extends AppCompatActivity {
         mLstKernel = new ArrayList<KernelItem>();
 
 
-        mKernelVersionView = (TextView)findViewById(com.dev.doods.base.R.id.KernelVersion);
-        mKernelArchitectureView = (TextView)findViewById(com.dev.doods.base.R.id.KernelArchitecture);
-        mKernelDeveloperView = (TextView)findViewById(com.dev.doods.base.R.id.KernelDeveloper);
-        mKernelDistributionView = (TextView)findViewById(com.dev.doods.base.R.id.KernelDistribution);
-        mKernelNameView = (TextView)findViewById(com.dev.doods.base.R.id.KernelName);
-        mSpinnerKernelsView = (Spinner) findViewById(com.dev.doods.base.R.id.spinnerKernels);
+        mKernelVersionView = (TextView)findViewById(R.id.KernelVersion);
+        mKernelArchitectureView = (TextView)findViewById(R.id.KernelArchitecture);
+        mKernelDeveloperView = (TextView)findViewById(R.id.KernelDeveloper);
+        mKernelDistributionView = (TextView)findViewById(R.id.KernelDistribution);
+        mKernelNameView = (TextView)findViewById(R.id.KernelName);
+        mSpinnerKernelsView = (Spinner) findViewById(R.id.spinnerKernels);
 
 
         mAdapterKernel = new ArrayAdapter<KernelItem>(OMV_ExtraSettingsActivity.this,
@@ -102,7 +102,7 @@ public class OMV_ExtraSettingsActivity extends AppCompatActivity {
             }
         });
 
-        fab_Backports_kernel = (FloatingActionButton)findViewById(com.dev.doods.base.R.id.fab_Backports_kernel);
+        fab_Backports_kernel = (FloatingActionButton)findViewById(R.id.fab_Backports_kernel);
 
         fab_Backports_kernel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +138,7 @@ public class OMV_ExtraSettingsActivity extends AppCompatActivity {
             }
         });
 
-        fab_Headers_kernel = (FloatingActionButton)findViewById(com.dev.doods.base.R.id.fab_Headers_kernel);;
+        fab_Headers_kernel = (FloatingActionButton)findViewById(R.id.fab_Headers_kernel);;
         fab_Headers_kernel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,7 +169,7 @@ public class OMV_ExtraSettingsActivity extends AppCompatActivity {
             }
         });
 
-        mSaveDefautKernel = (Button) findViewById(com.dev.doods.base.R.id.BtnSaveDefautKernel);
+        mSaveDefautKernel = (Button) findViewById(R.id.BtnSaveDefautKernel);
 
         mSaveDefautKernel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,7 +201,7 @@ public class OMV_ExtraSettingsActivity extends AppCompatActivity {
                 });
             }
         });
-        mFloatingActionMenu =(FloatingActionMenu) findViewById(com.dev.doods.base.R.id.menu);
+        mFloatingActionMenu =(FloatingActionMenu) findViewById(R.id.menu);
     }
 
 

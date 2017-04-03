@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.dev.doods.omvremote2.SharedFoldersActivity;
 import com.dev.doods.omvremote2.StatisticsScrollingActivity;
 import com.github.mikephil.charting.charts.PieChart;

@@ -21,7 +21,7 @@ public class SharedFoldersActivity extends SwipeViewBaseActivity implements OnFr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
     }
@@ -30,7 +30,7 @@ public class SharedFoldersActivity extends SwipeViewBaseActivity implements OnFr
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.menu_shared_folders, menu);
+        getMenuInflater().inflate(R.menu.menu_shared_folders, menu);
         return true;
     }
 
@@ -42,7 +42,7 @@ public class SharedFoldersActivity extends SwipeViewBaseActivity implements OnFr
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

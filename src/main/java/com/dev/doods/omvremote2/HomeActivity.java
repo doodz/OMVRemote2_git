@@ -61,9 +61,9 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
     FloatingActionButton fabInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_home;
+        NavigationId = R.id.nav_home;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_homet);
+        setContentView(R.layout.activity_homet);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -76,12 +76,12 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         */
-        fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
         registerForContextMenu(fab);
         controller = new HomeController(this);
 
-        fabInfo = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fabInfo);
+        fabInfo = (FloatingActionButton) findViewById(R.id.fabInfo);
         fabInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,7 +133,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
 
@@ -142,28 +142,28 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(com.dev.doods.base.R.menu.menu_power, menu);
+        inflater.inflate(R.menu.menu_power, menu);
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == com.dev.doods.base.R.id.action_reboot)
+        if(id == R.id.action_reboot)
         {
             mSystemController.Reboot(null);
-            this.showInfo(getString(com.dev.doods.base.R.string.Reboot_send));
+            this.showInfo(getString(R.string.Reboot_send));
         }
-        else if(id == com.dev.doods.base.R.id.action_shutdown)
+        else if(id == R.id.action_shutdown)
         {
             mSystemController.Shutdown(null);
-            this.showInfo(getString(com.dev.doods.base.R.string.Shutdown_send));
+            this.showInfo(getString(R.string.Shutdown_send));
         }
-        else if(id == com.dev.doods.base.R.id.action_standby)
+        else if(id == R.id.action_standby)
         {
             mSystemController.Standby(null);
-            this.showInfo(getString(com.dev.doods.base.R.string.Standby_send));
-        }else if(id == com.dev.doods.base.R.id.action_wakeup)
+            this.showInfo(getString(R.string.Standby_send));
+        }else if(id == R.id.action_wakeup)
         {
             JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
             Host h = jsonRpc.GetHost();
@@ -176,8 +176,8 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
                     DialogFragment dialog = new YesNoDialog();
                     Bundle args = new Bundle();
 
-                    args.putString("title",getString(com.dev.doods.base.R.string.no_mac));
-                    args.putString("message",getString(com.dev.doods.base.R.string.set_mac));
+                    args.putString("title",getString(R.string.no_mac));
+                    args.putString("message",getString(R.string.set_mac));
                     dialog.setArguments(args);
                     //dialog.setTargetFragment(OMVSystemActivity.this, YesNoDialog.YES_NO_CALL);
                     dialog.show(getSupportFragmentManager(), "tag");
@@ -192,7 +192,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
             }
 
             mSystemController.Wakeup();
-            this.showInfo(getString(com.dev.doods.base.R.string.Wakeup_send));
+            this.showInfo(getString(R.string.Wakeup_send));
         }
 
         return super.onContextItemSelected(item);
@@ -209,14 +209,14 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
 
             if(IsFinalized(true))
             startActivity(new Intent(HomeActivity.this, OMVSystemActivity.class));
             //startActivity(new Intent(HomeActivity.this, HomeSettingsActivity.class));
             return true;
         }
-        else if(id == com.dev.doods.base.R.id.action_power){
+        else if(id == R.id.action_power){
                 this.openContextMenu(fab);
         }
 
@@ -228,12 +228,12 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
 
         Log.v("MainActivity","Onclick from MainActivity");
 
-        if(v.getId() == com.dev.doods.base.R.id.fab)
+        if(v.getId() == R.id.fab)
         {
 
             getInfo();
         }
-        else if(v.getId() == com.dev.doods.base.R.id.RelativeLayout_Info_Server)
+        else if(v.getId() == R.id.RelativeLayout_Info_Server)
         {
 
             if(i == 5) {
@@ -252,7 +252,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
     private void getInfo()
     {
 
-        Animation animation = AnimationUtils.loadAnimation(this, com.dev.doods.base.R.anim.rotate_indefinitely);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotate_indefinitely);
         fab.startAnimation(animation);
 
         controller.GetSystemInformation(new CallbackImpl(this){
@@ -331,7 +331,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
     {
         LstServices.clear();
         LstServices.addAll(res);
-        ListView listView = (ListView) findViewById(com.dev.doods.base.R.id.StatusServices);
+        ListView listView = (ListView) findViewById(R.id.StatusServices);
         listView.setAdapter(new ServicesAdapter(HomeActivity.this,LstServices));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -380,42 +380,42 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
         switch (tb.replace(' ','_'))
         {
             case "Hostname":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.HostName);
+                tv = (TextView)findViewById(R.id.HostName);
                 tv.setText(val);
                 break;
             case "Version":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Version);
+                tv = (TextView)findViewById(R.id.Version);
                 JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
                 jsonRpc.GetHost().setVersion(val.contains("(Erasmus)")? 3 : 2);
 
                 tv.setText(val);
                 break;
             case "Processor":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Processor);
+                tv = (TextView)findViewById(R.id.Processor);
                 //tv.setText(val);
                 break;
             case "Kernel":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Kernel);
+                tv = (TextView)findViewById(R.id.Kernel);
                 tv.setText(val);
                 break;
             case "System_time":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.System_time);
+                tv = (TextView)findViewById(R.id.System_time);
                 tv.setText(val);
                 break;
             case "Uptime":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Uptime);
+                tv = (TextView)findViewById(R.id.Uptime);
                 tv.setText(val);
                 break;
             case "Load_average":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Load_average);
+                tv = (TextView)findViewById(R.id.Load_average);
                 tv.setText(val);
                 break;
             case "CPU_usage":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.CPU_usage);
+                tv = (TextView)findViewById(R.id.CPU_usage);
                 tv.setText(val);
                 break;
             case "Memory_usage":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Memory_usage);
+                tv = (TextView)findViewById(R.id.Memory_usage);
                 tv.setText(val);
                 break;
             default:

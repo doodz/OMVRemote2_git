@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.os.Handler;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import net.hockeyapp.android.Tracking;
 

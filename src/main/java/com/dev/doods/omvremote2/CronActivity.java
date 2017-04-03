@@ -36,11 +36,11 @@ public class CronActivity extends NavigationBaseActivity
     private CheckDirty mCheckDirty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_cron;
+        NavigationId = R.id.nav_cron;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_cron);
+        setContentView(R.layout.activity_cron);
         mCheckDirty = new CheckDirty(CronActivity.this);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +50,7 @@ public class CronActivity extends NavigationBaseActivity
             }
         });
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.LstCron);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.LstCron);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -89,7 +89,7 @@ public class CronActivity extends NavigationBaseActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.cron, menu);
+        getMenuInflater().inflate(R.menu.cron, menu);
         return true;
     }
 
@@ -101,7 +101,7 @@ public class CronActivity extends NavigationBaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

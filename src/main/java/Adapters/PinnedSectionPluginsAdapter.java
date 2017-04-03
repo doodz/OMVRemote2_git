@@ -10,7 +10,7 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import java.util.List;
 

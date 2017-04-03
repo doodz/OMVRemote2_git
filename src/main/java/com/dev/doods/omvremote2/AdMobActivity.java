@@ -25,10 +25,10 @@ public class AdMobActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_ad_mob);
+        setContentView(R.layout.activity_ad_mob);
 
         // Create the next level button, which tries to show an interstitial when clicked.
-        mNextLevelButton = ((FloatingActionButton) findViewById(com.dev.doods.base.R.id.next_level_button));
+        mNextLevelButton = ((FloatingActionButton) findViewById(R.id.next_level_button));
         mNextLevelButton.setEnabled(false);
         mNextLevelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,7 @@ public class AdMobActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.menu_ad_mob, menu);
+        getMenuInflater().inflate(R.menu.menu_ad_mob, menu);
         return true;
     }
 
@@ -58,7 +58,7 @@ public class AdMobActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

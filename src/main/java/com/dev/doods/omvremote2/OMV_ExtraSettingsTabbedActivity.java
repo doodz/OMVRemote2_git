@@ -29,7 +29,7 @@ public class OMV_ExtraSettingsTabbedActivity extends SwipeViewBaseActivity imple
         super.onCreate(savedInstanceState);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         fabSave.setVisibility(View.GONE);
@@ -39,7 +39,7 @@ public class OMV_ExtraSettingsTabbedActivity extends SwipeViewBaseActivity imple
     @Override
     public  void initPagetAdapter()
     {
-        setContentView(com.dev.doods.base.R.layout.activity_omv__extra_settings_tabbed);
+        setContentView(R.layout.activity_omv__extra_settings_tabbed);
         java.util.ArrayList<Fragment> items =  new ArrayList<Fragment>(
                 Arrays.asList(new OMVFragment.OMVExtraKernelFragment(),
                         new OMVFragment.CustomReposFragment()));
@@ -54,7 +54,7 @@ public class OMV_ExtraSettingsTabbedActivity extends SwipeViewBaseActivity imple
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.menu_omv__extra_settings_tabbed, menu);
+        getMenuInflater().inflate(R.menu.menu_omv__extra_settings_tabbed, menu);
         return true;
     }
 
@@ -66,7 +66,7 @@ public class OMV_ExtraSettingsTabbedActivity extends SwipeViewBaseActivity imple
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 
@@ -93,7 +93,7 @@ public class OMV_ExtraSettingsTabbedActivity extends SwipeViewBaseActivity imple
     {
 
         Snackbar snackbar = Snackbar
-                .make(fabSave, getString(com.dev.doods.base.R.string.snackbar_error_occurred), Snackbar.LENGTH_LONG)
+                .make(fabSave, getString(R.string.snackbar_error_occurred), Snackbar.LENGTH_LONG)
                 .setAction("Send Logs", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

@@ -43,9 +43,9 @@ public class SearchHostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_search_host);
-        mProgressBar = (ProgressBar) findViewById(com.dev.doods.base.R.id.pBAsync);
-        mInetAddressView = (ListView) findViewById(com.dev.doods.base.R.id.LstInetAddress);
+        setContentView(R.layout.activity_search_host);
+        mProgressBar = (ProgressBar) findViewById(R.id.pBAsync);
+        mInetAddressView = (ListView) findViewById(R.id.LstInetAddress);
 
         mInetAddressView.setLongClickable(false);
 
@@ -78,7 +78,7 @@ public class SearchHostActivity extends AppCompatActivity {
         });
 
         //mSkipView = (Button) findViewById(R.id.btSkip);
-        fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

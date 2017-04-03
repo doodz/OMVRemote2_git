@@ -42,7 +42,7 @@ public class HomeSettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_home_settings);
+        setContentView(R.layout.activity_home_settings);
 
         handler= new Handler();
         controller = new HomeController(this);
@@ -50,12 +50,12 @@ public class HomeSettingsActivity extends AppCompatActivity {
 
 
 
-        _SwithEnableSSL = (Switch) findViewById(com.dev.doods.base.R.id.swithEnableSSL);
-        _SwithForceSSL = (Switch) findViewById(com.dev.doods.base.R.id.swithForceSSL);
-        _TextViewPort = (EditText)findViewById(com.dev.doods.base.R.id.etPort);
-        _TextViewPortSSL = (EditText)findViewById(com.dev.doods.base.R.id.etPortSSL);
-        _TextViewTimeout = (EditText)findViewById(com.dev.doods.base.R.id.etTimeout);
-        _SpinnerSertificates = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerSertificates);
+        _SwithEnableSSL = (Switch) findViewById(R.id.swithEnableSSL);
+        _SwithForceSSL = (Switch) findViewById(R.id.swithForceSSL);
+        _TextViewPort = (EditText)findViewById(R.id.etPort);
+        _TextViewPortSSL = (EditText)findViewById(R.id.etPortSSL);
+        _TextViewTimeout = (EditText)findViewById(R.id.etTimeout);
+        _SpinnerSertificates = (Spinner)findViewById(R.id.spinnerSertificates);
 
 
         _TextViewPort.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
@@ -125,7 +125,7 @@ public class HomeSettingsActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
-        if(_SpinnerSertificates == null)_SpinnerSertificates = (Spinner)findViewById(com.dev.doods.base.R.id.spinnerSertificates);
+        if(_SpinnerSertificates == null)_SpinnerSertificates = (Spinner)findViewById(R.id.spinnerSertificates);
         _SpinnerSertificates.setAdapter(adapter);
     }
 
@@ -159,7 +159,7 @@ public class HomeSettingsActivity extends AppCompatActivity {
 
         _SpinnerSertificates.setEnabled(settings.getEnablessl());
 
-        _ButtonSave = (Button) findViewById(com.dev.doods.base.R.id.buttonSave);
+        _ButtonSave = (Button) findViewById(R.id.buttonSave);
         _ButtonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

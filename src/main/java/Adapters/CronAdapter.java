@@ -16,7 +16,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.dev.doods.omvremote2.AddEditeCronActivity;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
 import org.apache.commons.lang3.StringUtils;

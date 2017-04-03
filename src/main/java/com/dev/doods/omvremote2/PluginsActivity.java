@@ -41,13 +41,13 @@ public class PluginsActivity extends NavigationBaseActivity
     private FilterPlugin _Filters = new FilterPlugin();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_plugin;
+        NavigationId = R.id.nav_plugin;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_plugins);
+        setContentView(R.layout.activity_plugins);
 
         controller = new PluginsController(this);
         //mOutputController.AddListener(this);
-        com.github.clans.fab.FloatingActionButton fab_Install = (com.github.clans.fab.FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_Install);
+        com.github.clans.fab.FloatingActionButton fab_Install = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_Install);
         fab_Install.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +85,7 @@ public class PluginsActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton fab_UnInstall = (com.github.clans.fab.FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_UnInstall);
+        com.github.clans.fab.FloatingActionButton fab_UnInstall = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_UnInstall);
         fab_UnInstall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +124,7 @@ public class PluginsActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton fab_Filter = (com.github.clans.fab.FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_Filter);
+        com.github.clans.fab.FloatingActionButton fab_Filter = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_Filter);
         fab_Filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -267,7 +267,7 @@ public class PluginsActivity extends NavigationBaseActivity
 
         _lst = lst2;
 
-        ListView listView = (ListView) findViewById(com.dev.doods.base.R.id.LstPlugins);
+        ListView listView = (ListView) findViewById(R.id.LstPlugins);
 
         _PinnedSectionPluginsAdapter = new PinnedSectionPluginsAdapter(PluginsActivity.this,_lst);
 
@@ -278,7 +278,7 @@ public class PluginsActivity extends NavigationBaseActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.plugins, menu);
+        getMenuInflater().inflate(R.menu.plugins, menu);
         return true;
     }
 
@@ -290,7 +290,7 @@ public class PluginsActivity extends NavigationBaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

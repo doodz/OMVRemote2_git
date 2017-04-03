@@ -53,24 +53,24 @@ public class ServicesActivity extends AppCompatBaseActivity implements OnFragmen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_services);
+        setContentView(R.layout.activity_services);
 
         mController = new ServicesController(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(com.dev.doods.base.R.id.container);
+        mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(com.dev.doods.base.R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        fabSave = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fabSave);
+        fabSave = (FloatingActionButton) findViewById(R.id.fabSave);
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +91,7 @@ public class ServicesActivity extends AppCompatBaseActivity implements OnFragmen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.menu_services, menu);
+        getMenuInflater().inflate(R.menu.menu_services, menu);
         return true;
     }
 
@@ -103,7 +103,7 @@ public class ServicesActivity extends AppCompatBaseActivity implements OnFragmen
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

@@ -5,7 +5,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.widget.RemoteViews;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 /**
  * Implementation of App Widget functionality.

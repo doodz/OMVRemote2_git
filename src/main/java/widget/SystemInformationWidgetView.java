@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 
 import com.dev.doods.omvremote2.HomeActivity;
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import Client.Host;
 

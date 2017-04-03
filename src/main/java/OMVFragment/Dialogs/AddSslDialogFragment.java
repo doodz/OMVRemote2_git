@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import java.util.ArrayList;
 import java.util.List;

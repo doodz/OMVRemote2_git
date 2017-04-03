@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         controller = new LoginController(this);
 
-        setContentView(com.dev.doods.base.R.layout.activity_login);
+        setContentView(R.layout.activity_login);
 
         // Check for permissions
         int permissionCheck = ContextCompat.checkSelfPermission(this,
@@ -112,8 +112,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         }
         // Set up the login form.
-        mHostNameView = (EditText) findViewById(com.dev.doods.base.R.id.hostName);
-        mUrlView = (EditText) findViewById(com.dev.doods.base.R.id.host);
+        mHostNameView = (EditText) findViewById(R.id.hostName);
+        mUrlView = (EditText) findViewById(R.id.host);
         mUrlView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
             @Override
@@ -138,13 +138,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
         ;
-        mEmailView = (AutoCompleteTextView) findViewById(com.dev.doods.base.R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
 
-        mPasswordView = (EditText) findViewById(com.dev.doods.base.R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == com.dev.doods.base.R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == R.id.login || id == EditorInfo.IME_NULL) {
                     attemptLogin();
                     return true;
                 }
@@ -152,7 +152,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        mEmailSignInButton = (Button) findViewById(com.dev.doods.base.R.id.email_sign_in_button);
+        mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,15 +160,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        mLoginFormView = findViewById(com.dev.doods.base.R.id.login_form);
-        mProgressView = findViewById(com.dev.doods.base.R.id.login_progress);
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
 
 
 
-        mPortView = (EditText) findViewById(com.dev.doods.base.R.id.etPort);
+        mPortView = (EditText) findViewById(R.id.etPort);
 
         mPortView.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
-        mSSLView= (Switch) findViewById(com.dev.doods.base.R.id.swithEnableSSL);
+        mSSLView= (Switch) findViewById(R.id.swithEnableSSL);
 
         mSSLView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -193,9 +193,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
 
-        WolPortView = (EditText) findViewById(com.dev.doods.base.R.id.etWolPort);
+        WolPortView = (EditText) findViewById(R.id.etWolPort);
         WolPortView.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
-        MacView = (EditText) findViewById(com.dev.doods.base.R.id.etMac);
+        MacView = (EditText) findViewById(R.id.etMac);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null && bundle.containsKey("host"))
@@ -286,20 +286,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+            mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
             cancel = true;
         }
 
         if (TextUtils.isEmpty(name)) {
-            mHostNameView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+            mHostNameView.setError(getString(R.string.error_field_required));
             focusView = mHostNameView;
             cancel = true;
         }
 
         if (TextUtils.isEmpty((mPortView.getText().toString())))
         {
-            mPortView.setError(getString(com.dev.doods.base.R.string.error_field_required));
+            mPortView.setError(getString(R.string.error_field_required));
             focusView = mPortView;
             cancel = true;
         }

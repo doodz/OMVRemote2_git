@@ -21,7 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import org.apache.commons.lang3.StringUtils;
 

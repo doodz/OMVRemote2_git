@@ -27,7 +27,7 @@ public class UpdateSetingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_update_setings);
+        setContentView(R.layout.activity_update_setings);
 
         controller = new UpdateController(this);
         handler= new Handler();
@@ -54,7 +54,7 @@ public class UpdateSetingsActivity extends AppCompatActivity {
                 });
             }
         });
-        final Button saveButton = (Button) findViewById(com.dev.doods.base.R.id.SaveButton);
+        final Button saveButton = (Button) findViewById(R.id.SaveButton);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +87,7 @@ public class UpdateSetingsActivity extends AppCompatActivity {
     private void initSettings(UpdateSettings settings)
     {
         mSettings = settings;
-        Switch pre_release_switch = (Switch) findViewById(com.dev.doods.base.R.id.pre_release_switch);
+        Switch pre_release_switch = (Switch) findViewById(R.id.pre_release_switch);
         pre_release_switch.setChecked(settings.getProposed());
 
         pre_release_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -97,7 +97,7 @@ public class UpdateSetingsActivity extends AppCompatActivity {
                                                           }
                                                       });
 
-        Switch Community_switch = (Switch) findViewById(com.dev.doods.base.R.id.Community_switch);
+        Switch Community_switch = (Switch) findViewById(R.id.Community_switch);
         Community_switch.setChecked(settings.getPartner());
         Community_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

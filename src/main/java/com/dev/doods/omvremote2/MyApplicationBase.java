@@ -27,10 +27,6 @@ import net.hockeyapp.android.utils.Util;
 //import org.acra.annotation.ReportsCrashes;
 
 import OMV.Classe.MyCustomCrashManagerListener;
-
-
-
-//manifestPlaceholders = [HOCKEYAPP_APP_ID: "7076800147a94538934dfa2e5e0ee2ad"]
 /**
  * Created by thiba on 21/10/2016.
  */
@@ -67,7 +63,7 @@ public class MyApplicationBase extends Application {
         HockeyLog.setLogLevel(Log.DEBUG);
         //MobileCenter.start(this, "e7034db4-8db6-474a-a022-66771fb1e3f6",
         //        Analytics.class, Crashes.class);
-        MetricsManager.register(this,"7076800147a94538934dfa2e5e0ee2ad");
+        MetricsManager.register(this);
         MetricsManager.trackEvent("GET_LOGS_FILE");
 
         if(light) {
@@ -105,7 +101,7 @@ public class MyApplicationBase extends Application {
         }
         String appIdentifier = Util.getAppIdentifier(context);
 
-        CrashManager.register(context, "7076800147a94538934dfa2e5e0ee2ad", new MyCustomCrashManagerListener());
+        CrashManager.register(context, appIdentifier, new MyCustomCrashManagerListener());
         //CrashManager.register(this);
     }
 

@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dev.doods.base.R;
+import com.dev.doods.omvremote2.R;
 
 import java.util.List;
 

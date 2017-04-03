@@ -28,9 +28,9 @@ public class FileSystemsActivity extends NavigationBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_disk;
+        NavigationId = R.id.nav_disk;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_file_systems);
+        setContentView(R.layout.activity_file_systems);
 
         controller = new DisckController(this);
 
@@ -64,7 +64,7 @@ public class FileSystemsActivity extends NavigationBaseActivity {
     private void ShowFileSystem(List<FileSystem> lst)
     {
 
-        recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setAdapter(new FileSystemsAdapter(FileSystemsActivity.this,lst));
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -81,7 +81,7 @@ public class FileSystemsActivity extends NavigationBaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.file_systems, menu);
+        getMenuInflater().inflate(R.menu.file_systems, menu);
         return true;
     }
 
@@ -93,7 +93,7 @@ public class FileSystemsActivity extends NavigationBaseActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
 

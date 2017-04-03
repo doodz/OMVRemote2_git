@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         handler= new Handler();
-        fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
         controller = new HomeController(this);
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.v("MainActivity","Onclick from MainActivity");
 
-        if(v.getId() == com.dev.doods.base.R.id.fab)
+        if(v.getId() == R.id.fab)
         {
 
             showInfo("Get System Information");
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void showStatusServices(List<Datum> res)
     {
 
-        ListView listView = (ListView) findViewById(com.dev.doods.base.R.id.StatusServices);
+        ListView listView = (ListView) findViewById(R.id.StatusServices);
         listView.setAdapter(new ServicesAdapter(MainActivity.this,res));
 
     }
@@ -167,39 +167,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (tb.replace(' ','_'))
         {
             case "Hostname":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.HostName);
+                tv = (TextView)findViewById(R.id.HostName);
                 tv.setText(val);
                 break;
             case "Version":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Version);
+                tv = (TextView)findViewById(R.id.Version);
                 tv.setText(val);
                 break;
             case "Processor":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Processor);
+                tv = (TextView)findViewById(R.id.Processor);
                 tv.setText(val);
                 break;
             case "KernelItem":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Kernel);
+                tv = (TextView)findViewById(R.id.Kernel);
                 tv.setText(val);
                 break;
             case "System_time":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.System_time);
+                tv = (TextView)findViewById(R.id.System_time);
                 tv.setText(val);
                 break;
             case "Uptime":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Uptime);
+                tv = (TextView)findViewById(R.id.Uptime);
                 tv.setText(val);
                 break;
             case "Load_average":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Load_average);
+                tv = (TextView)findViewById(R.id.Load_average);
                 tv.setText(val);
                 break;
             case "CPU_usage":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.CPU_usage);
+                tv = (TextView)findViewById(R.id.CPU_usage);
                 tv.setText(val);
                 break;
             case "Memory_usage":
-                tv = (TextView)findViewById(com.dev.doods.base.R.id.Memory_usage);
+                tv = (TextView)findViewById(R.id.Memory_usage);
                 tv.setText(val);
                 break;
             default:

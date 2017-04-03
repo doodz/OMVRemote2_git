@@ -38,17 +38,17 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
     private OutputDialogFragment mOutputDialogFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NavigationId = com.dev.doods.base.R.id.nav_update;
+        NavigationId = R.id.nav_update;
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_packages_infomation);
+        setContentView(R.layout.activity_packages_infomation);
 
         controller = new UpdateController(this);
         PopulateLst();
         //mOutputController.AddListener(this);
 
-        NoUpdateVew = (TextView) findViewById(com.dev.doods.base.R.id.NoUpdate);
+        NoUpdateVew = (TextView) findViewById(R.id.NoUpdate);
 
-        com.github.clans.fab.FloatingActionButton fab_Refresh = (com.github.clans.fab.FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_Refresh);
+        com.github.clans.fab.FloatingActionButton fab_Refresh = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_Refresh);
         fab_Refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +72,7 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton fab_SelectAll = (com.github.clans.fab.FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_SelectAll);
+        com.github.clans.fab.FloatingActionButton fab_SelectAll = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_SelectAll);
         fab_SelectAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +88,7 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
             }
         });
 
-        com.github.clans.fab.FloatingActionButton fab_Update = (com.github.clans.fab.FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab_Update);
+        com.github.clans.fab.FloatingActionButton fab_Update = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_Update);
         fab_Update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,7 +143,7 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
     private void PopulateLst()
     {
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.LstPackageInformation);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.LstPackageInformation);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -235,7 +235,7 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.dev.doods.base.R.menu.packages_infomation, menu);
+        getMenuInflater().inflate(R.menu.packages_infomation, menu);
         return true;
     }
 
@@ -247,7 +247,7 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == com.dev.doods.base.R.id.action_settings) {
+        if (id == R.id.action_settings) {
 
             startActivity(new Intent(PackagesInfomationActivity.this, UpdateSetingsActivity.class));
 
@@ -263,46 +263,46 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if  (id == com.dev.doods.base.R.id.nav_home)
+        if  (id == R.id.nav_home)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, HomeActivity.class));
-        }else if(id == com.dev.doods.base.R.id.nav_update)
+        }else if(id == R.id.nav_update)
         {
            // startActivity(new Intent(PackagesInfomationActivity.this, PackagesInfomationActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_disk)
+        else if(id == R.id.nav_disk)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, FileSystemsActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_plugin)
+        else if(id == R.id.nav_plugin)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.PluginsActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_extra)
+        else if(id == R.id.nav_extra)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, omv_extrasActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_host)
+        else if(id == R.id.nav_host)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.HostManagerActivity.class));
         }
-        else if(id == com.dev.doods.base.R.id.nav_about)
+        else if(id == R.id.nav_about)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, AboutActivity.class));
         }
-        else if (id == com.dev.doods.base.R.id.nav_certificate)
+        else if (id == R.id.nav_certificate)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, CertificateActivity.class));
         }
-        else if (id == com.dev.doods.base.R.id.nav_logs)
+        else if (id == R.id.nav_logs)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.LogsActivity.class));
         }
-        else if (id == com.dev.doods.base.R.id.nav_cron)
+        else if (id == R.id.nav_cron)
         {
             startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.CronActivity.class));
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(com.dev.doods.base.R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

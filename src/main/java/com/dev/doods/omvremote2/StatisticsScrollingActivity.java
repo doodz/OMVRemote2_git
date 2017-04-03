@@ -43,11 +43,11 @@ public class StatisticsScrollingActivity extends AppCompatActivity implements Ou
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.dev.doods.base.R.layout.activity_cpu_usage_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(com.dev.doods.base.R.id.toolbar);
+        setContentView(R.layout.activity_cpu_usage_scrolling);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //mOutputController.AddListener(this);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.dev.doods.base.R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +76,7 @@ public class StatisticsScrollingActivity extends AppCompatActivity implements Ou
             }
         });
 
-        recyclerView = (RecyclerView) findViewById(com.dev.doods.base.R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         mStatisticItemList = new ArrayList<>();
         adapter = new StatisticItemAdapter(this, mStatisticItemList);
