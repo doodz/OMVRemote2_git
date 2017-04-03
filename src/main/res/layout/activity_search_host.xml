@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_host"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SearchHostActivity">
+
+    <TextView
+        android:id="@+id/tb1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hosts are wanted on your network."
+        android:layout_alignLeft="@+id/pBAsync"
+        />
+    <TextView
+        android:id="@+id/tb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Press the host to add or press skip to start the manual configuration."
+        android:layout_alignLeft="@+id/pBAsync"
+        android:layout_below="@+id/tb1"
+        />
+    <ProgressBar
+        android:layout_below="@+id/tb2"
+        android:id="@+id/pBAsync"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/LstInetAddress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pBAsync"
+        android:layout_alignLeft="@+id/pBAsync"
+        android:layout_alignStart="@+id/pBAsync" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_skip_next_black_24dp" />
+</RelativeLayout>

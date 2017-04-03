@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is installed"
+        android:id="@+id/switchInstalled"
+        android:enabled="true"
+        android:clickable="false" />
+    <TextView
+        android:layout_toRightOf="@id/switchInstalled"
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="normal|bold"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:layout_below="@id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        />
+        <TextView
+            android:layout_below="@id/Name"
+            android:layout_toRightOf="@id/checkBox"
+            android:id="@+id/Summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Summary"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="normal|italic" />
+
+    <TextView
+        android:id="@+id/extendeddescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="extendeddescription"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignRight="@+id/Name"
+        android:layout_alignEnd="@+id/Name"
+        android:visibility="gone"/>
+
+</RelativeLayout>

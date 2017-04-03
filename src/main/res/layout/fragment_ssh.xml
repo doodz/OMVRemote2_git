@@ -1,0 +1,112 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="OMVFragment.SSHFragment">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+    <Switch
+        android:layout_margin="8dp"
+        android:id="@+id/swithEnable"
+        android:text="Enable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Port"
+            android:imeActionId="@+id/etPort"
+            android:imeActionLabel="Port"
+            android:imeOptions="actionUnspecified"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+         <Switch
+        android:layout_margin="8dp"
+        android:id="@+id/swithRoot"
+        android:text="Permit root login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithPassword"
+            android:text="Password authentication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithPublicKey"
+            android:text="Public key authentication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithTCPForwarding"
+            android:text="TCP Forwarding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithCompress"
+            android:text="Compression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Extra options "
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Extra options"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="3"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+</FrameLayout>

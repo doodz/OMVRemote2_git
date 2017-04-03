@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HomeActivity"
+    tools:showIn="@layout/app_bar_home">
+
+  <!--  <ImageView
+        android:id="@+id/imageView"
+        android:src="@mipmap/header_logo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="#98b7cf"/>-->
+    <!-- Info server -->
+    <android.support.v7.widget.CardView
+        android:clickable="true"
+        android:onClick="onClick"
+        android:elevation="5dp"
+        android:id="@+id/RelativeLayout_Info_Server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HostName"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/HostName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HostName"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:layout_below="@id/HostName"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/Version"
+            android:layout_below="@id/HostName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version"
+            android:layout_alignParentRight="true"
+            />
+<!--
+        <TextView
+            android:layout_below="@id/Version"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Processor"
+            android:layout_alignParentLeft="true"
+            />
+
+            <TextView
+            android:id="@+id/Processor"
+            android:layout_below="@id/Version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Processor"
+            android:layout_alignParentRight="true"
+            />
+-->
+         <TextView
+            android:layout_below="@id/Version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kernel"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/Kernel"
+            android:layout_below="@id/Version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kernel"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:layout_below="@id/Kernel"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System time"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/System_time"
+            android:layout_below="@id/Kernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System time"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:layout_below="@id/System_time"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uptime"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/Uptime"
+            android:layout_below="@id/System_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uptime"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:layout_below="@id/Uptime"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load average"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/Load_average"
+            android:layout_below="@id/Uptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load average"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:layout_below="@id/Load_average"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPU usage"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/CPU_usage"
+            android:layout_below="@id/Load_average"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPU usage"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:layout_below="@id/CPU_usage"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Memory usage"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:paddingBottom="10dp"
+            android:id="@+id/Memory_usage"
+            android:layout_below="@id/CPU_usage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Memory usage"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_marginRight="5dp"
+       android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/RelativeLayout_Info_Server"
+       android:foregroundGravity="right"
+        android:id="@+id/fabInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="-20dp"
+        android:src="@drawable/ic_info_outline_black_24dp" />
+    <!-- info services -->
+    <RelativeLayout
+        android:layout_marginTop="18dp"
+        android:layout_below="@id/RelativeLayout_Info_Server"
+        android:id="@+id/RelativeLayout_Info_Services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+        <ListView
+            android:id="@+id/StatusServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="none"
+            android:clickable="false">
+
+        </ListView>
+
+
+    </RelativeLayout>
+</RelativeLayout>

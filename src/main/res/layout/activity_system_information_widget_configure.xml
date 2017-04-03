@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_system_information_widget_configure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.dev.doods.base.widget.SystemInformationWidgetConfigureActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/widget_pi_spinner_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="@dimen/padding_small"
+            android:text="@string/widget_omv"
+            android:textAppearance="?android:attr/textAppearanceMedium">
+
+            <requestFocus/>
+        </TextView>
+
+        <Spinner
+            android:id="@+id/widgetPiSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <CheckBox
+            android:id="@+id/checkBoxUptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/Uptime"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxCpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/CPU_usage"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxRam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/used_memory"/>
+
+
+
+        <TextView
+            android:id="@+id/autoUpdateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:text="@string/widget_auto_update"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <Spinner
+            android:id="@+id/widgetUpdateSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            >
+        </Spinner>
+
+        <LinearLayout
+            android:id="@+id/linLayoutUpdateInterval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/updateIntervalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:text="@string/widget_update_interval"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <Spinner
+                android:id="@+id/widgetUpdateIntervalSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/linLayoutCustomUpdateInterval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/textEditUpdateInterval"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="@string/default_update_interval"
+                    android:hint="@string/widget_update_interval_custom_text"
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

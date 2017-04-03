@@ -1,0 +1,126 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.doods.base.Fragment.WebAdministrationFragment"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:elevation="6dp"
+        android:visibility="visible"
+        android:id="@+id/app_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|end"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Port"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Port"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etTimeout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Session timeout"
+                android:imeActionId="@+id/etTimeout"
+                android:imeActionLabel="Session timeout"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:text="The session timeout time in minutes. Set to 0 to disable automatic logout."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/tvTimeoutInfo"/>
+        <Switch
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvEnableSSL"
+            android:layout_toRightOf="@+id/tvEnableSSL"
+            android:text="Enable secure connection."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/swithEnableSSL" />
+        <Spinner
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/tvCertificate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swithEnableSSL"
+            android:id="@+id/spinnerSertificates" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etPortSSL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Port SSL"
+                android:imeActionId="@+id/etPortSSL"
+                android:imeActionLabel="Port SSL"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+        </android.support.design.widget.TextInputLayout>
+        <Switch
+            android:id="@+id/swithForceSSL"
+            android:text="Force secure connection only."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:clickable="true"
+        card_view:fabSize="normal"
+        card_view:srcCompat="@drawable/ic_save_black_24dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="60dp"
+        android:id="@+id/fab_Save" />
+</FrameLayout>

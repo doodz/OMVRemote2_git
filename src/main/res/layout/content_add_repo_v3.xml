@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_add_repo_v3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddRepoV3Activity"
+    tools:showIn="@layout/activity_add_repo_v3"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <Switch
+                android:id="@+id/swithEnable"
+                android:text="@string/Enable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Name"
+                        android:imeActionId="@+id/etName"
+                        android:imeActionLabel="@string/Name"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/Comment"
+                        android:imeActionId="@+id/etComment"
+                        android:imeActionLabel="@string/Comment"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_Repo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/Repo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etRepo1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Repo"
+                            android:imeActionId="@+id/etRepo1"
+                            android:imeActionLabel="@string/Repo"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etKey1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Key"
+                            android:imeActionId="@+id/etKey1"
+                            android:imeActionLabel="@string/Key"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPackage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Package"
+                            android:imeActionId="@+id/etPackage1"
+                            android:imeActionLabel="@string/Package"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPin1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Pin"
+                            android:imeActionId="@+id/etPin1"
+                            android:imeActionLabel="@string/Pin"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPriority1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Priority"
+                            android:imeActionId="@+id/etPriority1"
+                            android:imeActionLabel="@string/Priority"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_Repo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/Repo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etRepo2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Repo"
+                            android:imeActionId="@+id/etRepo1"
+                            android:imeActionLabel="@string/Repo"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etKey2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Key"
+                            android:imeActionId="@+id/etKey1"
+                            android:imeActionLabel="@string/Key"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPackage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Package"
+                            android:imeActionId="@+id/etPackage1"
+                            android:imeActionLabel="@string/Package"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPin2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Pin"
+                            android:imeActionId="@+id/etPin1"
+                            android:imeActionLabel="@string/Pin"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPriority2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Priority"
+                            android:imeActionId="@+id/etPriority1"
+                            android:imeActionLabel="@string/Priority"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_Repo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/Repo3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etRepo3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Repo"
+                            android:imeActionId="@+id/etRepo1"
+                            android:imeActionLabel="@string/Repo"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etKey3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Key"
+                            android:imeActionId="@+id/etKey1"
+                            android:imeActionLabel="@string/Key"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPackage3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Package"
+                            android:imeActionId="@+id/etPackage1"
+                            android:imeActionLabel="@string/Package"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPin3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Pin"
+                            android:imeActionId="@+id/etPin1"
+                            android:imeActionLabel="@string/Pin"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etPriority3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Priority"
+                            android:imeActionId="@+id/etPriority1"
+                            android:imeActionLabel="@string/Priority"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_Permanent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <Switch
+                android:layout_marginRight="35dp"
+                android:id="@+id/swithPermanent"
+                android:text="@string/Enable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

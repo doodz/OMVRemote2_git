@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/FolderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_Name"
+            android:imeActionId="@+id/host"
+            android:imeActionLabel="@string/action_name"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textAutoCorrect"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <Spinner
+        android:id="@+id/spinnerVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/FolderPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_Path"
+            android:imeActionId="@+id/host"
+            android:imeActionLabel="@string/action_path"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textAutoCorrect"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <Spinner
+        android:id="@+id/spinnerPermissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/FolderComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_Comment"
+            android:imeActionId="@+id/host"
+            android:imeActionLabel="@string/action_comment"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textAutoCorrect"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+</LinearLayout>

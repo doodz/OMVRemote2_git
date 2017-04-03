@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginTop="8dp"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/Datum_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum Title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_toRightOf="@+id/Datum_Title"
+        android:id="@+id/Datum_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum Name"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+         />
+    <ImageView
+        android:id="@+id/Datum_Running"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_red_24dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+    <ImageView
+        android:id="@+id/Datum_Enabled"
+        android:layout_toLeftOf="@+id/Datum_Running"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_green_24dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/filterOnName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Filter on name"
+            android:imeActionId="@+id/host"
+            android:imeActionLabel="Name"
+            android:imeOptions="actionUnspecified"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:text="Pugins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
+
+    <RadioGroup
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:checkedButton="@+id/radioButtonAll">
+
+    <RadioButton
+        android:text="All"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonAll" />
+    <RadioButton
+        android:text="Installed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonInsalled" />
+    <RadioButton
+        android:text="Not installed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonNotInstalled" />
+
+</RadioGroup>
+
+    <Spinner
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerPluginSection" />
+
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdMobActivity">
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:elevation="5dp"
+        android:id="@+id/RelativeLayout_Info_Server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <!-- view for AdMob Interstitial Ad -->
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_welcome"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/_next_step"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/interstitial_ad_text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/next_level_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_skip_next_black_24dp" />
+
+
+</RelativeLayout>

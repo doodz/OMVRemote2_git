@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_powerButton"
+        android:orderInCategory="100"
+        android:title="@string/action_ACPI_shutdown"
+        />
+
+    <item
+        android:id="@+id/action_powerDown"
+        android:orderInCategory="100"
+        android:title="@string/action_power_off_machine"
+        />
+    <item
+        android:id="@+id/action_powerUp"
+        android:orderInCategory="100"
+        android:title="@string/action_Start"
+        />
+    <item
+        android:id="@+id/action_pause"
+        android:orderInCategory="100"
+        android:title="@string/action_Pause"
+        />
+    <item
+        android:id="@+id/action_saveState"
+        android:orderInCategory="100"
+        android:title="@string/action_Save_machine_state"
+        />
+    <item
+        android:id="@+id/action_reset"
+        android:orderInCategory="100"
+        android:title="@string/action_Reset"
+        />
+</menu>
