@@ -17,8 +17,8 @@ import com.dev.doods.omvremote2.R;
 
 import java.util.List;
 
-import Controllers.VirtualBoxController;
-import Models.VirtualBoxMachine;
+import com.dev.doods.omvremote2.Plugins.Virtualbox.VirtualBoxController;
+import com.dev.doods.omvremote2.Plugins.Virtualbox.VirtualBoxMachine;
 import OMVFragment.Dialogs.OutputDialogFragment;
 
 /**

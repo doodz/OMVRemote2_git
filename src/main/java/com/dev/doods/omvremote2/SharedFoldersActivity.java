@@ -14,7 +14,7 @@ import android.widget.TextView;
 import org.acra.ACRA;
 
 import Interfaces.OnFragmentInteractionListener;
-import OMV.Classe.SwipeViewBaseActivity;
+import OMV.Base.SwipeViewBaseActivity;
 
 public class SharedFoldersActivity extends SwipeViewBaseActivity implements OnFragmentInteractionListener {
 

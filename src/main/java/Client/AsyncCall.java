@@ -9,6 +9,7 @@ import com.dev.doods.omvremote2.R;
 
 import java.io.IOException;
 
+import OMV.Base.AppCompatBaseActivity;
 import utils.SnackBarError;
 import utils.SnackBarStartActivity;
 
@@ -25,9 +26,9 @@ public class AsyncCall extends CallImpl implements Runnable  {
         super(params);
         mActivity = activity;
 
-        if(mActivity instanceof OMV.Classe.AppCompatBaseActivity )
+        if(mActivity instanceof AppCompatBaseActivity)
         {
-            ((OMV.Classe.AppCompatBaseActivity)mActivity).AddBusy();
+            ((AppCompatBaseActivity)mActivity).AddBusy();
         }
 
 
@@ -107,9 +108,9 @@ public class AsyncCall extends CallImpl implements Runnable  {
     public void Finish()
     {
 
-        if(mActivity instanceof OMV.Classe.AppCompatBaseActivity )
+        if(mActivity instanceof AppCompatBaseActivity)
         {
-            ((OMV.Classe.AppCompatBaseActivity)mActivity).SuppBusy();
+            ((AppCompatBaseActivity)mActivity).SuppBusy();
         }
 
     }

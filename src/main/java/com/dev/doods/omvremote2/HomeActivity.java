@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.dev.doods.omvremote2.Plugins.Virtualbox.VirtualboxActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -47,7 +48,7 @@ import Models.Result;
 import Models.SystemInformation;
 import Models.Value;
 import Deserializers.ValueDeserializer;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.YesNoDialog;
 import utils.CheckDirty;
 import utils.Util;
@@ -349,13 +350,13 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
 
                 if(item.getName().equalsIgnoreCase("virtualbox"))
                 {
-                    intent = new Intent(HomeActivity.this, com.dev.doods.omvremote2.VirtualboxActivity.class);
+                    intent = new Intent(HomeActivity.this, VirtualboxActivity.class);
 
                 }
 
                 if(item.getName().equalsIgnoreCase("virtualbox"))
                 {
-                    intent = new Intent(HomeActivity.this, com.dev.doods.omvremote2.VirtualboxActivity.class);
+                    intent = new Intent(HomeActivity.this, VirtualboxActivity.class);
 
                 }
 

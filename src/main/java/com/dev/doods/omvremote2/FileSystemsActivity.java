@@ -20,7 +20,7 @@ import Controllers.DisckController;
 import Models.Device;
 import Models.FileSystem;
 import Models.Result;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 
 public class FileSystemsActivity extends NavigationBaseActivity {
     private DisckController controller;

@@ -49,7 +49,7 @@ import Controllers.ServicesController;
 import Models.Errors;
 import Models.LogRow;
 import Models.Result;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 
 public class LogsActivity extends NavigationBaseActivity {
 

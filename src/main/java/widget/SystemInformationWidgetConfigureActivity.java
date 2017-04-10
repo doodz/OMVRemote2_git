@@ -30,7 +30,7 @@ import java.util.List;
 import Client.Host;
 import DAL.HostsDAO;
 import DAL.HotsDatabaseHelper;
-import OMV.Classe.AppCompatBaseActivity;
+import OMV.Base.AppCompatBaseActivity;
 
 public class SystemInformationWidgetConfigureActivity extends AppCompatBaseActivity implements AdapterView.OnItemSelectedListener  {
 

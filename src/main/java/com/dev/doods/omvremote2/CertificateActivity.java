@@ -30,7 +30,7 @@ import Interfaces.NoticeDialogListener;
 import Models.Certificate;
 import Models.CertificateSsh;
 import Models.Result;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.AddSshDialogFragment;
 import OMVFragment.Dialogs.AddSslDialogFragment;
 

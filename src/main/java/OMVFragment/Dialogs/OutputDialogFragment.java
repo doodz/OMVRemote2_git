@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -131,6 +133,15 @@ public class OutputDialogFragment extends DialogFragment {
         {
             return;
         }
+
+        // Doods : Petite sécurité, car je n’arrive pas à déterminer le cas où l’on ne détache pas les parents des adview … ce qui cause des crashs.
+        ViewParent pview = MyApplicationBase.mAdViewSmall.getParent();
+        if(pview != null)
+            ((ViewGroup)pview).removeView(MyApplicationBase.mAdViewSmall);
+
+        pview = MyApplicationBase.mNativeExpressAdView.getParent();
+        if(pview != null)
+            ((ViewGroup)pview).removeView(MyApplicationBase.mNativeExpressAdView);
 
        if(b)
        {

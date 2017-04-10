@@ -22,7 +22,7 @@ import Client.Response;
 import Controllers.SystemController;
 import Interfaces.OnFragmentInteractionListener;
 import Models.SettingsNetwork;
-import OMV.Classe.FragmentBase;
+import OMV.Base.FragmentBase;
 
 
 /**

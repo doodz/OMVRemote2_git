@@ -2,11 +2,17 @@ package com.dev.doods.omvremote2;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.dev.doods.omvremote2.Billing.IabBroadcastReceiver;
+import com.dev.doods.omvremote2.Billing.IabHelper;
+import com.dev.doods.omvremote2.Billing.IabResult;
+import com.dev.doods.omvremote2.Billing.Inventory;
+import com.dev.doods.omvremote2.Billing.Purchase;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -27,6 +33,9 @@ import net.hockeyapp.android.utils.Util;
 //import org.acra.annotation.ReportsCrashes;
 
 import OMV.Classe.MyCustomCrashManagerListener;
+
+import static com.dev.doods.omvremote2.Billing.IabHelper.SKU_PREMUIM_YEARLY;
+
 /**
  * Created by thiba on 21/10/2016.
  */
@@ -37,12 +46,14 @@ import OMV.Classe.MyCustomCrashManagerListener;
         resToastText = R.string.crash_toast_text)*/
 public class MyApplicationBase extends Application {
 
-
+    // The helper object
+    IabHelper mHelper;
     private static Context context;
     public static AdRequest mAdRequest;
     public static AdView mAdViewSmall;
     public static AdView mAdViewSmallHaeder;
     public static boolean light;
+    public boolean mIsPremium;
     public static NativeExpressAdView mNativeExpressAdView;
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -53,7 +64,7 @@ public class MyApplicationBase extends Application {
 
     public void onCreate() {
         super.onCreate();
-
+        checkForPremium();
 
         //ACRA.init(this);
         //MobileCenter.setLogLevel(Log.VERBOSE);
@@ -66,7 +77,7 @@ public class MyApplicationBase extends Application {
         MetricsManager.register(this);
         MetricsManager.trackEvent("GET_LOGS_FILE");
 
-        if(light) {
+       // if(light) {
             MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/4711179794");
             MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/7664646197");
             mAdRequest = new AdRequest.Builder().build();
@@ -85,18 +96,89 @@ public class MyApplicationBase extends Application {
             mNativeExpressAdView.setAdSize(new AdSize(360, 132));
             mNativeExpressAdView.setAdUnitId("ca-app-pub-4922361220283829/7664646197");
             mNativeExpressAdView.loadAd(new AdRequest.Builder().build());
-        }
+       // }
     }
 
+    private void checkForPremium()
+    {
+
+        Log.d("MyApplicationBase", "Creating IAB helper.");
+       mHelper = new IabHelper(this, IabHelper.base64EncodedPublicKey);
+
+        // enable debug logging (for a production application, you should set this to false).
+        mHelper.enableDebugLogging(false);
+
+        // Start setup. This is asynchronous and the specified listener
+        // will be called once setup completes.
+        Log.d("MyApplicationBase", "Starting setup.");
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+            public void onIabSetupFinished(IabResult result) {
+                Log.d("MyApplicationBase", "Setup finished.");
+
+                if (!result.isSuccess()) {
+                    // Oh noes, there was a problem.
+                    Log.i("MyApplicationBase", "Problem setting up in-app billing: " + result);
+
+                    return;
+                }
+
+                // Have we been disposed of in the meantime? If so, quit.
+                if (mHelper == null) return;
+
+
+
+                // IAB is fully set up. Now, let's get an inventory of stuff we own.
+                Log.d("MyApplicationBase", "Setup successful. Querying inventory.");
+                try {
+                    mHelper.queryInventoryAsync(mGotInventoryListener);
+                } catch (IabHelper.IabAsyncInProgressException e) {
+                    Log.i("MyApplicationBase","Error querying inventory. Another async operation in progress.");
+                }
+            }
+        });
+    }
+
+    // Listener that's called when we finish querying the items and subscriptions we own
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+            Log.d("MyApplicationBase", "Query inventory finished.");
+
+            // Have we been disposed of in the meantime? If so, quit.
+            if (mHelper == null) return;
+
+            // Is it a failure?
+            if (result.isFailure()) {
+                Log.i("MyApplicationBase","Failed to query inventory: " + result);
+                return;
+            }
+
+            Log.d("MyApplicationBase", "Query inventory was successful.");
+
+            /*
+             * Check for items we own. Notice that for each purchase, we check
+             * the developer payload to see if it's correct! See
+             * verifyDeveloperPayload().
+             */
+
+            // Do we have the premium upgrade?
+            Purchase premiumPurchaseYearly = inventory.getPurchase(SKU_PREMUIM_YEARLY);
+            mIsPremium = (premiumPurchaseYearly != null);
+            Log.d("MyApplicationBase", "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
+
+            light = !mIsPremium;
+
+            Log.d("MyApplicationBase", "Initial inventory query finished; enabling main UI.");
+        }
+    };
 
     private void checkForCrashes() {
 
         try {
             Bundle bundle = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA).metaData;
            String str = (String) bundle.get("omg.doods.dev.omremote.base.appIdentifier");
-            light = str.equals("light");
+            //light = str.equals("light");
         } catch (PackageManager.NameNotFoundException e) {
-            light = false;
+            //light = false;
             e.printStackTrace();
         }
         String appIdentifier = Util.getAppIdentifier(context);

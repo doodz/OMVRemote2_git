@@ -15,7 +15,7 @@ import java.io.IOException;
 import Client.Call;
 import Client.CallbackImpl;
 import Client.Response;
-import OMV.Classe.AppCompatBaseActivity;
+import OMV.Base.AppCompatBaseActivity;
 
 public class LetsEncryptActivity extends AppCompatBaseActivity {
 

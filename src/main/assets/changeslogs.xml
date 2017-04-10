@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
     <changelog>
-    <release version="1.1.26" versioncode="31" date="XX/03/2017">
+    <release version="1.1.26" versioncode="31" date="03/04/2017">
         <change>code improvement.</change>
         <change>Fix some crashes.</change>
     </release>

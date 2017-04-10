@@ -36,7 +36,7 @@ import Models.Errors;
 import Models.Repo;
 import Models.RepoV3;
 import Models.Result;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.OutputDialogFragment;
 
 public class omv_extrasActivity extends NavigationBaseActivity

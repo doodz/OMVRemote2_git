@@ -26,7 +26,7 @@ import java.util.Map;
 import Controllers.ServicesController;
 import Interfaces.IUpdateFragment;
 import Interfaces.OnFragmentInteractionListener;
-import OMV.Classe.AppCompatBaseActivity;
+import OMV.Base.AppCompatBaseActivity;
 
 
 public class ServicesActivity extends AppCompatBaseActivity implements OnFragmentInteractionListener {

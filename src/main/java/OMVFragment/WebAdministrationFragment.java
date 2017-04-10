@@ -31,7 +31,7 @@ import Interfaces.OnFragmentInteractionListener;
 import Models.Certificate;
 import Models.Result;
 import Models.WebSettings;
-import OMV.Classe.FragmentBase;
+import OMV.Base.FragmentBase;
 import utils.InputFilterMinMax;
 
 

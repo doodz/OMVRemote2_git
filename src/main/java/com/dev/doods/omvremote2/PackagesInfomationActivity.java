@@ -26,12 +26,11 @@ import Client.Response;
 import Controllers.UpdateController;
 import Interfaces.OutputListener;
 import Models.PackageInformation;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.OutputDialogFragment;
 
 public class PackagesInfomationActivity extends NavigationBaseActivity
         implements OutputListener {
-
 
     private TextView NoUpdateVew;
     private UpdateController controller;
@@ -54,7 +53,6 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
             public void onClick(View view) {
 
                 controller.CheckUpdate(new CallbackImpl(PackagesInfomationActivity.this) {
-
 
                     @Override
                     public void onResponse(Call call, Response response) throws IOException, InterruptedException {
@@ -103,7 +101,6 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
                 for (PackageInformation pi:_lst ) {
 
                     if(pi.isSelected())lst2.add(pi);
-
                 }
 
                 controller.UpdatePackage(lst2, new CallbackImpl(PackagesInfomationActivity.this) {
@@ -131,7 +128,7 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
                 final ArrayList<PackageInformation> res = response.GetResultObject( new TypeToken< ArrayList<PackageInformation> >(){});
                 mHandler.post(new Runnable(){
                     public void run() {
-                        showUpgraded(res);
+                        UpdateUpgraded(res);
                     }
                 });
             }
@@ -142,7 +139,6 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
 
     private void PopulateLst()
     {
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.LstPackageInformation);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -179,32 +175,11 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         mOutputDialogFragment.setArguments(bundle);
         android.app.FragmentManager fm = getFragmentManager();
         mOutputDialogFragment.show(fm, "OutputDialogFragment");
-
-
     }
 
     private AlertDialog alert;
     private  List<PackageInformation> _lst = new ArrayList<PackageInformation>();
-    //private PackageInformationAdapter _adapter;
-    private void showUpgraded(List<PackageInformation> lst)
-    {
-        _lst.clear();
-        _lst.addAll(lst);
-        mrecyclerViewAdapter.notifyDataSetChanged();
 
-        //ListView listView = (ListView) findViewById(R.id.LstPackageInformation);
-        //_adapter = new PackageInformationAdapter(PackagesInfomationActivity.this,_lst);
-        //listView.setAdapter(_adapter);
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                CheckBox cb = (CheckBox) view.findViewById(R.id.checkBox);
-                cb.performClick();
-                Toast.makeText(PackagesInfomationActivity.this, "Clicked at positon = " + position, Toast.LENGTH_SHORT).show();
-
-            }
-        });*/
-    }
     private void UpdateUpgraded(List<PackageInformation> lst)
     {
         _lst.clear();
@@ -228,7 +203,6 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
             outState.putString("title", mTitle);
             outState.putString("fileName", mFileName);
         }
-
         super.onSaveInstanceState(outState);
     }
 
@@ -248,63 +222,11 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
             startActivity(new Intent(PackagesInfomationActivity.this, UpdateSetingsActivity.class));
-
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if  (id == R.id.nav_home)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, HomeActivity.class));
-        }else if(id == R.id.nav_update)
-        {
-           // startActivity(new Intent(PackagesInfomationActivity.this, PackagesInfomationActivity.class));
-        }
-        else if(id == R.id.nav_disk)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, FileSystemsActivity.class));
-        }
-        else if(id == R.id.nav_plugin)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.PluginsActivity.class));
-        }
-        else if(id == R.id.nav_extra)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, omv_extrasActivity.class));
-        }
-        else if(id == R.id.nav_host)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.HostManagerActivity.class));
-        }
-        else if(id == R.id.nav_about)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, AboutActivity.class));
-        }
-        else if (id == R.id.nav_certificate)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, CertificateActivity.class));
-        }
-        else if (id == R.id.nav_logs)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.LogsActivity.class));
-        }
-        else if (id == R.id.nav_cron)
-        {
-            startActivity(new Intent(PackagesInfomationActivity.this, com.dev.doods.omvremote2.CronActivity.class));
-        }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 
     @Override
@@ -320,7 +242,6 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
                         UpdateUpgraded(res);
                     }
                 });
-
             }
         });
     }
@@ -339,7 +260,6 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
                         UpdateUpgraded(res);
                     }
                 });
-
             }
         });
     }

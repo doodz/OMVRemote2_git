@@ -39,7 +39,7 @@ import Client.Response;
 import Controllers.SystemController;
 import Interfaces.OnFragmentInteractionListener;
 import Models.TimeSettings;
-import OMV.Classe.FragmentBase;
+import OMV.Base.FragmentBase;
 import utils.ISO8601;
 
 

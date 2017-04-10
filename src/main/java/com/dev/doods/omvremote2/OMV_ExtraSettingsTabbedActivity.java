@@ -19,7 +19,7 @@ import java.util.Arrays;
 
 import Adapters.SectionsPagerAdapter;
 import Interfaces.OnFragmentInteractionListener;
-import OMV.Classe.SwipeViewBaseActivity;
+import OMV.Base.SwipeViewBaseActivity;
 
 public class OMV_ExtraSettingsTabbedActivity extends SwipeViewBaseActivity implements OnFragmentInteractionListener {
 

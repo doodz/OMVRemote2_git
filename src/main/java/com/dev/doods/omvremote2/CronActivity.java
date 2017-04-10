@@ -24,7 +24,7 @@ import Controllers.CronController;
 import Interfaces.OutputListener;
 import Models.Cron;
 import Models.Result;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 import utils.CheckDirty;
 
 public class CronActivity extends NavigationBaseActivity

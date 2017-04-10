@@ -26,7 +26,7 @@ import Client.CallbackImpl;
 import Client.Response;
 import Controllers.PluginsController;
 import Interfaces.NoticeDialogListener;
-import OMV.Classe.NavigationBaseActivity;
+import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.FilterPluginDialogFragment;
 import Interfaces.OutputListener;
 import Models.FilterPlugin;
