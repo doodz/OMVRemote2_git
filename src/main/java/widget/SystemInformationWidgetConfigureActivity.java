@@ -29,7 +29,7 @@ import java.util.List;
 
 import Client.Host;
 import DAL.HostsDAO;
-import DAL.HotsDatabaseHelper;
+import DAL.OmvDatabaseHelper;
 import OMV.Base.AppCompatBaseActivity;
 
 public class SystemInformationWidgetConfigureActivity extends AppCompatBaseActivity implements AdapterView.OnItemSelectedListener  {
@@ -148,7 +148,7 @@ public class SystemInformationWidgetConfigureActivity extends AppCompatBaseActiv
     private CheckBox checkBoxRam;
     private LinearLayout linLayoutUpdateInterval;
 
-    private HotsDatabaseHelper hotsDatabaseHelper;
+    private OmvDatabaseHelper hotsDatabaseHelper;
 
     private int[] updateIntervalsMinutes;
 
@@ -192,7 +192,7 @@ public class SystemInformationWidgetConfigureActivity extends AppCompatBaseActiv
         }
 
         this.getSupportActionBar().setTitle(getString(R.string.widget_configure_title));
-        hotsDatabaseHelper = new HotsDatabaseHelper(this);
+        hotsDatabaseHelper = new OmvDatabaseHelper(this);
 
         datasource = new HostsDAO(this);
         datasource.open();

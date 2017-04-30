@@ -1,5 +1,6 @@
 package utils;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
@@ -23,9 +24,9 @@ import Models.Errors;
 
 public class CheckDirty {
 
-    private AppCompatActivity _AppCompatActivity;
+    private Activity _AppCompatActivity;
     ConfigController mConfigController;
-    public CheckDirty(AppCompatActivity activity)
+    public CheckDirty(Activity activity)
     {
         _AppCompatActivity = activity;
 

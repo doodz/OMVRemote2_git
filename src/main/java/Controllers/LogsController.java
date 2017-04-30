@@ -16,6 +16,12 @@ import Client.JSONRPCParamsBuilder;
 
 public class LogsController  extends Abstractcontroller {
 
+    public static List<String> LogsIdsPlugins = new ArrayList<String>(){{add("openvpn");add("autoshutdown");
+        add("letsencrypt");add("fail2ban");
+        add("transmissionbt");
+    }};
+
+
     public static List<String> LogsIds = new ArrayList<String>(){{add("syslog");add("boot");
         add("daemon");add("proftpd");
         add("proftpd_xferlog");add("messages");
@@ -30,7 +36,7 @@ public class LogsController  extends Abstractcontroller {
         add("rsync");add("rsyncd");
         add("smartd");add("smbdaudit");
         add("apt_history");add("apt_term");
-
+        add("auth");
     }};
     public LogsController(Activity activity) {
         super(activity);

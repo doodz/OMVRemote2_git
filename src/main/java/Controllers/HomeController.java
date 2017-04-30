@@ -39,7 +39,6 @@ public class HomeController extends Abstractcontroller{
         catch (Exception e)
         {
             e.printStackTrace();
-
         }
     }
 

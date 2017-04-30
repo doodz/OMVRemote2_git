@@ -45,6 +45,7 @@ public class AppCompatBaseActivity  extends AppCompatActivity implements IHandle
     public void SuppBusy()
     {
         BusyCount--;
+        if(BusyCount>0) BusyCount = 0;
         if(!Isbusy())
             SetProgresVisibility(View.GONE);
     }
@@ -69,20 +70,20 @@ public class AppCompatBaseActivity  extends AppCompatActivity implements IHandle
         });
     }
 
-
+    @Override
     public void SetFinalized(boolean finalized)
     {
         this.IsFinalized = finalized;
         //SetProgresVisibility(View.GONE);
 
     }
-
+    @Override
     public void SetOnError(boolean onError)
     {
         IsOnError = onError;
         //SetProgresVisibility(View.GONE);
     }
-
+    @Override
     public void ShowSnackError(String msg,boolean cansendLogs)
     {
         LastError = msg;
@@ -182,8 +183,10 @@ public class AppCompatBaseActivity  extends AppCompatActivity implements IHandle
 
     }
 
+
+
     protected void complain(String message) {
-        Log.e(TAG, "**** TrivialDrive Error: " + message);
+        Log.e(TAG, "**** OMVRemote Error: " + message);
         alert("Error: " + message);
     }
 

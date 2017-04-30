@@ -34,6 +34,7 @@ import Models.CurentKernel;
 import Models.Errors;
 import Models.KernelItem;
 import Models.Result;
+import OMV.Base.FragmentInteractionBase;
 import OMVFragment.Dialogs.OutputDialogFragment;
 
 /**

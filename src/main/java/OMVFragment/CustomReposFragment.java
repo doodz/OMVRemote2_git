@@ -34,6 +34,7 @@ import Interfaces.OnFragmentInteractionListener;
 import Models.CustomRepo;
 import Models.Errors;
 import Models.Result;
+import OMV.Base.FragmentInteractionBase;
 import OMVFragment.Dialogs.AddEditeCustomRepoDialogFragment;
 
 /**

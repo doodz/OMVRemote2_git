@@ -107,51 +107,51 @@
       <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 25 Platform (1)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="okio-1.9.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-asl-0.9.3" level="project" />
-    <orderEntry type="library" exported="" name="play-services-tasks-10.2.0" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="HockeySDK-4.1.1" level="project" />
-    <orderEntry type="library" exported="" name="design-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="transition-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="play-services-base-10.2.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-base-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="play-services-tasks-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="transition-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="play-services-gass-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="collections-query-0.2.9" level="project" />
-    <orderEntry type="library" exported="" name="play-services-gass-10.2.0" level="project" />
+    <orderEntry type="library" exported="" name="design-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="acra-4.9.1" level="project" />
     <orderEntry type="library" exported="" name="baseLibrary-2.3.1" level="project" />
-    <orderEntry type="library" exported="" name="cardview-v7-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="cardview-v7-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="adapters-1.3.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-clearcut-10.2.0" level="project" />
     <orderEntry type="library" exported="" name="commons-lang3-3.5" level="project" />
-    <orderEntry type="library" exported="" name="support-core-ui-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="play-services-ads-lite-10.2.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-ads-lite-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="play-services-clearcut-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="library-1.3.1" level="project" />
-    <orderEntry type="library" exported="" name="support-core-utils-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-fragment-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-core-utils-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-fragment-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="multidex-instrumentation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-ads-10.2.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-ads-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="jmdns-1.0-RC2" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-solver-1.0.2" level="project" />
-    <orderEntry type="library" exported="" name="percent-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="percent-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="MPAndroidChart-v3.0.2" level="project" />
     <orderEntry type="library" exported="" name="gson-2.7" level="project" />
-    <orderEntry type="library" exported="" name="play-services-basement-10.2.0" level="project" />
-    <orderEntry type="library" exported="" name="support-compat-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-basement-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="fab-1.6.4" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-media-compat-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.4.1" level="project" />
-    <orderEntry type="library" exported="" name="support-media-compat-25.3.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
-    <orderEntry type="library" exported="" name="recyclerview-v7-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="recyclerview-v7-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="pinned-section-listview-1.0.0" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="animated-vector-drawable-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-vector-drawable-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-vector-drawable-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-compat-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="animated-vector-drawable-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="android-android-25" level="project" />
   </component>
 </module>

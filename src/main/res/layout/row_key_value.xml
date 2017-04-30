@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:padding="0dp"
+    android:layout_margin="0dp">
+
+    <android.support.design.widget.TextInputLayout
+
+        app:layout_widthPercent="50%"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NameCont"
+        android:padding="0dp"
+        android:layout_margin="0dp">
+
+        <EditText
+
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Name"
+            android:imeActionId="@+id/Name"
+            android:imeActionLabel="@string/Name"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textUri"
+            android:maxLines="1" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        app:layout_widthPercent="50%"
+        android:layout_toRightOf="@+id/NameCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:padding="0dp"
+            android:layout_margin="0dp"
+            android:id="@+id/Value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Value"
+            android:imeActionId="@+id/Value"
+            android:imeActionLabel="@string/Value"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textUri"
+            android:maxLines="1" />
+
+    </android.support.design.widget.TextInputLayout>
+</android.support.percent.PercentRelativeLayout>

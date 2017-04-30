@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
+import Interfaces.IJSONRPCParamsBuilder;
+
 /**
  * Created by thiba on 16/08/2016.
  */
-public class JSONRPCParamsBuilder {
+public class JSONRPCParamsBuilder implements IJSONRPCParamsBuilder {
 
     private String mMethod;
     private String mService;

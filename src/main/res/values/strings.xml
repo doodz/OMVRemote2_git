@@ -490,5 +490,45 @@
         But also to participate in the costs of developing the application\n
         Support and motivate the developer of your favorite application ;). \n
     </string>
+    <string name="title_activity_command">Commands</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_add_command">Add Command</string>
+    <string name="ServiceName">Service name</string>
+    <string name="SetServiceName">Set service name</string>
+    <string name="CommandName">Command name</string>
+    <string name="SetMethodName">Set method name</string>
+    <string name="MethodName">Method name</string>
+    <string name="Value">Value</string>
+    <string name="nav_Command">Command</string>
+    <string name="Test">Test</string>
+    <string name="BuyUnlocker">you can\'t add more than one host in free version. please buy the unlocker in about section.</string>
+    <string name="title_activity_fail2ban">Fail2ban</string>
+    <string name="Ignoreip">Ignoreip</string>
+    <string name="info_Fail2ban_Ignoreip">Can be an IP address, a CIDR mask or a DNS host, separe with space for multiple ip.</string>
+    <string name="Findtime">Findtime</string>
+    <string name="info_Fail2ban_Findtime">The counter is set to zero if no match is found within \'findtime\' seconds. (604800 = 1 week)</string>
+    <string name="Bantime">Bantime</string>
+    <string name="info_Fail2ban_Bantime">Duration (in seconds) for IP to be banned for. Negative number for \'permanent\' ban. (604800 = 1 week)</string>
+    <string name="info_Fail2ban_Maxretry">Number of matches (i.e. value of the counter) which triggers ban action on the IP.</string>
+    <string name="Maxretry">Maxretry</string>
+    <string name="info_Fail2ban_Destemail">An email address to receive ban messages.</string>
+    <string name="Destemail">Destemail</string>
+    <string name="info_Fail2ban_Action"><![CDATA[action_= ban only / action_mw=ban & send an email / action_mwl=ban & send an email with whois report and log lines.]]></string>
+    <string name="Action">Action</string>
+    <string name="title_activity_add_edite_jail">Add/Edite Jail</string>
+    <string name="info_Fail2ban_Jail_Name">The name of the jail.</string>
+    <string name="Port">Port</string>
+    <string name="info_Fail2ban_Jail_Port">The port of the jail.</string>
+    <string name="Max_Retry">Max Retry</string>
+    <string name="info_Fail2ban_Jail_Max_Retry">Max Retry in seconds.</string>
+    <string name="Ban_Time">Ban Time</string>
+    <string name="info_Fail2ban_Jail_Ban_Time">Ban time in seconds.</string>
+    <string name="info_Fail2ban_Jail_Filter">A filter defines a regular expression which must match a pattern corresponding to a log-in failure or any other expression.</string>
+    <string name="Filter">Filter</string>
+    <string name="info_Fail2ban_Jail_Log_Path">The log file to be scanned by the filter.</string>
+    <string name="Log_Path">Log Path</string>
+    <string name="Day">Day</string>
+    <string name="Year">Year</string>
+    <string name="Week">Week</string>
 
 </resources>

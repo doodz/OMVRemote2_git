@@ -22,9 +22,10 @@ import Adapters.HostAdapter;
 import Client.Host;
 import Client.JSONRPCClient;
 import DAL.HostsDAO;
+import OMV.Base.AppCompatBaseActivity;
 import OMV.Classe.RecyclerItemClickListener;
 
-public class HostManagerActivity extends AppCompatActivity  implements RecyclerItemClickListener.OnItemClickListener{
+public class HostManagerActivity extends AppCompatBaseActivity implements RecyclerItemClickListener.OnItemClickListener{
     private HostsDAO datasource;
 
     private RecyclerView recyclerView;
@@ -69,6 +70,13 @@ public class HostManagerActivity extends AppCompatActivity  implements RecyclerI
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(mHosts.size() >=1 && MyApplicationBase.light )
+                {
+                    alert( getString(R.string.BuyUnlocker));
+                    return;
+                }
+
                 startActivity(new Intent(HostManagerActivity.this, SearchHostActivity.class));
             }
         });

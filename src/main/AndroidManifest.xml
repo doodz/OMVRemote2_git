@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dev.doods.omvremote2"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dev.doods.omvremote2">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
 
@@ -12,10 +12,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!--
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    -->
     <application
         android:name=".MyApplicationBase"
         android:allowBackup="true"
@@ -33,19 +34,15 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-       <meta-data
+        <meta-data
             android:name="omg.doods.dev.omremote.base.appIdentifier"
-            android:value="light"
-            />
-
+            android:value="light" />
         <meta-data
             android:name="net.hockeyapp.android.appIdentifier"
-            android:value="${HOCKEYAPP_APP_ID}"
-            />
+            android:value="${HOCKEYAPP_APP_ID}" />
         <meta-data
             android:name="net.hockeyapp.android.appSecret"
-            android:value="${HOCKEYAPP_APP_ID}"
-           />
+            android:value="${HOCKEYAPP_APP_ID}" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"
@@ -65,9 +62,10 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -162,6 +160,10 @@
             android:name=".Plugins.Virtualbox.VirtualboxActivity"
             android:label="@string/title_activity_virtualbox"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Plugins.Fail2ban.SwipeViewFail2banActivity"
+            android:label="@string/title_activity_fail2ban"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="widget.SystemInformationWidgetConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
@@ -205,10 +207,21 @@
             android:name=".BindableActivity"
             android:label="@string/title_activity_bindable"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HomeActivity2" />
         <activity
             android:name=".Plugins.LetsEncrypt.LetsEncryptActivity"
             android:label="@string/title_activity_lets_encrypt"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CommandActivity"
+            android:label="@string/title_activity_command"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddCommandActivity"
+            android:label="@string/title_activity_add_command"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Plugins.Fail2ban.AddEditeJailActivity"
+            android:label="@string/title_activity_add_edite_jail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

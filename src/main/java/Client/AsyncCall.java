@@ -9,7 +9,10 @@ import com.dev.doods.omvremote2.R;
 
 import java.io.IOException;
 
+import Interfaces.IJSONRPCParamsBuilder;
 import OMV.Base.AppCompatBaseActivity;
+import OMV.Base.FragmentInteractionBase;
+import OMV.Base.SwipeViewBaseActivity;
 import utils.SnackBarError;
 import utils.SnackBarStartActivity;
 
@@ -21,16 +24,16 @@ public class AsyncCall extends CallImpl implements Runnable  {
     private Thread t;
     private Activity mActivity;
     private JSONRPCClient mClient;
-    public AsyncCall(@Nullable Callback responseCallback, JSONRPCParamsBuilder params,Activity activity,JSONRPCClient client)
+    public AsyncCall(@Nullable Callback responseCallback, IJSONRPCParamsBuilder params, Activity activity, JSONRPCClient client)
     {
         super(params);
         mActivity = activity;
 
+        //TODO voir pour faire la meme avec les fragments SwipeViewBaseActivity?
         if(mActivity instanceof AppCompatBaseActivity)
         {
             ((AppCompatBaseActivity)mActivity).AddBusy();
         }
-
 
         mResponseCallback = responseCallback;
         mClient = client;

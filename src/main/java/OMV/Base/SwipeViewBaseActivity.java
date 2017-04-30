@@ -1,5 +1,6 @@
 package OMV.Base;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -17,14 +18,13 @@ import java.util.Arrays;
 
 import Adapters.SectionsPagerAdapter;
 import Interfaces.IFragmentInteraction;
+import Interfaces.OnFragmentInteractionListener;
 
 /**
  * Created by thiba on 03/11/2016.
  */
 
-public class SwipeViewBaseActivity extends AppCompatBaseActivity {
-
-
+public class SwipeViewBaseActivity extends AppCompatBaseActivity implements OnFragmentInteractionListener {
 
     public FloatingActionButton fabSave;
     public float fabSaveScaleX;
@@ -38,7 +38,7 @@ public class SwipeViewBaseActivity extends AppCompatBaseActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    protected SectionsPagerAdapter mSectionsPagerAdapter;
 
     public void setSectionsPagerAdapter(SectionsPagerAdapter adapter)
     {
@@ -170,6 +170,11 @@ public class SwipeViewBaseActivity extends AppCompatBaseActivity {
         // fabSave.setVisibility(View.GONE);
 
         //selectedTabs (tabLayout.getSelectedTabPosition());
+
+        IFragmentInteraction frag = (IFragmentInteraction)  mSectionsPagerAdapter.getItem(0);
+        int imgId = frag.GetIconActionId();
+        if(imgId != 0)
+            fabSave.setImageResource(imgId);
     }
 
 
@@ -217,6 +222,25 @@ public class SwipeViewBaseActivity extends AppCompatBaseActivity {
 
         }
 
+
+    }
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onFragmentMessage(String msg)
+    {
+
+        showInfo(msg);
+
+    }
+
+    @Override
+    public void onFragmentMessageError(String error)
+    {
+        ShowSnackError(error,true);
 
     }
 }

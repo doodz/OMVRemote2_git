@@ -14,10 +14,10 @@ public class DAOBase {
     protected final static String NOM = "database.db";
 
     protected SQLiteDatabase mDb = null;
-    protected HotsDatabaseHelper dbHelper  = null;
+    protected OmvDatabaseHelper dbHelper  = null;
 
     public DAOBase(Context pContext) {
-        this.dbHelper  = new HotsDatabaseHelper(pContext);
+        this.dbHelper  = new OmvDatabaseHelper(pContext);
     }
 
     public SQLiteDatabase open() {

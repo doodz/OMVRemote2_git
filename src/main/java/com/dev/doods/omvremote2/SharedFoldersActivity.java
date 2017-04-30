@@ -16,7 +16,7 @@ import org.acra.ACRA;
 import Interfaces.OnFragmentInteractionListener;
 import OMV.Base.SwipeViewBaseActivity;
 
-public class SharedFoldersActivity extends SwipeViewBaseActivity implements OnFragmentInteractionListener {
+public class SharedFoldersActivity extends SwipeViewBaseActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,45 +47,6 @@ public class SharedFoldersActivity extends SwipeViewBaseActivity implements OnFr
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
-
-    @Override
-    public void onFragmentMessage(String msg)
-    {
-
-        Snackbar.make(fabSave, msg, Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-
-    }
-
-    @Override
-    public void onFragmentMessageError(String error)
-    {
-
-        Snackbar snackbar = Snackbar
-                .make(fabSave, "an error occurred!", Snackbar.LENGTH_LONG)
-                .setAction("Send Logs", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        ACRA.getErrorReporter().handleException(null);
-                    }
-                });
-
-        // Changing message text color
-        snackbar.setActionTextColor(Color.RED);
-
-        // Changing action button text color
-        View sbView = snackbar.getView();
-        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        textView.setTextColor(Color.YELLOW);
-        snackbar.show();
-
     }
 
 }

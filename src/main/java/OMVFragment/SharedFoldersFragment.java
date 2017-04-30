@@ -42,6 +42,7 @@ import Models.Errors;
 import Models.Privileges;
 import Models.Result;
 import Models.SharedFolder;
+import OMV.Base.FragmentInteractionBase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +52,6 @@ import Models.SharedFolder;
  */
 public class SharedFoldersFragment extends FragmentInteractionBase {
 
-    Handler handler;
     private ShareMgmtController mController ;
     List<SharedFolder> mSharedFoldersLst = new ArrayList<SharedFolder>();
     private ListView mListView;
@@ -75,7 +75,7 @@ public class SharedFoldersFragment extends FragmentInteractionBase {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_shared_folders3, container, false);
-        handler= new Handler();
+
         mListView = (ListView) rootView.findViewById(R.id.ShareLst);
         mAdapter = new ArrayAdapter<SharedFolder>(getActivity(),
                 android.R.layout.simple_list_item_1, mSharedFoldersLst);
@@ -137,7 +137,7 @@ public class SharedFoldersFragment extends FragmentInteractionBase {
 
 
                 //final Result<SharedFolder> res = response.GetResultObject( new TypeToken<Result<SharedFolder>>(){});
-                handler.post(new Runnable(){
+                mHandler.post(new Runnable(){
                     public void run() {
                         populateLstView(res.getData());
                     }

@@ -2,7 +2,6 @@ package OMVFragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.CallSuper;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,6 +32,7 @@ import Models.Errors;
 import Models.Privileges;
 import Models.Result;
 import Models.SharedFolder;
+import OMV.Base.FragmentInteractionBase;
 import utils.SnackBarError;
 
 /**
@@ -41,9 +41,9 @@ import utils.SnackBarError;
  * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class ResetPermissionsFragment extends FragmentInteractionBase  {
+public class ResetPermissionsFragment extends FragmentInteractionBase {
 
-    Handler handler;
+
     private ShareMgmtController mController ;
     private ArrayAdapter<SharedFolder> mAdapterSharedFolder;
     private Spinner mSharedFolderView;
@@ -52,8 +52,6 @@ public class ResetPermissionsFragment extends FragmentInteractionBase  {
     public ResetPermissionsFragment() {
         // Required empty public constructon
         HaveUpdateMethode = true;
-
-
 
     }
 
@@ -71,7 +69,6 @@ public class ResetPermissionsFragment extends FragmentInteractionBase  {
         View rootView = inflater.inflate(R.layout.fragment_reset_permissions, container, false);
         mSharedFolderView =(Spinner) rootView.findViewById(R.id.spinnerSharedFolder);
         mPermissionsView =(Spinner) rootView.findViewById(R.id.spinnerPermissions);
-        handler= new Handler();
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item, ShareMgmtController.PermissionsType);
         mPermissionsView.setAdapter(mAdapter);
@@ -117,7 +114,7 @@ public class ResetPermissionsFragment extends FragmentInteractionBase  {
 
 
                 //final Result<SharedFolder> res = response.GetResultObject( new TypeToken<Result<SharedFolder>>(){});
-                handler.post(new Runnable(){
+                mHandler.post(new Runnable(){
                     public void run() {
                         populateSharedFolderView(res.getData());
                     }
@@ -136,7 +133,6 @@ public class ResetPermissionsFragment extends FragmentInteractionBase  {
         mAdapterSharedFolder.notifyDataSetChanged();
 
     }
-
 
     @Override
     public void onAttach(Context context) {

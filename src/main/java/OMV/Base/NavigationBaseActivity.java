@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 
 import com.dev.doods.omvremote2.AboutActivity;
 import com.dev.doods.omvremote2.CertificateActivity;
+import com.dev.doods.omvremote2.CommandActivity;
 import com.dev.doods.omvremote2.CronActivity;
 import com.dev.doods.omvremote2.FileSystemsActivity;
 import com.dev.doods.omvremote2.HomeActivity;
@@ -133,6 +134,10 @@ public class NavigationBaseActivity extends AppCompatBaseActivity
         else if (id == R.id.nav_cron)
         {
             startActivity(new Intent(this, CronActivity.class));
+        }
+        else if (id == R.id.nav_Command)
+        {
+            startActivity(new Intent(this, CommandActivity.class));
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

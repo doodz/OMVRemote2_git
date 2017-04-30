@@ -35,6 +35,10 @@
             android:id="@+id/nav_logs"
             android:icon="@drawable/ic_folder_black_24dp"
             android:title="@string/nav_logs" />
+        <item
+            android:id="@+id/nav_Command"
+            android:icon="@drawable/ic_settings_remote_black_24dp"
+            android:title="@string/nav_Command" />
     </group>
 
   <item android:title="Administration">

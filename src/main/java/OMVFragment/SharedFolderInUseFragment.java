@@ -2,7 +2,6 @@ package OMVFragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.CallSuper;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,6 +32,7 @@ import Models.Errors;
 import Models.Privileges;
 import Models.Result;
 import Models.SharedFolderInUse;
+import OMV.Base.FragmentInteractionBase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +42,6 @@ import Models.SharedFolderInUse;
  */
 public class SharedFolderInUseFragment extends FragmentInteractionBase {
 
-    Handler handler;
     private ShareMgmtController mController ;
     List<SharedFolderInUse> mSharedFolder = new ArrayList<SharedFolderInUse>();
     private ListView mListView;
@@ -66,7 +65,7 @@ public class SharedFolderInUseFragment extends FragmentInteractionBase {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_shared_folder_in_use, container, false);
-        handler= new Handler();
+
         mListView = (ListView) rootView.findViewById(R.id.ShareLst);
         mNoOMVExtra= (TextView) rootView.findViewById(R.id.No_OMV_Extra);
 
@@ -89,7 +88,7 @@ public class SharedFolderInUseFragment extends FragmentInteractionBase {
 
             @Override
             public void OnOMVServeurError(Call call, Errors error) {
-                handler.post(new Runnable(){
+                mHandler.post(new Runnable(){
                     public void run() {
                             mListView.setVisibility(View.GONE);
                             mNoOMVExtra.setVisibility(View.VISIBLE);
@@ -113,7 +112,7 @@ public class SharedFolderInUseFragment extends FragmentInteractionBase {
                 final Result<SharedFolderInUse> res = gson.fromJson(j,t);
 
                 //final Result<SharedFolderInUse> res = response.GetResultObject( new TypeToken< Result<SharedFolderInUse>>(){});
-                handler.post(new Runnable(){
+                mHandler.post(new Runnable(){
                     public void run() {
                             populateLstView(res.getData());
                     }

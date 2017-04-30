@@ -19,15 +19,17 @@ import java.util.List;
 
 import Client.Call;
 import Client.Callback;
+import Client.CallbackImpl;
 import Client.Response;
 import Controllers.CronController;
 import Models.Cron;
 import Models.Errors;
 import Models.OmvUser;
+import OMV.Base.AppCompatBaseActivity;
 import OMV.Classe.openmediavault_default;
 import utils.SnackBarError;
 import com.dev.doods.omvremote2.R;
-public class AddEditeCronActivity extends AppCompatActivity {
+public class AddEditeCronActivity extends AppCompatBaseActivity {
 
     Switch swithEnable;
     Spinner spinnerTimeExec;
@@ -210,17 +212,7 @@ public class AddEditeCronActivity extends AppCompatActivity {
     {
         PopulateCron(mCron);
 
-        mController.setCron(mCron, new Callback() {
-            @Override
-            public void onFailure(Call call, Exception e) {
-
-            }
-
-            @Override
-            public void OnOMVServeurError(Call call, Errors error) {
-                new SnackBarError(fab,error.getMessage());
-            }
-
+        mController.setCron(mCron, new CallbackImpl(this) {
             @Override
             public void onResponse(Call call, Response response) throws IOException, InterruptedException {
                 AddEditeCronActivity.this.finish();

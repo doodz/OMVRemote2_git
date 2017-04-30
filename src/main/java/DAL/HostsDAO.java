@@ -7,8 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import org.w3c.dom.Comment;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +22,10 @@ public class HostsDAO {
 
 
     private SQLiteDatabase database;
-    private HotsDatabaseHelper dbHelper;
+    private OmvDatabaseHelper dbHelper;
 
     public HostsDAO(Context context) {
-        dbHelper = new HotsDatabaseHelper(context);
+        dbHelper = new OmvDatabaseHelper(context);
     }
 
     public void open() throws SQLException {

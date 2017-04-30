@@ -244,7 +244,7 @@ public class CertificateAdapter extends RecyclerView.Adapter<CertificateAdapter.
 
                         // Changing action button text color
                         View sbView = snackbar.getView();
-                        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                        TextView textView = (TextView) sbView.findViewById(R.id.snackbar_text);
                         textView.setTextColor(Color.YELLOW);
                         snackbar.show();
                     }

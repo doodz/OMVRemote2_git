@@ -2,6 +2,8 @@ package Client;
 
 import java.io.IOException;
 
+import Interfaces.IJSONRPCParamsBuilder;
+
 /**
  * Created by thiba on 29/08/2016.
  */
@@ -9,15 +11,15 @@ public class CallImpl implements Call {
 
     private boolean mExecuted;
     private boolean isCanceled;
-    private JSONRPCParamsBuilder mParams;
+    private IJSONRPCParamsBuilder mParams;
 
-    @Override public JSONRPCParamsBuilder params()
+    @Override public IJSONRPCParamsBuilder params()
     {
         return mParams;
 
     }
 
-    public CallImpl(JSONRPCParamsBuilder params)
+    public CallImpl(IJSONRPCParamsBuilder params)
     {
         mParams = params;
     }

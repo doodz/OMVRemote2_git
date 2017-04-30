@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.dev.doods.omvremote2.Plugins.Fail2ban.SwipeViewFail2banActivity;
 import com.dev.doods.omvremote2.Plugins.Virtualbox.VirtualboxActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -94,7 +95,6 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
         new CheckDirty(HomeActivity.this).Check();
     }
 
-
     private void checkHost()
     {
         HostsDAO datasource = new HostsDAO(this);
@@ -111,7 +111,6 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
 
         SharedPreferences sharedPref = getSharedPreferences("electedHost", Context.MODE_PRIVATE);
         final long hostId = sharedPref.getLong("electedHostId",0);
-
 
         JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
         if(!jsonRpc.HaveHost() && lst.size() > 0) {
@@ -346,18 +345,14 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
                 intent.putExtra("ItemName",item.getName());
                 intent.putExtra("ItemTitle",item.getTitle());
 
-
-
                 if(item.getName().equalsIgnoreCase("virtualbox"))
                 {
                     intent = new Intent(HomeActivity.this, VirtualboxActivity.class);
-
                 }
 
-                if(item.getName().equalsIgnoreCase("virtualbox"))
+                if(item.getName().equalsIgnoreCase("fail2Ban"))
                 {
-                    intent = new Intent(HomeActivity.this, VirtualboxActivity.class);
-
+                    intent = new Intent(HomeActivity.this, SwipeViewFail2banActivity.class);
                 }
 
                 startActivity(intent);

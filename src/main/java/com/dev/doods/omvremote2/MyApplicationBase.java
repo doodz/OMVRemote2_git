@@ -106,7 +106,7 @@ public class MyApplicationBase extends Application {
        mHelper = new IabHelper(this, IabHelper.base64EncodedPublicKey);
 
         // enable debug logging (for a production application, you should set this to false).
-        mHelper.enableDebugLogging(false);
+        mHelper.enableDebugLogging(true);
 
         // Start setup. This is asynchronous and the specified listener
         // will be called once setup completes.
@@ -183,8 +183,12 @@ public class MyApplicationBase extends Application {
         }
         String appIdentifier = Util.getAppIdentifier(context);
 
-        CrashManager.register(context, appIdentifier, new MyCustomCrashManagerListener());
-        //CrashManager.register(this);
+        if (!BuildConfig.DEBUG) {
+            CrashManager.register(context, appIdentifier, new MyCustomCrashManagerListener());
+            //CrashManager.register(this);
+        }
+
+
     }
 
 

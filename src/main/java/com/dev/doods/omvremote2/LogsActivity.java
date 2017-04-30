@@ -35,6 +35,7 @@ import net.hockeyapp.android.metrics.MetricsManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,12 +45,15 @@ import Client.Call;
 import Client.CallbackImpl;
 import Client.DownloadLogsAsyncTask;
 import Client.Response;
+import Controllers.HomeController;
 import Controllers.LogsController;
 import Controllers.ServicesController;
+import Models.Datum;
 import Models.Errors;
 import Models.LogRow;
 import Models.Result;
 import OMV.Base.NavigationBaseActivity;
+import utils.Util;
 
 public class LogsActivity extends NavigationBaseActivity {
 
@@ -57,6 +61,7 @@ public class LogsActivity extends NavigationBaseActivity {
 
     LogsController mController = new LogsController(this);
     ServicesController mServicesController = new ServicesController(this);
+    HomeController mHomeController = new HomeController(this);
     RecyclerView mRecyclerLogs;
     List<LogRow> lst = new ArrayList<LogRow>();
     LogRowAdapter mLogRowAdapter;
@@ -69,7 +74,11 @@ public class LogsActivity extends NavigationBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logs);
 
-        mLogsId = (mController.GetApiVersion() == 3)?LogsController.LogsIdsV3:LogsController.LogsIds;
+        mLogsId = new ArrayList<>();
+        mLogsId.addAll((mController.GetApiVersion() == 3)?LogsController.LogsIdsV3:LogsController.LogsIds);
+        Collections.sort(mLogsId);
+        getOtherIdLogs();
+
         // Setup spinner
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new MyAdapter(
@@ -133,6 +142,40 @@ public class LogsActivity extends NavigationBaseActivity {
         mRecyclerLogs.setLayoutManager(mLayoutManager);
         mRecyclerLogs.setItemAnimator(new DefaultItemAnimator());
         mRecyclerLogs.setAdapter(mLogRowAdapter);
+    }
+
+
+    private void getOtherIdLogs()
+    {
+        //LogsIds
+        mHomeController.GetStatusServices(new CallbackImpl(this){
+            @Override
+            public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                super.onResponse(call,response);
+                final Result<Datum> res = response.GetResultObject(new TypeToken<Result<Datum>>(){});
+                mHandler.post(new Runnable(){
+                    public void run() {
+                        addLogsId(res.getData());
+                    }
+                });
+            }
+
+        });
+    }
+
+
+    private void addLogsId(List<Datum> res)
+    {
+
+        for (Datum data: res) {
+            if(Util.containsCaseInsensitive(data.getName(),LogsController.LogsIdsPlugins))
+            {
+                mLogsId.add(data.getName().toLowerCase());
+            }
+
+        }
+
+        Collections.sort(mLogsId);
     }
 
 

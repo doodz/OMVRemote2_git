@@ -3,6 +3,7 @@ package DAL;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+
 /**
  * Created by thiba on 11/10/2016.
  */
@@ -42,11 +43,15 @@ public class HostsTable {
 
     public static void onUpgrade(SQLiteDatabase database, int oldVersion,
                                  int newVersion) {
-        Log.w(HostsTable.class.getName(), "Upgrading database from version "
-                + oldVersion + " to " + newVersion
-                + ", which will destroy all old data");
-        database.execSQL("DROP TABLE IF EXISTS " + TABLE_HOST);
-        onCreate(database);
+
+
+        if(false) {
+            Log.w(HostsTable.class.getName(), "Upgrading database from version "
+                    + oldVersion + " to " + newVersion
+                    + ", which will destroy all old data");
+            database.execSQL("DROP TABLE IF EXISTS " + TABLE_HOST);
+            onCreate(database);
+        }
     }
 
 }

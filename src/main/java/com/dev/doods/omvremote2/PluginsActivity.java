@@ -55,7 +55,6 @@ public class PluginsActivity extends NavigationBaseActivity
                         //.setAction("Action", null).show();
                 if(!IsFinalized(true))
                 {
-
                     return;
                 }
                 int i = 0;
