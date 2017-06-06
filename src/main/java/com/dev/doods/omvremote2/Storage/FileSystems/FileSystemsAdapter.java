@@ -1,4 +1,4 @@
-package Adapters;
+package com.dev.doods.omvremote2.Storage.FileSystems;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dev.doods.omvremote2.R;
-import com.dev.doods.omvremote2.SharedFoldersActivity;
+import com.dev.doods.omvremote2.Storage.SharedFoldersActivity;
 import com.dev.doods.omvremote2.StatisticsScrollingActivity;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
@@ -24,7 +24,6 @@ import com.github.mikephil.charting.data.PieDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import Models.FileSystem;
 import utils.Util;
 
 /**
@@ -38,7 +37,7 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView overflow;
-
+        public ImageView scheduledTest;
         public TextView devicefile;
         public TextView available_size;
         public TextView used_size;
@@ -61,6 +60,7 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
             pieChartFileSystems = (PieChart) view.findViewById(R.id.PieChartFileSystems);
 
             overflow = (ImageView) view.findViewById(R.id.overflow);
+            scheduledTest= (ImageView) view.findViewById(R.id.scheduledTest);
         }
     }
     public FileSystemsAdapter(Context mContext, List<FileSystem> fileSystemList) {

@@ -198,7 +198,7 @@ public class SwipeViewBaseActivity extends AppCompatBaseActivity implements OnFr
         if(imgId != 0)
             fabSave.setImageResource(imgId);
         else
-            fabSave.setImageResource(android.R.drawable.ic_menu_save);
+            fabSave.setImageResource(R.drawable.ic_save_black_24dp);
 
         fabSave.startAnimation(animation);
 

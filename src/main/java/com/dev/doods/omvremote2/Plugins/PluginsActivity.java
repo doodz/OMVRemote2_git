@@ -1,4 +1,4 @@
-package com.dev.doods.omvremote2;
+package com.dev.doods.omvremote2.Plugins;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.dev.doods.omvremote2.R;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import com.innahema.collections.query.functions.Predicate;
@@ -24,7 +25,6 @@ import Adapters.PinnedSectionPluginsAdapter;
 import Client.Call;
 import Client.CallbackImpl;
 import Client.Response;
-import Controllers.PluginsController;
 import Interfaces.NoticeDialogListener;
 import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.FilterPluginDialogFragment;
@@ -90,7 +90,7 @@ public class PluginsActivity extends NavigationBaseActivity
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //.setAction("Action", null).show();
-                if(IsFinalized(true))
+                if(!IsFinalized(true))
                 {
                     return;
                 }

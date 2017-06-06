@@ -1,4 +1,4 @@
-package Models;
+package com.dev.doods.omvremote2.Storage.Smart;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -7,11 +7,16 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.util.List;
+
 /**
  * Created by Ividata7 on 27/01/2017.
  */
 
-public class DeviceSmart {
+public class SmartDevices {
+    @SerializedName("devicelinks")
+    @Expose
+    private List<String> devicelinks = null;
     @SerializedName("devicename")
     @Expose
     private String devicename;
@@ -63,6 +68,14 @@ public class DeviceSmart {
 
     public void setDevicefile(String devicefile) {
         this.devicefile = devicefile;
+    }
+
+    public List<String> getDevicelinks() {
+        return devicelinks;
+    }
+
+    public void setDevicelinks(List<String> devicelinks) {
+        this.devicelinks = devicelinks;
     }
 
     public String getDevicefilebyid() {
@@ -147,12 +160,14 @@ public class DeviceSmart {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+
+        return description;
+        //return ToStringBuilder.reflectionToString(this);
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(devicename).append(devicefile).append(devicefilebyid).append(model).append(size).append(temperature).append(description).append(vendor).append(serialnumber).append(overallstatus).append(uuid).append(monitor).toHashCode();
+        return new HashCodeBuilder().append(devicename).append(devicefile).append(devicelinks).append(devicefilebyid).append(model).append(size).append(temperature).append(description).append(vendor).append(serialnumber).append(overallstatus).append(uuid).append(monitor).toHashCode();
     }
 
     @Override
@@ -160,10 +175,10 @@ public class DeviceSmart {
         if (other == this) {
             return true;
         }
-        if ((other instanceof DeviceSmart) == false) {
+        if ((other instanceof SmartDevices) == false) {
             return false;
         }
-        DeviceSmart rhs = ((DeviceSmart) other);
-        return new EqualsBuilder().append(devicename, rhs.devicename).append(devicefile, rhs.devicefile).append(devicefilebyid, rhs.devicefilebyid).append(model, rhs.model).append(size, rhs.size).append(temperature, rhs.temperature).append(description, rhs.description).append(vendor, rhs.vendor).append(serialnumber, rhs.serialnumber).append(overallstatus, rhs.overallstatus).append(uuid, rhs.uuid).append(monitor, rhs.monitor).isEquals();
+        SmartDevices rhs = ((SmartDevices) other);
+        return new EqualsBuilder().append(devicename, rhs.devicename).append(devicefile, rhs.devicefile).append(devicelinks, rhs.devicelinks).append(devicefilebyid, rhs.devicefilebyid).append(model, rhs.model).append(size, rhs.size).append(temperature, rhs.temperature).append(description, rhs.description).append(vendor, rhs.vendor).append(serialnumber, rhs.serialnumber).append(overallstatus, rhs.overallstatus).append(uuid, rhs.uuid).append(monitor, rhs.monitor).isEquals();
     }
 }

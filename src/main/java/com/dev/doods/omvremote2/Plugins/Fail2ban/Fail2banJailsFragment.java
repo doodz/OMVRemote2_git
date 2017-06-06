@@ -11,9 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import com.dev.doods.omvremote2.AddEditeCronActivity;
-import com.dev.doods.omvremote2.CronActivity;
-import com.dev.doods.omvremote2.HomeActivity;
 import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
@@ -25,10 +22,8 @@ import Adapters.SwithNameDescAdapter;
 import Client.Call;
 import Client.CallbackImpl;
 import Client.Response;
-import Interfaces.INameDescObject;
 import Models.Result;
 import OMV.Base.FragmentInteractionBase;
-import OMV.Base.NameDescObjectBase;
 import OMV.Classe.RecyclerItemClickListener;
 import utils.CheckDirty;
 

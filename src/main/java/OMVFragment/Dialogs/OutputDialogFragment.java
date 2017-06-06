@@ -1,7 +1,10 @@
 package OMVFragment.Dialogs;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -36,12 +39,24 @@ public class OutputDialogFragment extends DialogFragment {
     private OutputListener mListener;
     private OutputDialogController mOutputDialogController = new OutputDialogController(this);
     private LinearLayout LinearLayoutDialog;
+
+    public void show(FragmentManager manager, String tag) {
+      super.show(manager,tag);
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+
+
+        Activity activity = getActivity();
+
+        activity.isFinishing();
+        // quand on ferme l'application avant l'ouverture de la popup.
+        if(activity.isFinishing())
+            this.dismiss();
         try {
-
-
             // Instantiate the NoticeDialogListener so we can send events to the host
             mListener = (OutputListener) context;
         } catch (ClassCastException e) {
@@ -62,21 +77,20 @@ public class OutputDialogFragment extends DialogFragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-
-
         mOutput = mOutputDialogController.Stop();
         if(mOutput != null)
             mOutput.setOutput(mMessage);
         outState.putSerializable("Output", mOutput);
-
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        Activity activity = getActivity();
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         // Get the layout inflater
-        LayoutInflater inflater = getActivity().getLayoutInflater();
+        LayoutInflater inflater = activity.getLayoutInflater();
 
         Bundle bundle = getArguments();
         justWaitCursor = bundle.getBoolean("justWaitCursor");

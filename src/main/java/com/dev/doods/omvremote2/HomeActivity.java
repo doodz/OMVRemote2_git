@@ -19,8 +19,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.dev.doods.omvremote2.Plugins.Autoshutdown.AutoshutdownActivity;
 import com.dev.doods.omvremote2.Plugins.Fail2ban.SwipeViewFail2banActivity;
 import com.dev.doods.omvremote2.Plugins.Virtualbox.VirtualboxActivity;
+import com.dev.doods.omvremote2.TestUi.TestActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -167,7 +169,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
         {
             JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
             Host h = jsonRpc.GetHost();
-            if(h.getMacAddr().equals("") || h.getMacAddr() == null)
+            if( h.getMacAddr() == null || h.getMacAddr().equals("") )
             {
                 String strMac = Util.getMacFromArpCache(h.getAddr());
 
@@ -246,7 +248,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
     int i = 0;
     private void ShowDebug()
     {
-        startActivity(new Intent(HomeActivity.this, com.dev.doods.omvremote2.TestActivity.class));
+        startActivity(new Intent(HomeActivity.this, TestActivity.class));
     }
 
     private void getInfo()
@@ -260,6 +262,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
 
             @Override
             public void onFailure(Call call, Exception e) {
+                //super.onFailure(call,e);
                 e.printStackTrace();
                 ShowSnackError(e.getMessage(),false);
                 mHandler.post(new Runnable(){
@@ -273,7 +276,7 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
 
             @Override
             public void OnOMVServeurError(Call call, Errors error) {
-
+                //super.OnOMVServeurError(call,error);
                 ShowSnackError(error.getMessage(),false);
                 mHandler.post(new Runnable(){
                     public void run() {
@@ -353,6 +356,10 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
                 if(item.getName().equalsIgnoreCase("fail2Ban"))
                 {
                     intent = new Intent(HomeActivity.this, SwipeViewFail2banActivity.class);
+                }
+                if(item.getName().equalsIgnoreCase("Autoshutdown"))
+                {
+                    intent = new Intent(HomeActivity.this, AutoshutdownActivity.class);
                 }
 
                 startActivity(intent);

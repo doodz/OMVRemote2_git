@@ -29,6 +29,12 @@ public class LogRow {
     @Expose
     private String message;
 
+    @SerializedName("event")
+    @Expose
+    private String event;
+    @SerializedName("log")
+    @Expose
+    private String log;
     /**
      *
      * @return
@@ -109,7 +115,6 @@ public class LogRow {
     public String getMessage() {
         return message;
     }
-
     /**
      *
      * @param message
@@ -118,6 +123,43 @@ public class LogRow {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    /**
+     *
+     * @return
+     * The event
+     */
+    public String getEvent(){
+        return event;
+    }
+
+    /**
+     *
+     * @param event
+     * The message
+     */
+    public void setEvent(String event) {
+        this.event = event;
+    }
+    /**
+     *
+     * @return
+     * The Log
+     */
+    public String getLog(){
+        return log;
+    }
+
+    /**
+     *
+     * @param log
+     * The message
+     */
+    public void setLog(String log) {
+        this.log = log;
+    }
+
+
 
     @Override
     public String toString() {
@@ -138,6 +180,6 @@ public class LogRow {
             return false;
         }
         LogRow rhs = ((LogRow) other);
-        return new EqualsBuilder().append(rownum, rhs.rownum).append(ts, rhs.ts).append(date, rhs.date).append(hostname, rhs.hostname).append(message, rhs.message).isEquals();
+        return new EqualsBuilder().append(rownum, rhs.rownum).append(ts, rhs.ts).append(date, rhs.date).append(hostname, rhs.hostname).append(message, rhs.message).append(event, rhs.event).append(log, rhs.log).isEquals();
     }
 }

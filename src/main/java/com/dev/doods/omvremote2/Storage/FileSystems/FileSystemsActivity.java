@@ -1,5 +1,6 @@
-package com.dev.doods.omvremote2;
+package com.dev.doods.omvremote2.Storage.FileSystems;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -7,23 +8,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.dev.doods.omvremote2.R;
+import com.dev.doods.omvremote2.Storage.Smart.SwipeViewSmartActivity;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.util.List;
 
-import Adapters.FileSystemsAdapter;
 import Client.Call;
 import Client.CallbackImpl;
 import Client.Response;
-import Controllers.DisckController;
 import Models.Device;
-import Models.FileSystem;
 import Models.Result;
 import OMV.Base.NavigationBaseActivity;
 
 public class FileSystemsActivity extends NavigationBaseActivity {
-    private DisckController controller;
+    private DisckController mController = new DisckController(this);
     private RecyclerView recyclerView;
 
     @Override
@@ -32,9 +32,7 @@ public class FileSystemsActivity extends NavigationBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_systems);
 
-        controller = new DisckController(this);
-
-        controller.getListDevies(new CallbackImpl(this) {
+        mController.getListDevies(new CallbackImpl(this) {
             @Override
             public void onResponse(Call call, Response response) throws IOException,InterruptedException {
                 super.onResponse(call,response);
@@ -47,7 +45,7 @@ public class FileSystemsActivity extends NavigationBaseActivity {
             }
         });
 
-        controller.getListFilesSystems(new CallbackImpl(this) {
+        mController.getListFilesSystems(new CallbackImpl(this) {
             @Override
             public void onResponse(Call call, Response response) throws IOException,InterruptedException {
                 super.onResponse(call,response);
@@ -93,7 +91,8 @@ public class FileSystemsActivity extends NavigationBaseActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_smart) {
+            startActivity(new Intent(FileSystemsActivity.this, SwipeViewSmartActivity.class));
             return true;
         }
 

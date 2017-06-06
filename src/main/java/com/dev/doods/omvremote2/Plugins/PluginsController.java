@@ -1,4 +1,4 @@
-package Controllers;
+package com.dev.doods.omvremote2.Plugins;
 
 import android.app.Activity;
 
@@ -11,6 +11,7 @@ import Client.AsyncCall;
 import Client.Callback;
 import Client.JSONRPCClient;
 import Client.JSONRPCParamsBuilder;
+import Controllers.Abstractcontroller;
 import Models.PackageInformation;
 import Models.Plugins;
 

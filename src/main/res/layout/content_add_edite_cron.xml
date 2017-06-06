@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".AddEditeCronActivity"
+    tools:context=".System.AddEditeCronActivity"
     tools:showIn="@layout/activity_add_edite_cron">
     <ScrollView
         android:layout_width="match_parent"

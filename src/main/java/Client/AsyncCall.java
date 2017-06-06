@@ -100,8 +100,15 @@ public class AsyncCall extends CallImpl implements Runnable  {
             if(mResponseCallback != null)
                 mResponseCallback.onFailure(this,ex);
 
-        }
-        finally {
+        } catch (HttpPageException e) {
+            e.printStackTrace();
+
+            if(mActivity != null)
+                new SnackBarError(mActivity.getCurrentFocus(),e.getMessage());
+
+            if(mResponseCallback != null)
+                mResponseCallback.onFailure(this,e);
+        } finally {
             mClient.Dispatcher().finished(this);
             Finish();
         }

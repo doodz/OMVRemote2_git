@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
     <changelog>
+    <release version="1.1.32" versioncode="41" date="06/06/2017">
+        <change>fix error on wake up action, when mac address is not defined.</change>
+        <change>Fix error on Autoshutdown activity.</change>
+        <change>Fix error/ crash when you call a url who is not OMV API, but an web page.</change>
+        <change>Fix error on S.M.A.R.T activity.</change>
+        <change>Code improvement.</change>
+    </release>
+    <release version="1.1.31" versioncode="40" date="11/05/2017">
+        <change>Add S.M.A.R.T activity on FileSystems menu.</change>
+        <change>Fix error on Widget.</change>
+        <change>Fix regress for uninstall a plugin.</change>
+        <change>Code improvement.</change>
+    </release>
+    <release version="1.1.30" versioncode="39" date="03/05/2017">
+        <change>Add autoshutdown activity.</change>
+        <change>Code improvement.</change>
+    </release>
+
     <release version="1.1.29" versioncode="38" date="30/04/2017">
         <change>Possibility to filter the graphs by type to display in statistics activity.</change>
         <change>Add openvpn - autoshutdown - fail2ban - transmissionbt - in logs activity.</change>

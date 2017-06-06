@@ -61,7 +61,19 @@ public class LogRowAdapter  extends RecyclerView.Adapter<LogRowAdapter.MyViewHol
     @Override
     public void onBindViewHolder(final LogRowAdapter.MyViewHolder holder,final int position) {
         final LogRow data = mLogRowList.get(position);
-        holder.messageView.setText(data.getMessage());
+
+        String mess = data.getMessage();
+
+        if(mess == null ||mess.isEmpty())
+        {
+            mess = data.getEvent();
+        }
+
+        if(mess == null ||mess.isEmpty())
+        {
+            mess = data.getLog();
+        }
+        holder.messageView.setText(mess);
 
 
         holder.dateView.setText(data.getDate());

@@ -1,18 +1,23 @@
-package com.dev.doods.omvremote2;
+package com.dev.doods.omvremote2.System;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.dev.doods.omvremote2.MyApplicationBase;
+import com.dev.doods.omvremote2.R;
+import com.dev.doods.omvremote2.UpdateSetingsActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -32,9 +37,12 @@ import OMVFragment.Dialogs.OutputDialogFragment;
 public class PackagesInfomationActivity extends NavigationBaseActivity
         implements OutputListener {
 
-    private TextView NoUpdateVew;
+    //private TextView NoUpdateVew;
+    private CardView mCardViewAds;
+    private LinearLayoutCompat mInfoLayout;
     private UpdateController controller;
     private OutputDialogFragment mOutputDialogFragment;
+    private NativeExpressAdView mBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         NavigationId = R.id.nav_update;
@@ -45,7 +53,16 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         PopulateLst();
         //mOutputController.AddListener(this);
 
-        NoUpdateVew = (TextView) findViewById(R.id.NoUpdate);
+        //NoUpdateVew = (TextView) findViewById(R.id.NoUpdate);
+        mInfoLayout= (LinearLayoutCompat) findViewById(R.id.InfoLayout);
+        mCardViewAds = (CardView)findViewById(R.id.card_view_ads);
+        mBanner = (NativeExpressAdView)findViewById(R.id.banner);
+        if(MyApplicationBase.light)
+        {
+            AdRequest request = new AdRequest.Builder().build();
+            mBanner.loadAd(request);
+            mCardViewAds.setVisibility(View.VISIBLE);
+        }
 
         com.github.clans.fab.FloatingActionButton fab_Refresh = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab_Refresh);
         fab_Refresh.setOnClickListener(new View.OnClickListener() {
@@ -175,6 +192,8 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         mOutputDialogFragment.setArguments(bundle);
         android.app.FragmentManager fm = getFragmentManager();
         mOutputDialogFragment.show(fm, "OutputDialogFragment");
+
+
     }
 
     private AlertDialog alert;
@@ -186,9 +205,9 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         _lst.addAll(lst);
         mrecyclerViewAdapter.notifyDataSetChanged();
         if(!_lst.isEmpty())
-            NoUpdateVew.setVisibility(View.GONE);
+            mInfoLayout.setVisibility(View.GONE);
         else
-            NoUpdateVew.setVisibility(View.VISIBLE);
+            mInfoLayout.setVisibility(View.VISIBLE);
     }
 
     @Override

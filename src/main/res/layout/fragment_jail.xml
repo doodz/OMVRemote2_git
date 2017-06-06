@@ -5,7 +5,7 @@
     <ProgressBar
         android:elevation="6dp"
         android:visibility="gone"
-        android:id="@+id/app_progress"
+        android:id="@+id/app_progress_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"

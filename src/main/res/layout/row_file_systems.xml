@@ -57,11 +57,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <ImageView
             android:layout_width="20dp"
             android:layout_height="match_parent"
@@ -81,6 +85,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Used size"/>
+        </LinearLayout>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/scheduledTest"
+            android:layout_width="30dp"
+            android:layout_height="@dimen/ic_album_overflow_height"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:foregroundGravity="right"
+            android:layout_gravity="right"
+            android:layout_below="@id/thumbnail"
+            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_schedule_black_24dp"  />
     </LinearLayout>
 
         <LinearLayout

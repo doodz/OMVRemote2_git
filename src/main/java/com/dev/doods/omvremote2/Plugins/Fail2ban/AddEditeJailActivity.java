@@ -2,28 +2,20 @@ package com.dev.doods.omvremote2.Plugins.Fail2ban;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 
-import com.dev.doods.omvremote2.AddEditeCronActivity;
 import com.dev.doods.omvremote2.R;
 
 import java.io.IOException;
 
 import Client.Call;
-import Client.Callback;
 import Client.CallbackImpl;
 import Client.Response;
-import Controllers.CronController;
-import Models.Cron;
-import Models.Errors;
 import OMV.Base.AppCompatBaseActivity;
 import OMV.Classe.openmediavault_default;
-import utils.SnackBarError;
 
 public class AddEditeJailActivity extends AppCompatBaseActivity {
     Fail2banController mController = new Fail2banController(this);

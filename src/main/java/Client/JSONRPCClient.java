@@ -3,11 +3,13 @@ package Client;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.text.TextUtils;
+import android.util.JsonReader;
 import android.util.Log;
 import android.webkit.URLUtil;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.google.gson.stream.MalformedJsonException;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -159,7 +161,7 @@ public class JSONRPCClient implements Runnable {
     }
 
 
-    public Response Execute(Call call) throws IOException,MovedPermanentlyException
+    public Response Execute(Call call) throws IOException,MovedPermanentlyException,HttpPageException
     {
         JsonElement jsonResponse = null;
         HttpURLConnection urlConnection = null;
@@ -231,7 +233,9 @@ public class JSONRPCClient implements Runnable {
                 //jsonResponse = new JsonParser().parse(erorlog);
                 //return new Response(jsonResponse);
             }
-
+            if (result.toString().contains("<html>")){
+                throw new HttpPageException(result.toString());
+            }
             jsonResponse = new JsonParser().parse(result.toString());
 
         }
@@ -243,6 +247,13 @@ public class JSONRPCClient implements Runnable {
         catch (ProtocolException e) {
             Log.i("JSONRPCClient","ProtocolException");
             e.printStackTrace();
+        }
+        catch (MalformedJsonException e)
+        {
+            Log.i("JSONRPCClient","MalformedJsonException");
+            e.printStackTrace();
+
+
         }
         finally {
             if(urlConnection != null)

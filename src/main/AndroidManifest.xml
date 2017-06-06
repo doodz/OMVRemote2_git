@@ -70,16 +70,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PackagesInfomationActivity"
+            android:name=".System.PackagesInfomationActivity"
             android:label="@string/title_activity_packages_infomation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UpdateSetingsActivity" />
         <activity
-            android:name=".FileSystemsActivity"
+            android:name=".Storage.FileSystems.FileSystemsActivity"
             android:label="@string/title_activity_file_systems"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PluginsActivity"
+            android:name=".Plugins.PluginsActivity"
             android:label="@string/title_activity_plugins"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -88,7 +88,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".HomeSettingsActivity" />
         <activity
-            android:name=".WebAdministrationActivity"
+            android:name=".System.WebAdministrationActivity"
             android:label="@string/title_activity_web_administration" />
         <activity
             android:name=".HostManagerActivity"
@@ -105,7 +105,7 @@
             android:label="@string/title_activity_services"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SharedFoldersActivity"
+            android:name=".Storage.SharedFoldersActivity"
             android:label="@string/title_activity_shared_folders"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -141,11 +141,11 @@
             android:label="@string/title_activity_logs"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CronActivity"
+            android:name=".System.CronActivity"
             android:label="@string/title_activity_cron"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddEditeCronActivity"
+            android:name=".System.AddEditeCronActivity"
             android:label="@string/title_activity_add_edite_cron"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -192,7 +192,7 @@
                 android:resource="@xml/disk_usage_widget_info" />
         </receiver>
 
-        <activity android:name=".TestActivity" />
+        <activity android:name=".TestUi.TestActivity" />
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
@@ -201,7 +201,7 @@
             android:name=".AdMobActivity"
             android:label="@string/title_activity_ad_mob" />
         <activity
-            android:name=".testthibactivity"
+            android:name=".TestUi.testthibactivity"
             android:label="@string/title_activity_testthibactivity" />
         <activity
             android:name=".BindableActivity"
@@ -222,6 +222,18 @@
         <activity
             android:name=".Plugins.Fail2ban.AddEditeJailActivity"
             android:label="@string/title_activity_add_edite_jail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Plugins.Autoshutdown.AutoshutdownActivity"
+            android:label="@string/title_activity_autoshutdown"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Storage.Smart.SwipeViewSmartActivity"
+            android:label="@string/title_activity_smart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Storage.Smart.AddEditeScheduledTestActivity"
+            android:label="@string/title_activity_add_edite_scheduled_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

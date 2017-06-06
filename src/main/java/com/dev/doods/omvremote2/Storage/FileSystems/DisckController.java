@@ -1,4 +1,4 @@
-package Controllers;
+package com.dev.doods.omvremote2.Storage.FileSystems;
 
 import android.app.Activity;
 
@@ -6,11 +6,12 @@ import Client.AsyncCall;
 import Client.Callback;
 import Client.JSONRPCClient;
 import Client.JSONRPCParamsBuilder;
+import Controllers.Abstractcontroller;
 
 /**
  * Created by thiba on 06/09/2016.
  */
-public class DisckController extends Abstractcontroller{
+public class DisckController extends Abstractcontroller {
 
 
     public DisckController(Activity activity)  { super(activity); }

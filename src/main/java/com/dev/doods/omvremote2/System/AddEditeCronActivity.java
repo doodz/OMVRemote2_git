@@ -1,9 +1,8 @@
-package com.dev.doods.omvremote2;
+package com.dev.doods.omvremote2.System;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 
+import com.github.mikephil.charting.utils.Utils;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -21,13 +21,12 @@ import Client.Call;
 import Client.Callback;
 import Client.CallbackImpl;
 import Client.Response;
-import Controllers.CronController;
 import Models.Cron;
 import Models.Errors;
 import Models.OmvUser;
 import OMV.Base.AppCompatBaseActivity;
 import OMV.Classe.openmediavault_default;
-import utils.SnackBarError;
+
 import com.dev.doods.omvremote2.R;
 public class AddEditeCronActivity extends AppCompatBaseActivity {
 
@@ -165,24 +164,24 @@ public class AddEditeCronActivity extends AppCompatBaseActivity {
         int i = CronController.TimeExecValServer.indexOf(cron.getExecution());
         spinnerTimeExec.setSelection(i);
 
-        ArrayAdapter<String> spinnerMinuteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CronController.MinuteVal);
+        ArrayAdapter<String> spinnerMinuteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.ListUtils.MinuteVal);
         spinnerMinute.setAdapter(spinnerMinuteAdapter);
-        i = CronController.MinuteVal.indexOf(cron.getMinute());
+        i = utils.ListUtils.MinuteVal.indexOf(cron.getMinute());
         spinnerMinute.setSelection(i);
 
-        ArrayAdapter<String> spinnerHourAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CronController.HourVal);
+        ArrayAdapter<String> spinnerHourAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.ListUtils.HourVal);
         spinnerHour.setAdapter(spinnerHourAdapter);
-        i = CronController.HourVal.indexOf(cron.getHour());
+        i = utils.ListUtils.HourVal.indexOf(cron.getHour());
         spinnerHour.setSelection(i);
 
-        ArrayAdapter<String> spinnerDayMonthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CronController.DayVal);
+        ArrayAdapter<String> spinnerDayMonthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.ListUtils.DayVal);
         spinnerDayMonth.setAdapter(spinnerDayMonthAdapter);
-        i = CronController.DayVal.indexOf(cron.getDayofmonth());
+        i = utils.ListUtils.DayVal.indexOf(cron.getDayofmonth());
         spinnerDayMonth.setSelection(i);
 
-        ArrayAdapter<String> spinnerMonthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CronController.MonthVal);
+        ArrayAdapter<String> spinnerMonthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, utils.ListUtils.MonthVal);
         spinnerMonth.setAdapter(spinnerHourAdapter);
-        i = CronController.MonthVal.indexOf(cron.getMonth());
+        i = utils.ListUtils.MonthVal.indexOf(cron.getMonth());
         spinnerMonth.setSelection(i);
 
     }

@@ -14,6 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import com.dev.doods.omvremote2.Plugins.PluginsActivity;
+import com.dev.doods.omvremote2.Storage.FileSystems.FileSystemsActivity;
+import com.dev.doods.omvremote2.System.PackagesInfomationActivity;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -171,15 +174,15 @@ public class CertificateActivity extends NavigationBaseActivity implements Notic
         }
         else if(id == R.id.nav_update)
         {
-            startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.PackagesInfomationActivity.class));
+            startActivity(new Intent(CertificateActivity.this, PackagesInfomationActivity.class));
         }
         else if(id == R.id.nav_disk)
         {
-            startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.FileSystemsActivity.class));
+            startActivity(new Intent(CertificateActivity.this, FileSystemsActivity.class));
         }
         else if(id == R.id.nav_plugin)
         {
-            startActivity(new Intent(CertificateActivity.this, com.dev.doods.omvremote2.PluginsActivity.class));
+            startActivity(new Intent(CertificateActivity.this, PluginsActivity.class));
         }
         else if(id == R.id.nav_extra)
         {

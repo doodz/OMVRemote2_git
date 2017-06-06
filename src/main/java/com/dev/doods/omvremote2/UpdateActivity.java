@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.dev.doods.omvremote2.Plugins.PluginsActivity;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;

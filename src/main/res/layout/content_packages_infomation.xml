@@ -9,15 +9,67 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".PackagesInfomationActivity"
+    tools:context=".System.PackagesInfomationActivity"
     tools:showIn="@layout/app_bar_packages_infomation">
 
-    <TextView
-        android:id="@+id/NoUpdate"
-        android:text="@string/noUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
+
+<android.support.v7.widget.LinearLayoutCompat
+    android:id="@+id/InfoLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        android:padding="10dp"
+        app:cardCornerRadius="@dimen/card_album_radius">
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/NoUpdate"
+            android:text="@string/noUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/card_view_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        android:padding="10dp"
+        app:cardCornerRadius="@dimen/card_album_radius">
+        <android.support.v7.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/plzClickMe"
+            android:text="@string/plzClickMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.gms.ads.NativeExpressAdView
+            android:layout_gravity="center"
+            android:id="@+id/banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            app:adSize="360x132"
+            app:adUnitId="ca-app-pub-4922361220283829/7664646197"
+            />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.CardView>
+
+</android.support.v7.widget.LinearLayoutCompat>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/LstPackageInformation"

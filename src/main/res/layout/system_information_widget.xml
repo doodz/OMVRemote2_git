@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     android:padding="@dimen/widget_margin"
     android:weightSum="1"
-    android:background="@android:color/background_dark"
+    android:background="@color/colorOMV"
     >
         <LinearLayout
             android:id="@+id/linLayoutInfo"
@@ -41,7 +41,7 @@
                     android:background="@null"
                     android:padding="1dp"
                     android:scaleType="fitCenter"
-                    android:tint="@color/colorOMV"
+
                     android:src="@drawable/ic_refresh_black_24dp"
                     />
 
@@ -124,6 +124,7 @@
                     android:gravity="center"
                     android:text="@string/widget_uptime_header"
                     android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     />
 
                 <TextView
@@ -135,6 +136,7 @@
                     android:gravity="center"
                     android:padding="2dp"
                     android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     />
             </LinearLayout>
 
@@ -172,6 +174,7 @@
                     android:gravity="center"
                     android:text="@string/widget_cpu_header"
                     android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     />
 
                 <TextView
@@ -183,6 +186,7 @@
                     android:gravity="center"
                     android:padding="2dp"
                     android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     />
             </LinearLayout>
         </LinearLayout>
@@ -220,6 +224,7 @@
                     android:gravity="center"
                     android:text="@string/widget_memory_header"
                     android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     />
 
                 <TextView
@@ -231,6 +236,7 @@
                     android:gravity="center"
                     android:padding="2dp"
                     android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     />
             </LinearLayout>
         </LinearLayout>

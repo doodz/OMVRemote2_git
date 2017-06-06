@@ -39,6 +39,8 @@ public class Device {
     @Expose
     private Boolean isroot;
 
+
+
     /**
      *
      * @return

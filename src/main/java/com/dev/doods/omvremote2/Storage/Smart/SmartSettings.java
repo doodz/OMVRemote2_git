@@ -1,4 +1,4 @@
-package Models;
+package com.dev.doods.omvremote2.Storage.Smart;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import Models.Monitor;
 
 /**
  * Created by Ividata7 on 27/01/2017.
@@ -36,7 +38,7 @@ public class SmartSettings {
     private Monitor monitor;
     @SerializedName("scheduledtests")
     @Expose
-    private String scheduledtests;
+    private Scheduledtests scheduledtests;
 
     public Boolean getEnable() {
         return enable;
@@ -94,11 +96,11 @@ public class SmartSettings {
         this.monitor = monitor;
     }
 
-    public String getScheduledtests() {
+    public Scheduledtests getScheduledtests() {
         return scheduledtests;
     }
 
-    public void setScheduledtests(String scheduledtests) {
+    public void setScheduledtests(Scheduledtests scheduledtests) {
         this.scheduledtests = scheduledtests;
     }
 

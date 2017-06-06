@@ -18,8 +18,6 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.dev.doods.omvremote2.AddEditeCronActivity;
-import com.dev.doods.omvremote2.HomeActivity;
 import com.dev.doods.omvremote2.Plugins.Fail2ban.AddEditeJailActivity;
 import com.dev.doods.omvremote2.Plugins.Fail2ban.Fail2banController;
 import com.dev.doods.omvremote2.Plugins.Fail2ban.Jail;
@@ -33,12 +31,8 @@ import Client.Call;
 import Client.Callback;
 import Client.Response;
 import Controllers.ConfigController;
-import Interfaces.INameDescObject;
-import Models.CertificateSsh;
 import Models.Errors;
-import OMV.Base.NameDescObjectBase;
 import OMVFragment.Dialogs.OutputDialogFragment;
-import utils.CheckDirty;
 
 /**
  * Created by Ividata7 on 27/04/2017.

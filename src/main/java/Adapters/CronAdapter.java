@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.dev.doods.omvremote2.AddEditeCronActivity;
+import com.dev.doods.omvremote2.System.AddEditeCronActivity;
 import com.dev.doods.omvremote2.R;
 import com.google.gson.reflect.TypeToken;
 
@@ -27,7 +27,7 @@ import java.util.List;
 import Client.Call;
 import Client.Callback;
 import Client.Response;
-import Controllers.CronController;
+import com.dev.doods.omvremote2.System.CronController;
 import Models.Cron;
 import Models.Errors;
 import OMVFragment.Dialogs.OutputDialogFragment;

@@ -1,4 +1,4 @@
-package com.dev.doods.omvremote2;
+package com.dev.doods.omvremote2.System;
 
 
 import android.annotation.TargetApi;
@@ -20,6 +20,9 @@ import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
+import com.dev.doods.omvremote2.AppCompatPreferenceActivity;
+import com.dev.doods.omvremote2.R;
+
 import java.util.List;
 
 /**
@@ -33,7 +36,7 @@ import java.util.List;
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
  */
-public class testthibactivity extends AppCompatPreferenceActivity {
+public class WebAdministrationActivity extends AppCompatPreferenceActivity {
     /**
      * A preference value change listener that updates the preference's summary
      * to reflect its new value.
@@ -185,7 +188,7 @@ public class testthibactivity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), testthibactivity.class));
+                startActivity(new Intent(getActivity(), WebAdministrationActivity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);
@@ -215,7 +218,7 @@ public class testthibactivity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), testthibactivity.class));
+                startActivity(new Intent(getActivity(), WebAdministrationActivity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);
@@ -245,7 +248,7 @@ public class testthibactivity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), testthibactivity.class));
+                startActivity(new Intent(getActivity(), WebAdministrationActivity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);

@@ -328,7 +328,7 @@ public class SystemInformationWidgetConfigureActivity extends AppCompatBaseActiv
      * @param server    ID of the chosen server
      */
     static void saveChosenDevicePref(Context context, int appWidgetId, Host server, int updateInterval, boolean onlyOnWifi,
-                                     boolean showCpu, boolean showUptime, boolean showMemory) {
+                                     boolean showCpu, boolean showMemory,boolean showUptime) {
         Log.i("SystemInformationWidget","Saving new OverclockingWidget. Settings - Update interval: {"+updateInterval+"} - Only on Wifi: {"+onlyOnWifi+"}" +
                 " - CPU: {"+showCpu+"} - Uptime: {"+showUptime+"} - RAM: {"+showMemory+"}");
         SharedPreferences.Editor prefs = context.getSharedPreferences(PREFS_NAME, 0).edit();

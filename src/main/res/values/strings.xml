@@ -530,5 +530,67 @@
     <string name="Day">Day</string>
     <string name="Year">Year</string>
     <string name="Week">Week</string>
+    <string name="title_activity_autoshutdown">Autoshutdown</string>
+    <string name="Cycles">Cycles</string>
+    <string name="info_Autoshutdown_Cycles">Set the number of cycles with no result (no PC online, etc) before shutdown.</string>
+    <string name="Sleep">Sleep</string>
+    <string name="info_Autoshutdown_Sleep">Numbers of seconds between each cycle.</string>
+    <string name="Shutdown_Command">Shutdown Command</string>
+    <string name="Uphours_Begin">Uphours Begin</string>
+    <string name="Uphours_End">Uphours End</string>
+    <string name="Check_Clock">Check Clock</string>
+    <string name="info_Autoshutdown_CheckClock">Check Clock to identify forced uptime.</string>
+    <string name="IP_Range">IP-Range</string>
+    <string name="info_Autoshutdown_IPRange"><![CDATA[Define a range of IPs which should be scanned, via XXX.XXX.XXX.xxx last triple of IP address in a list.\n
+    The following scheme is mandatoryv..v+m,w,x..x+n,y+o..y,z\n
+    - define an ip range : start..end -> the two dots are mandatory\n
+    - define a single ip : ip\n
+    - all list entries are seperated by comma \',\'\n
+    Please make sure to leave 1 and 255 out of the list!\n
+    Enter a single dash \'-\' in the field to disable check.]]>
+    </string>
+    <string name="Sockets">Sockets</string>
+    <string name="info_Autoshutdown_Sockets">Socket number to check for activity.</string>
+    <string name="ULDL_Rate">ULDL Rate</string>
+    <string name="info_Autoshutdown_ULDLRate">Define the network traffic in kB/s</string>
+    <string name="Load_Average">Load Average</string>
+    <string name="info_Autoshutdown_LoadAverage">If the load average of the server is above this value, then no shutdown. Example: 50 means a loadaverage of 0.50, 8 means a loadaverage of 0.08, 220 means a loadaverage of 2.20</string>
+    <string name="HDDIO_Rate">HDDIO_Rate</string>
+    <string name="info_Autoshutdown_HDDIORate">If the HDD-IO-average of the server is above this value, then no shutdown.</string>
+    <string name="Check_smbstatus">Check smbstatus</string>
+    <string name="info_Autoshutdown_Checksmbstatus">Check smbstatus for connected clients.</string>
+    <string name="Check_Users">Check Users</string>
+    <string name="info_Autoshutdown_CheckUsers">Check for connected users.</string>
+    <string name="Log_to_Syslog">Log to Syslog</string>
+    <string name="info_Autoshutdown_LogToSyslog">Write log informations to system logs.</string>
+    <string name="Verbose">Verbose</string>
+    <string name="info_Autoshutdown_Verbose">Verbose mode.</string>
+    <string name="Fake">Fake</string>
+    <string name="info_Autoshutdown_Fake">Fake/Test mode.</string>
+    <string name="Extra_Options">Extra Options</string>
+    <string name="title_activity_smart">S.M.A.R.T</string>
+    <string name="action_smart">S.M.A.R.T</string>
+    <string name="Check_interval">Check interval</string>
+    <string name="info_Smart_CheckInterval">Sets the interval between disk checks to N seconds, logging S.M.A.R.T. errors and changes of S.M.A.R.T. attributes.</string>
+    <string name="Power_mode">Power mode</string>
+    <string name="info_Smart_Powermode">Prevent a disk from being spun-up when it is periodically polled.\n
+        •\tNever - Poll (check) the device regardless of its power mode. This may cause a disk which is spun-down to be spun-up when it is checked.\n
+        •\tSleep - Check the device unless it is in SLEEP mode.\n
+        •\tStandby - Check the device unless it is in SLEEP or STANDBY mode. In these modes most disks are not spinning, so if you want to prevent a disk from spinning up each poll, this is probably what you want.\n
+        •\tIdle - Check the device unless it is in SLEEP, STANDBY or IDLE mode. In the IDLE state, most disks are still spinning, so this is probably not what you want.
+    </string>
+    <string name="Temp_monitoring">Temperature monitoring</string>
+    <string name="Difference">Difference</string>
+    <string name="info_Smart_Difference">Report if the temperature had changed by at least N degrees Celsius since last report. Set to 0 to disable this report.</string>
+    <string name="Informal">Informal</string>
+    <string name="info_Smart_Informal">Report if the temperature is greater or equal than N degrees Celsius. Set to 0 to disable this report.</string>
+    <string name="Critical">Critical</string>
+    <string name="info_Smart_Critical">Report if the temperature is greater or equal than N degrees Celsius. Set to 0 to disable this report.</string>
+    <string name="Power_Mode">Power mode</string>
+    <string name="title_activity_add_edite_scheduled_test">Scheduled Test</string>
+    <string name="Device">Device</string>
+    <string name="Type">Type</string>
+    <string name="edite_Scheduled">Edite Scheduled</string>
+    <string name="plzClickMe">It is a free application, think about clicking on an advertisement sometimes to say thanks ;).</string>
 
 </resources>

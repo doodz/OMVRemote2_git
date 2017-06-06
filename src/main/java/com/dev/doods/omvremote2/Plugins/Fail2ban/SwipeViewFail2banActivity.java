@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 
 import com.dev.doods.omvremote2.R;
+import com.dev.doods.omvremote2.Storage.Smart.SmartDevicesFragment;
+import com.dev.doods.omvremote2.Storage.Smart.SmartScheduledTestsFragment;
+import com.dev.doods.omvremote2.Storage.Smart.SmartSettingsFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,5 +43,6 @@ public class SwipeViewFail2banActivity extends SwipeViewBaseActivity {
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),titles,items);
     }
+
 
 }

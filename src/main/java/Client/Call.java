@@ -16,5 +16,5 @@ public interface  Call {
 
     boolean isCanceled();
 
-    Response execute() throws IOException, MovedPermanentlyException;
+    Response execute() throws IOException, MovedPermanentlyException, HttpPageException;
 }

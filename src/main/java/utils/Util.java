@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.android.internal.util.Predicate;
 import com.google.gson.Gson;
@@ -247,5 +248,15 @@ public  class Util {
             }
         }
         return false;
+    }
+
+    public static void SetInteger(EditText view, int val)
+    {
+        view.setText(Integer.toString(val));
+    }
+
+    public static int GetInteger(EditText view)
+    {
+        return Integer.parseInt(view.getText().toString());
     }
 }

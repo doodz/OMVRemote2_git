@@ -1,4 +1,4 @@
-package Models;
+package com.dev.doods.omvremote2.Storage.FileSystems;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -1,4 +1,4 @@
-package com.dev.doods.omvremote2;
+package com.dev.doods.omvremote2.Storage;
 
 import android.graphics.Color;
 import android.net.Uri;
@@ -11,6 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.TextView;
+
+import com.dev.doods.omvremote2.R;
+
 import org.acra.ACRA;
 
 import Interfaces.OnFragmentInteractionListener;

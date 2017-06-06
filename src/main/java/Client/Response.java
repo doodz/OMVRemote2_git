@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
@@ -74,7 +75,7 @@ public class Response{
     }
     public JsonElement GetJsonError()
     {
-        if(mJsonResponse == null)
+        if(mJsonResponse == null || mJsonResponse instanceof JsonNull)
         {
             Log.i("Response","Response is null");
             Errors objNUll = new Errors();

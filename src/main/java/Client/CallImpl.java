@@ -37,7 +37,7 @@ public class CallImpl implements Call {
         return isCanceled();
     }
 
-    @Override public Response execute() throws IOException, MovedPermanentlyException {
+    @Override public Response execute() throws IOException, MovedPermanentlyException,HttpPageException {
 
         //only allow one thread at a time
         synchronized (this) {
