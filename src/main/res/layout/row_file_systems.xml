@@ -56,11 +56,18 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/LayoutSizeUsed"
             android:layout_marginLeft="10dp"
             android:layout_weight="0.5"
             android:orientation="horizontal"
@@ -86,26 +93,13 @@
             android:layout_height="wrap_content"
             android:text="Used size"/>
         </LinearLayout>
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/scheduledTest"
-            android:layout_width="30dp"
-            android:layout_height="@dimen/ic_album_overflow_height"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:foregroundGravity="right"
-            android:layout_gravity="right"
-            android:layout_below="@id/thumbnail"
-            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_schedule_black_24dp"  />
     </LinearLayout>
-
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <LinearLayout
+
                 android:layout_marginLeft="10dp"
                 android:layout_weight="0.5"
                 android:orientation="horizontal"
@@ -118,6 +112,7 @@
                     android:id="@+id/ColorAvailable"
                     android:background="@color/colorOMV"/>
                 <TextView
+                    android:id="@+id/textAvailable"
                     android:layout_marginLeft="10dp"
                     android:textSize="20dp"
                     android:layout_width="wrap_content"
@@ -130,18 +125,21 @@
                     android:layout_height="wrap_content"
                     android:text="Available size"/>
             </LinearLayout>
-        <ImageView
-            android:id="@+id/overflow"
-            android:layout_width="30dp"
-            android:layout_height="@dimen/ic_album_overflow_height"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:foregroundGravity="right"
-            android:layout_gravity="right"
-            android:layout_below="@id/thumbnail"
-            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_more_vert_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/overflow"
+                    android:layout_width="30dp"
+                    android:layout_height="@dimen/ic_album_overflow_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:foregroundGravity="right"
+                    android:layout_gravity="right"
+                    android:layout_below="@id/thumbnail"
+                    android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
+        </LinearLayout>
+
         </LinearLayout>
 </LinearLayout>
 

@@ -166,7 +166,7 @@ public class AutoshutdownActivity extends AppCompatBaseActivity {
             swithCheckSmbstatus.setChecked(false);
         if(Settings.getCheckcli() == null)
         {
-            swithCheckUsers.setChecked(Settings.getCheckcli());
+            swithCheckUsers.setChecked(false);
             swithCheckUsers.setEnabled(false);
         }
         else

@@ -41,11 +41,16 @@ public class Wol {
         return bytes;
     }
 
-    public static void wakeup(String serveurIP,final String mac, int port) {
+    public static void wakeup(String serveurIP,final String mac, int port) throws IOException {
+
+
+
         if (mac == null) {
             return;
         }
-
+        MagicPacket.send(mac.trim(),serveurIP.trim(),port);
+        return;
+        /*
         try {
             byte[] macBytes = getMacBytes(mac.replace(":",""));
             byte[] bytes = new byte[6 + 16 * macBytes.length];
@@ -85,7 +90,7 @@ public class Wol {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        */
     }
 
     private static InetAddress getBroadcast(InetAddress inetAddr) {

@@ -58,4 +58,40 @@ public class DisckController extends Abstractcontroller {
         }
     }
 
+
+    public void mount(String devicefile,Callback callBack)
+    {
+        try {
+            JSONRPCParamsBuilder params = new JSONRPCParamsBuilder();
+            //set parameters
+            params.setService("FileSystemMgmt");
+            params.setMethod("mount");
+            params.addParam("fstab", "mTrue");
+            params.addParam("id",devicefile);
+
+            this.enqueue(params,callBack);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void umount(String devicefile,Callback callBack)
+    {
+        try {
+            JSONRPCParamsBuilder params = new JSONRPCParamsBuilder();
+            //set parameters
+            params.setService("FileSystemMgmt");
+            params.setMethod("umount");
+            params.addParam("fstab", "mTrue");
+            params.addParam("id",devicefile);
+
+            this.enqueue(params,callBack);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

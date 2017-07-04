@@ -619,6 +619,8 @@ public class JSONRPCClient implements Runnable {
 
             bmp = BitmapFactory.decodeStream(in);
 
+            String str = urlConnection.getResponseMessage();
+
             int responseCode = urlConnection.getResponseCode();
             if (responseCode == HttpsURLConnection.HTTP_OK)
             {

@@ -9,4 +9,12 @@
         android:id="@+id/action_show_statistics"
         android:orderInCategory="101"
         android:title="@string/action_show_statistics" />
+    <item
+        android:id="@+id/action_device_mount"
+        android:orderInCategory="102"
+        android:title="@string/mount" />
+    <item
+        android:id="@+id/action_device_umount"
+        android:orderInCategory="103"
+        android:title="@string/umount" />
 </menu>

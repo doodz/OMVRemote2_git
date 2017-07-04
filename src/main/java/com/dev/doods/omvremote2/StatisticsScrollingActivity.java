@@ -15,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.dev.doods.omvremote2.Plugins.Sensors.FilterStatisticsSensorsDialogFragment;
+import com.dev.doods.omvremote2.Plugins.Sensors.SensorsController;
+import com.dev.doods.omvremote2.Plugins.Sensors.SensorsSettings;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -27,9 +30,13 @@ import Client.Callback;
 import Client.CallbackImpl;
 import Client.Response;
 import Controllers.DaignostiquesSystemeController;
+import Controllers.NetworkController;
 import Interfaces.NoticeDialogListener;
 import Interfaces.OutputListener;
+import Models.Certificate;
 import Models.Errors;
+import Models.Interface;
+import Models.Result;
 import Models.StatisticItem;
 import OMV.Base.AppCompatBaseActivity;
 import OMVFragment.Dialogs.FilterPluginDialogFragment;
@@ -42,7 +49,8 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
 
     private String mUuid;
     private DaignostiquesSystemeController mController = new DaignostiquesSystemeController(this);
-    //private OutputController mOutputController = new OutputController(this);
+    private NetworkController mNetworkController = new NetworkController(this);
+    private SensorsController mSensorsController = new SensorsController(this);
 
     private RecyclerView recyclerView;
     private StatisticItemAdapter adapter;
@@ -54,6 +62,9 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
         setContentView(R.layout.activity_cpu_usage_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
         //mOutputController.AddListener(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +74,7 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
 
                     @Override
                     public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                        super.onResponse(call,response);
                         final String filename =  response.GetResultObject(new TypeToken<String>(){});
                         mHandler.post(new Runnable(){
                             public void run() {
@@ -74,6 +86,10 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
                 });
             }
         });
+
+
+
+
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -98,7 +114,19 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
             prepareStatisticItems(mUuid);
         }
         else
-        prepareStatisticItems();
+            mNetworkController.getInterfaceList(new CallbackImpl(this){
+                @Override
+                public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                    super.onResponse(call,response);
+                    final Result<Interface> res = response.GetResultObject(new TypeToken<Result<Interface>>(){});
+                    mHandler.post(new Runnable(){
+                        public void run() {
+                            prepareStatisticItems(res.getData());
+                        }
+                    });
+                }
+            });
+
     }
 
     private OutputDialogFragment mOutputDialogFragment;
@@ -142,7 +170,7 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
         adapter.notifyDataSetChanged();
     }
 
-    private void prepareStatisticItems()
+    private void prepareStatisticItems(List<Interface> interfaces)
     {
         SharedPreferences settings = getSharedPreferences(StatisticsScrollingActivity.PREFS_STATISTICS, 0);
         StatisticItem item;
@@ -168,6 +196,42 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
                         mStatisticItemList.add(item);
                     }
 
+
+        for (Interface inter: interfaces) {
+            if(settings.getBoolean("swithInterfaceHour",true)) {
+
+                String str = DaignostiquesSystemeController.Diagnostique_interface_xxxx_hour;
+                str = str.replace("xxxx",inter.getDevicename());
+                item = new StatisticItem(str);
+                mStatisticItemList.add(item);
+            }
+            if(settings.getBoolean("swithInterfaceDay",true)) {
+                String str = DaignostiquesSystemeController.Diagnostique_interface_xxxx_day;
+                str = str.replace("xxxx",inter.getDevicename());
+                item = new StatisticItem(str);
+                mStatisticItemList.add(item);
+            }
+            if(settings.getBoolean("swithInterfacesWeek",true)) {
+                String str = DaignostiquesSystemeController.Diagnostique_interface_xxxx_week;
+                str = str.replace("xxxx",inter.getDevicename());
+                item = new StatisticItem(str);
+                mStatisticItemList.add(item);
+            }
+            if(settings.getBoolean("swithInterfacesMonth",true)) {
+                String str = DaignostiquesSystemeController.Diagnostique_interface_xxxx_month;
+                str = str.replace("xxxx",inter.getDevicename());
+                item = new StatisticItem(str);
+                mStatisticItemList.add(item);
+            }
+            if(settings.getBoolean("swithInterfacesYear",true)) {
+                String str = DaignostiquesSystemeController.Diagnostique_interface_xxxx_year;
+                str = str.replace("xxxx",inter.getDevicename());
+                item = new StatisticItem(str);
+                mStatisticItemList.add(item);
+            }
+        }
+
+        /*
         if(settings.getBoolean("swithInterfaceHour",true)) {
             item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_interface_eth0_hour);
             mStatisticItemList.add(item);
@@ -188,7 +252,7 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
                             item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_interface_eth0_year);
                             mStatisticItemList.add(item);
                         }
-
+*/
         if(settings.getBoolean("swithLoadAverageHour",true)) {
             item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_load_average_hour);
             mStatisticItemList.add(item);
@@ -231,7 +295,137 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
                             mStatisticItemList.add(item);
                         }
         adapter.notifyDataSetChanged();
+        mSensorsController.getSettings(new CallbackImpl(StatisticsScrollingActivity.this) {
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                super.onResponse(call,response);
+                final SensorsSettings settings =  response.GetResultObject(new TypeToken<SensorsSettings>(){});
+                mHandler.post(new Runnable(){
+                    public void run() {
+                        //mOutputController.IsRunningFile(filename);
+                        AddSensors(settings);
+                    }
+                });
+            }
+        });
+
     }
+
+    private Boolean Sensorsplugin = false;
+    private void AddSensors(SensorsSettings settings2) {
+        Sensorsplugin = false;
+
+        if (settings2 == null) {
+            adapter.notifyDataSetChanged();
+            HideSensors();
+            return;
+        }
+        Sensorsplugin = true;
+
+        SharedPreferences settings = getSharedPreferences(StatisticsScrollingActivity.PREFS_STATISTICS, 0);
+        StatisticItem item;
+        if (settings2.getCpuenable()) {
+
+            //Cpu Temps
+            if (settings.getBoolean("swithSensorsCpuHourDay", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sensors_hour);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithSensorsCpuHourWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sensors_day);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithSensorsCpuHourWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sensors_week);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithSensorsCpuHourWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sensors_month);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithSensorsCpuHourWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sensors_year);
+                mStatisticItemList.add(item);
+            }
+        }
+        if (settings2.getMbtemp()) {
+            //MotherBoard Temp
+
+
+            if (settings.getBoolean("swithMotherBoardWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_mb_hour);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithMotherBoardWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_mb_day);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithMotherBoardWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_mb_week);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithMotherBoardWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_mb_month);
+                mStatisticItemList.add(item);
+            }
+            if (settings.getBoolean("swithMotherBoardWeek", true)) {
+                item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_mb_year);
+                mStatisticItemList.add(item);
+            }
+        }
+        if (settings2.getCpufanenable()) {
+            //CPU fan speed
+
+
+        if (settings.getBoolean("swithCPUFanSpeedWeek", true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_fan_hour);
+            mStatisticItemList.add(item);
+        }
+        if (settings.getBoolean("swithCPUFanSpeedWeek", true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_fan_day);
+            mStatisticItemList.add(item);
+        }
+        if (settings.getBoolean("swithCPUFanSpeedWeek", true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_fan_week);
+            mStatisticItemList.add(item);
+        }
+        if (settings.getBoolean("swithCPUFanSpeedWeek", true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_fan_month);
+            mStatisticItemList.add(item);
+        }
+        if (settings.getBoolean("swithCPUFanSpeedWeek", true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_fan_year);
+            mStatisticItemList.add(item);
+        }
+    }
+        if(settings2.getSysfanenable()) {
+            //SYS fan speed
+
+        if(settings.getBoolean("swithSYSFanSpeedWeek",true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sys_hour);
+            mStatisticItemList.add(item);
+        }
+        if(settings.getBoolean("swithSYSFanSpeedWeek",true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sys_day);
+            mStatisticItemList.add(item);
+        }
+        if(settings.getBoolean("swithSYSFanSpeedWeek",true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sys_week);
+            mStatisticItemList.add(item);
+        }
+        if(settings.getBoolean("swithSYSFanSpeedWeek",true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sys_month);
+            mStatisticItemList.add(item);
+        }
+        if(settings.getBoolean("swithSYSFanSpeedWeek",true)) {
+            item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_sys_year);
+            mStatisticItemList.add(item);
+        }
+        }
+        adapter.notifyDataSetChanged();
+    }
+
 
     @Override
     public void OnFinich() {
@@ -239,7 +433,18 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
         if(mUuid != null)
             prepareStatisticItems(mUuid);
         else
-            prepareStatisticItems();
+            mNetworkController.getInterfaceList(new CallbackImpl(this){
+                @Override
+                public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                    super.onResponse(call,response);
+                    final Result<Interface> res = response.GetResultObject(new TypeToken<Result<Interface>>(){});
+                    mHandler.post(new Runnable(){
+                        public void run() {
+                            prepareStatisticItems(res.getData());
+                        }
+                    });
+                }
+            });
     }
 
     @Override
@@ -255,8 +460,18 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.plugins, menu);
+        mMenu = menu;
+            getMenuInflater().inflate(R.menu.menu_sensors, menu);
+
         return true;
+    }
+
+    private Menu mMenu;
+
+    private void HideSensors()
+    {
+        MenuItem item = mMenu.getItem(1);
+        item.setVisible(false);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -271,7 +486,18 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
             return true;
         }
 
+        if (id == R.id.action_sensors_settings) {
+            showDialogSensors();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDialogSensors()
+    {
+        DialogFragment dialog = new FilterStatisticsSensorsDialogFragment();
+        dialog.show(getSupportFragmentManager(), "FilterStatisticsSensorsDialogFragment");
     }
 
     private void showDialog()
@@ -287,7 +513,18 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
         if(mUuid != null)
             prepareStatisticItems(mUuid);
         else
-            prepareStatisticItems();
+            mNetworkController.getInterfaceList(new CallbackImpl(this){
+                @Override
+                public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                    super.onResponse(call,response);
+                    final Result<Interface> res = response.GetResultObject(new TypeToken<Result<Interface>>(){});
+                    mHandler.post(new Runnable(){
+                        public void run() {
+                            prepareStatisticItems(res.getData());
+                        }
+                    });
+                }
+            });
 
     }
 

@@ -33,13 +33,14 @@ public class SmartSettings {
     @SerializedName("tempcrit")
     @Expose
     private Integer tempcrit;
+    /*
     @SerializedName("monitor")
     @Expose
     private Monitor monitor;
     @SerializedName("scheduledtests")
     @Expose
     private Scheduledtests scheduledtests;
-
+    */
     public Boolean getEnable() {
         return enable;
     }
@@ -88,6 +89,7 @@ public class SmartSettings {
         this.tempcrit = tempcrit;
     }
 
+    /*
     public Monitor getMonitor() {
         return monitor;
     }
@@ -103,7 +105,7 @@ public class SmartSettings {
     public void setScheduledtests(Scheduledtests scheduledtests) {
         this.scheduledtests = scheduledtests;
     }
-
+*/
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
@@ -111,7 +113,7 @@ public class SmartSettings {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(enable).append(interval).append(powermode).append(tempdiff).append(tempinfo).append(tempcrit).append(monitor).append(scheduledtests).toHashCode();
+        return new HashCodeBuilder().append(enable).append(interval).append(powermode).append(tempdiff).append(tempinfo).append(tempcrit)/*.append(monitor).append(scheduledtests)*/.toHashCode();
     }
 
     @Override
@@ -123,7 +125,7 @@ public class SmartSettings {
             return false;
         }
         SmartSettings rhs = ((SmartSettings) other);
-        return new EqualsBuilder().append(enable, rhs.enable).append(interval, rhs.interval).append(powermode, rhs.powermode).append(tempdiff, rhs.tempdiff).append(tempinfo, rhs.tempinfo).append(tempcrit, rhs.tempcrit).append(monitor, rhs.monitor).append(scheduledtests, rhs.scheduledtests).isEquals();
+        return new EqualsBuilder().append(enable, rhs.enable).append(interval, rhs.interval).append(powermode, rhs.powermode).append(tempdiff, rhs.tempdiff).append(tempinfo, rhs.tempinfo).append(tempcrit, rhs.tempcrit)/*.append(monitor, rhs.monitor).append(scheduledtests, rhs.scheduledtests)*/.isEquals();
     }
 
 }

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dev.doods.omvremote2.R;
@@ -21,9 +22,16 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.data.PieDataSet;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Client.Call;
+import Client.Callback;
+import Client.Response;
+import Interfaces.IUpdateActivity;
+import Models.Errors;
+import utils.CheckDirty;
 import utils.Util;
 
 /**
@@ -34,10 +42,10 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
 
     private Context mContext;
     private List<FileSystem> mFileSystemList;
-
+    private DisckController mController;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView overflow;
-        public ImageView scheduledTest;
+        //public ImageView scheduledTest;
         public TextView devicefile;
         public TextView available_size;
         public TextView used_size;
@@ -46,6 +54,11 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
         public PieChart pieChartFileSystems;
         public ImageView colorAvailable;
         public ImageView colorUsed;
+
+        public LinearLayout LayoutSizeUsed;
+        public ImageView ColorAvailable;
+        public TextView textAvailable;
+        //public TextView deviceNoMounted;
 
         public MyViewHolder(View view) {
             super(view);
@@ -59,12 +72,18 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
             colorUsed = (ImageView) view.findViewById(R.id.ColorUsed);
             pieChartFileSystems = (PieChart) view.findViewById(R.id.PieChartFileSystems);
 
+            LayoutSizeUsed =(LinearLayout) view.findViewById(R.id.LayoutSizeUsed);
+            //deviceNoMounted = (TextView) view.findViewById(R.id.deviceNoMounted);
+
             overflow = (ImageView) view.findViewById(R.id.overflow);
-            scheduledTest= (ImageView) view.findViewById(R.id.scheduledTest);
+            //scheduledTest= (ImageView) view.findViewById(R.id.scheduledTest);
+            ColorAvailable = (ImageView) view.findViewById(R.id.ColorAvailable);
+            textAvailable = (TextView) view.findViewById(R.id.textAvailable);
         }
     }
-    public FileSystemsAdapter(Context mContext, List<FileSystem> fileSystemList) {
+    public FileSystemsAdapter(Context mContext,DisckController controller, List<FileSystem> fileSystemList) {
         this.mContext = mContext;
+        this.mController = controller;
         this.mFileSystemList = fileSystemList;
     }
 
@@ -142,6 +161,23 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
                 showPopupMenu(holder.overflow,position);
             }
         });
+
+
+        if(data.getMounted())
+        {
+            //holder.sizeLayout.setVisibility(View.VISIBLE);
+            //holder.deviceNoMounted.setVisibility(View.GONE);
+            holder.LayoutSizeUsed.setVisibility(View.VISIBLE);
+            holder.ColorAvailable.setVisibility(View.VISIBLE);
+            holder.textAvailable.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            holder.LayoutSizeUsed.setVisibility(View.GONE);
+            holder.ColorAvailable.setVisibility(View.GONE);
+            holder.textAvailable.setVisibility(View.GONE);
+            holder.available_size.setText(mContext.getString(R.string.device_no_mounted));
+        }
     }
 
     /**
@@ -152,6 +188,13 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
         PopupMenu popup = new PopupMenu(mContext, view);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.menu_filesystem_card, popup.getMenu());
+
+        FileSystem data = mFileSystemList.get(position);
+
+        Boolean b = !data.getMounted() && !data.getUsed();
+        popup.getMenu().getItem(2).setVisible(b);
+        b = data.getMounted() && !data.getUsed();
+        popup.getMenu().getItem(3).setVisible(b);
         popup.setOnMenuItemClickListener(new FileSystemsAdapter.MyMenuItemClickListener(position));
         popup.show();
     }
@@ -196,10 +239,55 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
                 mContext.startActivity(intent);
                 return true;
             }
+            else if(menuItem.getItemId() ==R.id.action_device_mount)
+            {
+                FileSystem data = mFileSystemList.get(mPosition);
+                String str = data.getDevicefile();
+
+                mController.mount(str, new Callback() {
+                    @Override
+                    public void onFailure(Call call, Exception e) {
+
+                    }
+
+                    @Override
+                    public void OnOMVServeurError(Call call, Errors error) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                        new CheckDirty(mController.GetActivity()).Check();
+                        ((IUpdateActivity)mContext).update();
+                    }
+                });
+                return true;
+            }
+            else if(menuItem.getItemId() ==R.id.action_device_umount)
+            {
+                FileSystem data = mFileSystemList.get(mPosition);
+                String str = data.getDevicefile();
+                mController.umount(str, new Callback() {
+                    @Override
+                    public void onFailure(Call call, Exception e) {
+
+                    }
+
+                    @Override
+                    public void OnOMVServeurError(Call call, Errors error) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException, InterruptedException {
+                        new CheckDirty(mController.GetActivity()).Check();
+                        ((IUpdateActivity)mContext).update();
+                    }
+                });
+                return true;
+            }
             else if(menuItem.getItemId() ==R.id.action_delete)
             {
-
-
                 return true;
             }
             else

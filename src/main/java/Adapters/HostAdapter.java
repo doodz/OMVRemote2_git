@@ -121,8 +121,24 @@ public class HostAdapter   extends RecyclerView.Adapter<HostAdapter.MyViewHolder
                     Snackbar.make(mView, mContext.getString(R.string.no_mac), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
-                else
-                    Wol.wakeup(h.getAddr(),h.getMacAddr(),h.getPort());
+                else {
+                    try {
+                        Wol.wakeup(h.getAddr(), h.getMacAddr(), h.getWolport());
+
+                    }catch(IllegalArgumentException iae) {
+                        Snackbar.make(mView, mContext.getString(R.string.send_failed)+":\n"+iae.getMessage(), Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                        return false;
+
+                    }catch(Exception e) {
+                        Snackbar.make(mView, mContext.getString(R.string.send_failed)+":\n"+e.getMessage(), Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+
+                        return false;
+                    }
+
+
+                }
 
                 return true;
             }

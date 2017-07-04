@@ -592,5 +592,10 @@
     <string name="Type">Type</string>
     <string name="edite_Scheduled">Edite Scheduled</string>
     <string name="plzClickMe">It is a free application, think about clicking on an advertisement sometimes to say thanks ;).</string>
+    <string name="action_settings_sensors">Sensors settings</string>
+    <string name="mount">Mount</string>
+    <string name="umount">Umount</string>
+    <string name="device_no_mounted">Your device is not mounted</string>
+    <string name="send_failed">Send failed</string>
 
 </resources>
