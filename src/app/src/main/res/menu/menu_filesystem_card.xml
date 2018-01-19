@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_show_shared_folders"
+        android:orderInCategory="100"
+        android:title="@string/action_show_shared_folders" />
+
+    <item
+        android:id="@+id/action_show_statistics"
+        android:orderInCategory="101"
+        android:title="@string/action_show_statistics" />
+    <item
+        android:id="@+id/action_device_mount"
+        android:orderInCategory="102"
+        android:title="@string/mount" />
+    <item
+        android:id="@+id/action_device_umount"
+        android:orderInCategory="103"
+        android:title="@string/umount" />
+</menu>

@@ -1,0 +1,486 @@
+<resources>
+    <string name="app_name">OMVRemote base</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_user">User</string>
+    <string name="prompt_website">(host) 127.0.0.1</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_update">UpdateActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+
+
+    <string name="short_description">Application who quickly manage openmediavault.</string>
+    <string name="full_description">This application aims to control OMV directly with its smartphone.</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">OMV Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_packages_infomation">Package Infomation</string>
+    <string name="title_activity_file_systems">File Systems</string>
+    <string name="title_activity_plugins">Plugins</string>
+    <string name="title_activity_omv_extras">OMV-extras.org</string>
+    <string name="title_activity_web_administration">Web Administration</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_host_manager">Host Manager</string>
+    <string name="title_activity_omvsystem">OMV System</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--<string name="crash_toast_text">Send to dev by mail</string> -->
+    <string name="title_activity_services">Services</string>
+
+    <string name="crash_toast_text">Ooooops ! I crashed, but a report has been sent to my developer to help fix the issue !</string>
+
+    <string name="crash_dialog_title">CrashTest has crashed</string>
+    <string name="crash_dialog_text">An unexpected error occurred forcing the
+    application to stop. Please help us fix this by sending us error data,
+    all you have to do is click OK.</string>
+    <string name="crash_dialog_comment_prompt">You might add your comments about the problem below:</string>
+    <string name="crash_dialog_ok_toast">Thank you !</string>
+    <string name="SharedFolder">SharedFolder</string>
+    <string name="SharedFolderName">Shared folder name</string>
+    <string name="Comment">Comment</string>
+    <string name="Yes_no">yes / no</string>
+    <string name="Public">Public</string>
+    <string name="ReadOnly">ReadOnly</string>
+    <string name="Browsable">Browsable</string>
+    <string name="Client">Client</string>
+    <string name="Option">Option</string>
+    <string name="Options">Options</string>
+    <string name="SecurityLevel">Security level</string>
+    <string name="AuthentificationType">Authentification type</string>
+    <string name="PrivacyType">Privacy type</string>
+    <string name="title_activity_shared_folders">Shared Folders</string>
+    <string name="ClearAcl">Clear ACLs</string>
+    <string name="prompt_Name">name</string>
+    <string name="action_name">name</string>
+    <string name="prompt_Path">path</string>
+    <string name="action_path">path</string>
+    <string name="prompt_Comment">Comment</string>
+    <string name="action_comment">comment</string>
+    <string name="title_activity_add_edite_shared_folder">Shared folder</string>
+    <string name="you_want_send_logs">You want send a report without any Exception , just because you know that this application is in an unexpected state. So push the button</string>
+    <string name="edite_folder">Edite shared folder</string>
+    <string name="No_OMV_Extra">OMVEXTRA is not installed. Please visite website</string>
+    <string name="dialog_delete_item">Do you really want to delete the selected item?</string>
+    <string name="dialog_delete_Content">Do you want to remove the content of the shared folder recursively? The shared folder content will be permanently removed and cannot be recovered. Select \'No\' to delete the shared folder configuration only or \'Cancel\' to abort.</string>
+    <string name="_no">No</string>
+    <string name="_yes">Yes</string>
+    <string name="_cancel">Cancel</string>
+    <string name="InstalledKernels">Installed kernels</string>
+    <string name="Set_as_default_boot_kernel">Set as default boot kernel</string>
+    <string name="NotesKernel">Setting the wrong default boot kernel may cause the system to be inaccessible.The boot menu will still be available to select a different kernel.
+        \nInstalling the backports kernel with not uninstall the standard kernel.
+        \nIf the system does not boot using the backports kernel, the boot menu will still have the option to boot the standard kernel.</string>
+    <string name="install_Backports_kernel">Intall backports kernel</string>
+    <string name="install_Headers_kernel">Install kernel headers</string>
+    <string name="title_activity_OMV_ExtraSettingsActivity">OMV-Extra settings</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_omv__extra_settings_tabbed">OMV-Extra.org Settings</string>
+    <string name="action_add_custom_repo">Add custom repo</string>
+    <string name="action_repo">Repo</string>
+    <string name="action_key">Key</string>
+    <string name="action_power">power</string>
+    <string name="action_reboot">reboot</string>
+    <string name="action_standby">standby</string>
+    <string name="action_shutdown">shutdown</string>
+    <string name="title_activity_cpu_usage_scrolling">CpuUsageScrollingActivity</string>
+    <string name="action_show_shared_folders">Manage Shared folders</string>
+    <string name="action_show_statistics">Show statistics</string>
+    <string name="title_activity_statistics_scrolling">Statistics</string>
+    <string name="action_wakeup">wakeup</string>
+    <string name="action_translate">translate</string>
+    <string name="action_click_translate">Click here for translate OMV Remote</string>
+    <string name="translate_url">https://www.getlocalization.com/OMV_REMOTE</string>
+    <string name="action_click_forum">Questions, requests for improvement? Please follow the link.</string>
+    <string name="Forum">forum</string>
+    <string name="snackbar_error_occurred">an error occurred!</string>
+    <string name="not_volumes">No available volumes</string>
+    <string name="title_activity_certificate">Certificates</string>
+    <string name="SSL">SSL</string>
+    <string name="SSH">SSH</string>
+    <string name="Used">used</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_update">Update</string>
+    <string name="nav_disk">File Systems</string>
+    <string name="nav_plugin">Plugin</string>
+    <string name="nav_extra">OMV-Extra</string>
+    <string name="nav_certificate">Certificates</string>
+    <string name="nav_host">Manage hosts</string>
+    <string name="nav_about">About</string>
+    <string name="action_add_certificate_ssh">add ssh certificate</string>
+    <string name="action_add_certificate_ssl">add ssl certificate</string>
+    <string name="select">select</string>
+    <string name="edite">edite</string>
+    <string name="delete">delete</string>
+    <string name="detail">detail</string>
+    <string name="not_implemented">not implemented</string>
+    <string name="title_activity_edite_certificate_ssh">Edite CertificateSsh</string>
+    <string name="certificate_is_used">certificate is used</string>
+    <string name="title_activity_edite_certificate">Edite Certificate</string>
+    <string name="Private_key">Private key</string>
+    <string name="Public_key">Public key</string>
+    <string name="Certificate">Certificate</string>
+    <string name="Omv_app_version">Omv app version :</string>
+    <string name="App_code_version">App code version :</string>
+    <string name="key_size">Key size</string>
+    <string name="RSA_key_length">The RSA key length</string>
+    <string name="period_validity">Period of validity</string>
+    <string name="day_certificate_valid">The number of days the certificate is valid for</string>
+    <string name="Common_name">Common Name</string>
+    <string name="Organisation_name">Organisation Name</string>
+    <string name="Organisation_unit">Organization Unit</string>
+    <string name="Organization_name">Organization Name</string>
+    <string name="Organization_unit">Organization Unit</string>
+    <string name="City">City</string>
+    <string name="State_Province">State / Province</string>
+    <string name="Country">Country</string>
+    <string name="Response_null">Can\'t read response</string>
+    <string name="action_back">back</string>
+    <string name="title_activity_logs">LogsActivity</string>
+    <string name="nav_logs">Logs</string>
+    <string name="Installed_Kernels">Installed Kernels</string>
+    <string name="Clonezilla">Clonezilla</string>
+    <string name="GParted_live">GParted live</string>
+    <string name="SystemRescueCD">SystemRescueCD</string>
+    <string name="Installed_Kernels_info">•\tSetting the wrong default boot kernel may cause the system to be inaccessible. The boot menu will still be available to select a different kernel.\n
+        •\tInstalling the backports kernel with not uninstall the standard kernel.\n
+        •\tInstalling the backports kernel and Proxmox kernel on the same system may cause problems.\n
+        •\tIf the system does not boot using the backports kernel, the boot menu will still have the option to boot the standard kernel.</string>
+    <string name="Clonezilla_info">•\tDownloads Clonezilla ISO and configures grub bootloader to allow booting from ISO.\n
+        •\tSSH server is enabled by default. Login with username: user and password: live\n
+        •\tWhen connecting via ssh, the ssh key will be different than the OpenMediaVault ssh key and need to be updated on the client system.\n
+        •\tIP Address will be set by DHCP. Using static DHCP is recommended for headless servers.\n
+        •\tWhen logging in remotely, start clonezilla with: sudo clonezilla\n
+        •\tISO uses approximately 139 Mb in /boot directory on OS drive.</string>
+    <string name="GParted_info">•\tDownloads GParted Live ISO and configures grub bootloader to allow booting from ISO.\n
+        •\tNot recommended for headless servers. SSH is not enabled by default.\n
+        •\tDefault username: user and password: live\n
+        •\tIP Address will be set by DHCP.\n
+        •\tISO uses approximately 219 Mb in /boot directory on OS drive.</string>
+    <string name="SystemRescueCD_info">•\tDownloads SystemRescuecd ISO and configures grub bootloader to allow booting from ISO.\n
+        •\tSSH server is enabled by default. Login with username: root and password: openmediavault\n
+        •\tWhen connecting via ssh, the ssh key will be different than the OpenMediaVault ssh key and need to be updated on the client system.\n
+        •\tIP Address will be set by DHCP. Using static DHCP is recommended for headless servers.\n
+        •\tISO uses approximately 381 Mb in /boot directory on OS drive.</string>
+    <string name="title_activity_cron">Cron</string>
+    <string name="Enable">Enable</string>
+    <string name="Time_Exec">Time of execution</string>
+    <string name="Minute">Minute</string>
+    <string name="EveryNMinute">Every N minute</string>
+    <string name="Hour">Hour</string>
+    <string name="EveryNHour">Every N hour</string>
+    <string name="DayMonth">Day of month</string>
+    <string name="EveryNDayMonth">Every N day of month</string>
+    <string name="Month">Month</string>
+    <string name="DayWeek">Day of week</string>
+    <string name="SendEmail">Send Email</string>
+    <string name="SendEmailInfoCron">Send command output via email\\r\\nAn email message with the command output (if any produced) is send to the user  who performs the job.</string>
+    <string name="User">User</string>
+    <string name="Command">Command</string>
+    <string name="Scheduling">Scheduling</string>
+    <string name="action_run">Run</string>
+    <string name="action_edite">Edite</string>
+    <string name="action_delete">Delete</string>
+    <string name="nav_cron">Scheduled Jobs</string>
+    <string name="title_activity_add_edite_cron">AddEditeCronActivity</string>
+    <string name="edite_Cron">Edite Cron</string>
+    <string name="ExcecCron">Execute cron job</string>
+    <string name="title_activity_login_by_step">LoginByStepActivity</string>
+    <string name="wizard_add_host">This wizard will guide you through the process of adding hosts to OMV Remote.</string>
+    <string name="wizard_check_host">Verify that the host to be added is turned on and connected to the network and / or properly configured for remote access.</string>
+    <string name="wizard_entering_ip">Start by entering the IP address of the host.</string>
+    <string name="wizard_entering_user">Entering your username and password (WebUi)</string>
+    <string name="wizard_entering_port">Entering port with you use webui. Default is 80 or if you have check secure connection default is 443.\\r\\n Please check SSL if you are un secure connection.</string>
+    <string name="wizard_entering_wol">The wol parameters are not required.</string>
+    <string name="Date">Date</string>
+    <string name="Time">Time</string>
+    <string name="Times_Servers">Times Servers</string>
+    <string name="manualDate">Manual Date</string>
+    <string name="title_activity_add_repo_v3">Add Repo</string>
+    <string name="Name">Name</string>
+    <string name="Repo1">Repo #1</string>
+    <string name="Repo">Repo</string>
+    <string name="Key">Key</string>
+    <string name="Package">Package</string>
+    <string name="Pin">Pin</string>
+    <string name="Priority">Priority</string>
+    <string name="Repo3">Repo #3</string>
+    <string name="Repo2">Repo #2</string>
+    <string name="Add_Repo">Add repo</string>
+    <string name="edite_Repo">Edite repo</string>
+    <string name="UpdateNow">Update now</string>
+    <string name="ApplyChanges">Apply changes</string>
+    <string name="ApplyChangesMessage">The configuration has been changed.You must apply the changes in order for then to take effect.</string>
+    <string name="title_activity_virtualbox">Virtualbox</string>
+    <string name="VMDirectoty">VM directory</string>
+    <string name="fixModulKernel">Fix module for backports kernels</string>
+    <string name="AdvancedConfig">Advenced configuration</string>
+    <string name="ShowTab">Show tab</string>
+    <string name="StatUpMode">Startup mode</string>
+    <string name="action_ACPI_shutdown">ACPI shutdown</string>
+    <string name="action_power_off_machine">Power off the machine</string>
+    <string name="action_Start">Start</string>
+    <string name="action_Pause">Pause</string>
+    <string name="action_Save_machine_state">Save the machine state</string>
+    <string name="action_Reset">Reset</string>
+    <string name="MovedPermanentlyException">You don\'t use the good port.</string>
+    <string name="send_logs">Send Logs</string>
+    <string name="fix_Error">Fix error</string>
+    <string name="SendFeedback">Send feedback</string>
+    <string name="send_logs_btn">logs from btn</string>
+    <string name="send">Send</string>
+    <string name="error_no_network_message">Your device is not connected to the internet.</string>
+    <string name="Update">Upgrade</string>
+    <string name="Upgrade">Upgrade</string>
+    <string name="Check">Check</string>
+    <string name="SelectAll">Select all</string>
+    <string name="widget_omv">Choose your OMV</string>
+    <string name="core_temp">CORE Temperature</string>
+    <string name="core_freq">CORE Frequency</string>
+    <string name="average_load">Average load</string>
+    <string name="used_memory">Used memory</string>
+    <string name="widget_auto_update">Automatic updates</string>
+    <string name="widget_update_interval">Update interval</string>
+    <string name="default_update_interval">60</string>
+    <string name="widget_configure_title">Configure widget</string>
+    <string name="widget_add_no_device">You need to add a OMV server in the app first.</string>
+
+    <string name="widget_update_interval_zero">Must be greater than zero.</string>
+    <string name="widget_update_interval_five_min">5 Minutes</string>
+    <string name="widget_update_interval_ten_min">10 Minutes</string>
+    <string name="widget_update_interval_thirty_min">30 Minutes</string>
+    <string name="widget_update_interval_one_hour">1 Hour</string>
+    <string name="widget_update_interval_two_hours">2 Hours</string>
+    <string name="widget_update_interval_eight_hours">8 Hours</string>
+    <string name="widget_update_interval_one_day">1 Day</string>
+    <string name="widget_update_interval_custom">Custom interval</string>
+    <string name="widget_update_interval_custom_text">Update interval (in minutes)</string>
+    <string name="widget_auto_update_yes">Yes</string>
+    <string name="widget_auto_update_wifi">Only on Wi-Fi</string>
+    <string name="widget_auto_update_no">No</string>
+    <string name="Save">Save</string>
+    <string name="widget_update_interval_error">Not a valid update interval.</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="widget_memory_header" translatable="false">RAM</string>
+    <string name="widget_load_header" translatable="false">LOAD</string>
+    <string name="widget_arm_header" translatable="false">ARM</string>
+    <string name="widget_temp_header" translatable="false">TEMP</string>
+    <string name="widget_no_read_permission">OMV remote has no permission to access the external storage. Can\\\'t update widget.</string>
+    <string name="widget_cpu_header">CPU</string>
+    <string name="widget_uptime_header">UPTIME</string>
+    <string name="Uptime">Uptime</string>
+    <string name="CPU_usage">CPU usage</string>
+    <string name="Reboot_send">Reboot send</string>
+    <string name="Shutdown_send">Shutdown send</string>
+    <string name="Standby_send">Standby send</string>
+    <string name="Wakeup_send">Wakup send</string>
+    <string name="Continue">Would you continue ?</string>
+    <string name="noUpdate">no update found. Use check for refresh.</string>
+    <string name="title_activity_ad_mob">AdMobActivity</string>
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="interstitial_ad_text">This interstitial ads is show just 1 time (no host detected).</string>
+    <string name="_welcome">Welcome to OMV remote app !</string>
+    <string name="_next_step">Next step will be configure the app for manage your OMV.</string>
+    <string name="title_activity_testthibactivity">Settings</string>
+    <string name="title_activity_bindable">Sign in</string>
+    <string name="no_mac">MAC Address !</string>
+    <string name="set_mac">Set MAC Address manualy ?</string>
+    <string name="title_activity_lets_encrypt">LetsEncryptActivity</string>
+    <string name="Schedule_Refresh">Schedule Refresh</string>
+    <string name="Test_Certificate">Test Certificate</string>
+    <string name="Info_letsEncrypt">Enable monthly update of certificate. This will create an entry in Scheduled Jobs.</string>
+    <string name="Info_Test_letsEncrypt">Do not enable until first certificate has been successfully generated. Once you have a certificate use this to avoid rate limit errors.</string>
+    <string name="Tips_letsEncrypt">Plugin uses the webroot installation method provided by Let\'s Encrypt. OMV configuration needs to be applied after generating certificate due to the plugin adding entries to certificates and scheduled jobs. If you generate your first certificate with the test flag enabled your certificate will have an invalid root cert from Happy Hacker. You will need to delete your /etc/letsencrypt folder and start over. Server Setup  Port 80 must be open for Let\'s Encrypt to verify your domain. Since the plugin only supports one webroot, use a reverse proxy to direct all of Let\'s Encrypt validation calls to yourdomain.tld/.well-known/acme-challenge/* to your configured webroot.</string>
+    <string name="info_LetsEncrypt_Domain">Domains the certificate will be generated for and must point to this server, e.g yourdomain.tld, sub.afraid.org. Wildcard (*) domains are not supported. Separate multiple (sub)domains with a comma (,) Adresse mail</string>
+    <string name="Adresse_Mail">Adresse Mail</string>
+    <string name="Domain">Domain</string>
+    <string name="info_LetsEncrypt_Mail">Required for registration with LetsEncrypt.org. This email address can be used to recover lost certificates.</string>
+    <string name="info_LetsEncrypt_WebRoot">The root directory of the files served by your internet facing webserver.</string>
+    <string name="WebRoot">WebRoot</string>
+    <string name="Saved">Saved</string>
+
+</resources>

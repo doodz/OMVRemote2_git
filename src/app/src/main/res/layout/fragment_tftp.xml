@@ -1,0 +1,131 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="OMVFragment.TFTPFragment">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithEnable"
+            android:text="Enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Port"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Port"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:text="Shared folder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerSharedFolder"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etBlocksize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blocksize"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Blocksize"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etRetryTimeout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Retry timeout"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Retry timeout"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithNewFiles"
+            android:text="Allow new files"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Extra options "
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Extra options"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="3"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,181 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="OMVFragment.OMVExtraKernelFragment"
+    xmlns:fab="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/InstalledKernels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/tvCertificate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/spinnerKernels" />
+        <Button
+            android:id="@+id/BtnSaveDefautKernel"
+            android:text="@string/Set_as_default_boot_kernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:text="@string/NotesKernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_marginTop="20dp"
+                android:text="Version :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="left"
+                android:layout_weight="0.5"
+                android:layout_marginTop="20dp"
+                android:text="Version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/KernelVersion"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.5"
+                android:text="Distribution :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="left"
+                android:layout_weight="0.5"
+
+                android:text="Distribution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/KernelDistribution"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.5"
+                android:text="Kernel :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="left"
+                android:layout_weight="0.5"
+
+                android:text="Kernel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/KernelName"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.5"
+                android:text="Architecture :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="left"
+                android:layout_weight="0.5"
+
+                android:text="Architecture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/KernelArchitecture"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.5"
+                android:text="Developer :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:gravity="left"
+                android:layout_weight="0.5"
+                android:text="Developer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/KernelDeveloper"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="53dp"
+        android:layout_marginRight="11dp"
+
+
+        fab:menu_fab_size="normal"
+        fab:menu_showShadow="true"
+        fab:menu_shadowColor="#66000000"
+        fab:menu_shadowRadius="4dp"
+        fab:menu_shadowXOffset="1dp"
+        fab:menu_shadowYOffset="3dp"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_icon="@drawable/fab_add"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_textColor="#FFFFFF"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_position="left"
+        fab:menu_openDirection="up"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_fab_label=""
+        fab:menu_colorNormal="@color/colorOMV"
+
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_Backports_kernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_box_black_24dp"
+            fab:fab_size="mini"
+            fab:fab_label="@string/install_Backports_kernel" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_Headers_kernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_box_black_24dp"
+            fab:fab_size="mini"
+            fab:fab_label="@string/install_Headers_kernel" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</FrameLayout>

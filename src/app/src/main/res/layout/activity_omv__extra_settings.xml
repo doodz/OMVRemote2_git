@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OMV_ExtraSettingsActivity"
+    tools:showIn="@layout/app_bar_omv_extra_settings"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:text="@string/InstalledKernels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/tvCertificate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/spinnerKernels" />
+    <Button
+        android:id="@+id/BtnSaveDefautKernel"
+        android:text="@string/Set_as_default_boot_kernel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:text="@string/NotesKernel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="0.5"
+            android:layout_marginTop="20dp"
+            android:text="Version :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="left"
+            android:layout_weight="0.5"
+            android:layout_marginTop="20dp"
+            android:text="Version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/KernelVersion"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="0.5"
+            android:text="Distribution :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="left"
+            android:layout_weight="0.5"
+
+            android:text="Distribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/KernelDistribution"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="0.5"
+            android:text="Kernel :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="left"
+            android:layout_weight="0.5"
+
+            android:text="Kernel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/KernelName"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="0.5"
+            android:text="Architecture :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="left"
+            android:layout_weight="0.5"
+
+            android:text="Architecture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/KernelArchitecture"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="0.5"
+            android:text="Developer :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:gravity="left"
+            android:layout_weight="0.5"
+            android:text="Developer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/KernelDeveloper"/>
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

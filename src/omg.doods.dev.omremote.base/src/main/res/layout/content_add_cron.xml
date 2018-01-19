@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_enable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/card_margin"
+                android:elevation="5dp"
+                card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                <Switch
+                    android:layout_margin="8dp"
+                    android:id="@+id/swithEnable"
+                    android:text="@string/Enable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_times"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/card_margin"
+                android:elevation="5dp"
+                card_view:cardCornerRadius="@dimen/card_album_radius">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/Time_Exec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerTimeExec"
+                        />
+
+                    <TextView
+                        android:text="@string/Minute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewMinute"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerMinute"
+                        />
+                    <Switch
+                        android:layout_margin="8dp"
+                        android:id="@+id/swithEveryNMinute"
+                        android:text="@string/EveryNMinute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+
+                    <TextView
+                        android:text="@string/Hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewHour"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerHour"
+                        />
+                    <Switch
+                        android:layout_margin="8dp"
+                        android:id="@+id/swithEveryNHour"
+                        android:text="@string/EveryNHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:text="@string/DayMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewDayMonth"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerDayMonth"
+                        />
+                    <Switch
+                        android:layout_margin="8dp"
+                        android:id="@+id/swithEveryNDayMonth"
+                        android:text="@string/EveryNDayMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:text="@string/Month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewMonth"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerMonth"
+                        />
+                    <TextView
+                        android:text="@string/DayWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textViewDayWeek"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerDayWeek"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_cmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/card_margin"
+                android:elevation="5dp"
+                card_view:cardCornerRadius="@dimen/card_album_radius">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/User"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinnerUser"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/etCommand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Command"
+                            android:imeActionId="@+id/etCommand"
+                            android:imeActionLabel="@string/Command"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="3"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_cmt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/card_margin"
+                android:elevation="5dp"
+                card_view:cardCornerRadius="@dimen/card_album_radius">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Switch
+                        android:layout_margin="8dp"
+                        android:id="@+id/swithEmail"
+                        android:text="@string/SendEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:text="@string/SendEmailInfoCron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/etComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Comment"
+                            android:imeActionId="@+id/etComment"
+                            android:imeActionLabel="@string/Comment"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="text"
+                            android:maxLines="3"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

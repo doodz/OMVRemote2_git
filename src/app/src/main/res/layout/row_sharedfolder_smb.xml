@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+       android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/SharedFolder"
+            android:text="@string/SharedFolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+
+            android:text=" - "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/SharedFolderName"
+            android:text="@string/SharedFolderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:switchPadding="10dp"
+            android:text="Enable"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center"
+            android:id="@+id/SwitchEnable" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <Switch
+            android:id="@+id/Public"
+            android:text="@string/Public"
+            android:layout_weight="0.33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:id="@+id/ReadOnly"
+            android:text="@string/ReadOnly"
+            android:layout_weight="0.33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:id="@+id/Browsable"
+            android:text="@string/Browsable"
+            android:layout_weight="0.33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/Comment"
+        android:text="@string/Comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

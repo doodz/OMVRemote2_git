@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CPU"
+                    android:layout_margin="5dp"/>
+
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSensorsCpuHour"
+                    android:text="@string/Hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSensorsCpuDay"
+                    android:text="@string/Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSensorsCpuWeek"
+                    android:text="@string/Week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSensorsCpuMonth"
+                    android:text="@string/Month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSensorsCpuYear"
+                    android:text="@string/Year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MotherBoard"
+                    android:layout_margin="5dp"/>
+
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithMotherBoardHour"
+                    android:text="@string/Hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithMotherBoardDay"
+                    android:text="@string/Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithMotherBoardWeek"
+                    android:text="@string/Week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithMotherBoardMonth"
+                    android:text="@string/Month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithMotherBoardYear"
+                    android:text="@string/Year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CPU Fan Speed"
+                    android:layout_margin="5dp"/>
+
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithCPUFanSpeedHour"
+                    android:text="@string/Hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithCPUFanSpeedDay"
+                    android:text="@string/Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithCPUFanSpeedWeek"
+                    android:text="@string/Week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithCPUFanSpeedMonth"
+                    android:text="@string/Month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithCPUFanSpeedYear"
+                    android:text="@string/Year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SYS Fan Speed"
+                    android:layout_margin="5dp"/>
+
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSYSFanSpeedHour"
+                    android:text="@string/Hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSYSFanSpeedDay"
+                    android:text="@string/Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSYSFanSpeedWeek"
+                    android:text="@string/Week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSYSFanSpeedMonth"
+                    android:text="@string/Month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithSYSFanSpeedYear"
+                    android:text="@string/Year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>

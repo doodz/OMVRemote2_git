@@ -1,0 +1,193 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="OMVFragment.SMBFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithEnable"
+            android:text="Enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etWorkgroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Workgroup"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Workgroup"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Description"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithLocalBrowser"
+            android:text="Local master browser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithTimeServer"
+            android:text="Time server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithUserHome"
+            android:text="User Home directories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithBrowsable"
+            android:text="Browseable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithWinsSupport"
+            android:text="WINS support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <EditText
+                android:id="@+id/etWINSServer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="WINS server"
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="WINS server"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:text="Log level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_weight="1" />
+
+        <Spinner
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerLogs"
+            android:layout_weight="1" />
+
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithNULLPasswords"
+            android:text="Null passwords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithUseSendfile"
+            android:text="Use sendfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Switch
+            android:layout_margin="8dp"
+            android:id="@+id/swithAsyncIO"
+            android:text="Asynchronous I/O"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <EditText
+                android:id="@+id/etOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Extra options "
+                android:imeActionId="@+id/etPort"
+                android:imeActionLabel="Extra options"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="3"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

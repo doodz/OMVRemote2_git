@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="OMVFragment.ResetPermissionsFragment"
+    android:orientation="vertical"
+    >
+
+    <Spinner
+        android:id="@+id/spinnerSharedFolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/spinnerPermissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Switch
+        android:id="@+id/SwithClearAcl"
+        android:text="@string/ClearAcl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

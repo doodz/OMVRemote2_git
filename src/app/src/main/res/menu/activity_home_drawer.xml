@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/nav_home"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_update"
+            android:icon="@android:drawable/stat_sys_upload_done"
+            android:title="@string/nav_update" />
+        <item
+            android:id="@+id/nav_disk"
+            android:icon="@drawable/ic_folder_black_24dp"
+            android:title="@string/nav_disk" />
+        <item
+        android:id="@+id/nav_plugin"
+        android:icon="@drawable/ic_add_box_black_24dp"
+        android:title="@string/nav_plugin" />
+        <item
+            android:id="@+id/nav_extra"
+            android:icon="@drawable/ic_power_black_24dp"
+            android:title="@string/nav_extra" />
+        <item
+            android:id="@+id/nav_certificate"
+            android:icon="@drawable/ic_https_black_24dp"
+            android:title="@string/nav_certificate" />
+        <item
+            android:id="@+id/nav_cron"
+            android:icon="@drawable/ic_schedule_black_24dp"
+            android:title="@string/nav_cron" />
+        <item
+            android:id="@+id/nav_logs"
+            android:icon="@drawable/ic_folder_black_24dp"
+            android:title="@string/nav_logs" />
+        <item
+            android:id="@+id/nav_Command"
+            android:icon="@drawable/ic_settings_remote_black_24dp"
+            android:title="@string/nav_Command" />
+    </group>
+
+  <item android:title="Administration">
+        <menu>
+            <item
+                android:id="@+id/nav_host"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/nav_host" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/nav_about" />
+        </menu>
+    </item>
+
+</menu>

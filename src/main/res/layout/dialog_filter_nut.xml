@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="8dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nut Charge"
+            android:layout_margin="5dp"/>
+
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutChargeHour"
+                android:text="@string/Hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        <Switch
+            android:layout_margin="5dp"
+            android:id="@+id/swithNutChargeDay"
+            android:text="@string/Day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutChargeWeek"
+                android:text="@string/Week"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutChargeMonth"
+                android:text="@string/Month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutChargeYear"
+                android:text="@string/Year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="8dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nut Load"
+                android:layout_margin="5dp"/>
+
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutloadHour"
+                android:text="@string/Hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutloadDay"
+                android:text="@string/Day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutloadWeek"
+                android:text="@string/Week"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutloadMonth"
+                android:text="@string/Month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutloadYear"
+                android:text="@string/Year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="8dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nut Temperature"
+                android:layout_margin="5dp"/>
+
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutTemperatureHour"
+                android:text="@string/Hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutTemperatureDay"
+                android:text="@string/Day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutTemperatureWeek"
+                android:text="@string/Week"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutTemperatureMonth"
+                android:text="@string/Month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <Switch
+                android:layout_margin="5dp"
+                android:id="@+id/swithNutTemperatureYear"
+                android:text="@string/Year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="8dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nut Voltage"
+                    android:layout_margin="5dp"/>
+
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithNutVoltageHour"
+                    android:text="@string/Hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithNutVoltageDay"
+                    android:text="@string/Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithNutVoltageWeek"
+                    android:text="@string/Week"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithNutVoltageMonth"
+                    android:text="@string/Month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+                <Switch
+                    android:layout_margin="5dp"
+                    android:id="@+id/swithNutVoltageYear"
+                    android:text="@string/Year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>

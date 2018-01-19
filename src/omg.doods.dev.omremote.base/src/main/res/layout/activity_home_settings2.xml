@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Port"
+            android:imeActionId="@+id/etPort"
+            android:imeActionLabel="Port"
+            android:imeOptions="actionUnspecified"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etTimeout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Session timeout"
+            android:imeActionId="@+id/etTimeout"
+            android:imeActionLabel="Session timeout"
+            android:imeOptions="actionUnspecified"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:text="The session timeout time in minutes. Set to 0 to disable automatic logout."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/tvTimeoutInfo"/>
+    <Switch
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tvEnableSSL"
+        android:layout_toRightOf="@+id/tvEnableSSL"
+        android:text="Enable secure connection."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swithEnableSSL" />
+    <Spinner
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/tvCertificate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/swithEnableSSL"
+        android:id="@+id/spinnerSertificates" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/etPortSSL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Port SSL"
+        android:imeActionId="@+id/etPortSSL"
+        android:imeActionLabel="Port SSL"
+        android:imeOptions="actionUnspecified"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+         />
+    </android.support.design.widget.TextInputLayout>
+    <Switch
+        android:id="@+id/swithForceSSL"
+        android:text="Force secure connection only."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/buttonSave" />
+
+</LinearLayout>

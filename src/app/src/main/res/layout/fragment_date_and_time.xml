@@ -1,0 +1,168 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.doods.base.Fragment.DateAndTimeFragment"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:elevation="6dp"
+        android:visibility="visible"
+        android:background="@color/white"
+        android:id="@+id/app_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|end"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:text="Current time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCurrentTime"/>
+        <TextView
+            android:text="Time zone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerTimeZone" />
+        <Switch
+            android:id="@+id/swithNTP"
+            android:text="Use NTP server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etServers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Times_Servers"
+                android:imeActionId="@+id/etServers"
+                android:imeActionLabel="@string/Times_Servers"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_Manual_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/manualDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Date"
+                    android:imeActionId="@+id/etDate"
+                    android:imeActionLabel="@string/Date"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Time"
+                    android:imeActionId="@+id/etTime"
+                    android:imeActionLabel="@string/Time"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:text="@string/UpdateNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/buttonUpdate" />
+
+        </LinearLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:clickable="true"
+        card_view:fabSize="normal"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="60dp"
+        card_view:srcCompat="@drawable/ic_save_black_24dp"
+        android:id="@+id/fab_Save" />
+</FrameLayout>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:padding="@dimen/widget_margin"
+    android:weightSum="1"
+    android:background="@color/colorOMV"
+    >
+        <LinearLayout
+            android:id="@+id/linLayoutInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:minWidth="120dp"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                >
+
+
+                <ImageButton
+                    android:id="@+id/buttonRefresh"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:padding="1dp"
+                    android:scaleType="fitCenter"
+
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/refreshProgressBar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/buttonRefresh"
+                    android:indeterminate="true"
+                    android:padding="3dp"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linLayoutName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textDeviceValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="1dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:id="@+id/textDeviceUserHost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/textStatusValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linLayoutUptime"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="4dp"
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/widget_uptime_header"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/textUptimeValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linLayoutCpu"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="4dp">
+
+            <ProgressBar
+                android:id="@+id/progressBarCpuValue"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="6dp"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/widget_cpu_header"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/textCpuValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/linLayoutMem"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="4dp">
+
+            <ProgressBar
+                android:id="@+id/progressBarMemory"
+                style="@style/Widget.ProgressBar.Vertical"
+                android:layout_width="6dp"
+                android:layout_height="match_parent"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/widget_memory_header"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/textMemoryValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>

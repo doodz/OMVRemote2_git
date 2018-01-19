@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/customRepoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/action_name"
+            android:imeActionId="@+id/customRepoName"
+            android:imeActionLabel="@string/action_name"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/customRepoRepo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/action_repo"
+            android:imeActionId="@+id/customRepoRepo"
+            android:imeActionLabel="@string/action_repo"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/customRepoKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/action_key"
+            android:imeActionId="@+id/customRepokey"
+            android:imeActionLabel="@string/action_key"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/customRepoComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/action_comment"
+            android:imeActionId="@+id/customRepoComment"
+            android:imeActionLabel="@string/action_comment"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/IsEnable"
+                android:text="Enable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:layout_below="@+id/IsEnable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/SwitchEnable"
+                android:enabled="true"
+                android:clickable="false" />
+
+            <RelativeLayout
+                android:layout_toRightOf="@+id/SwitchEnable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeLayout"
+                android:layout_marginLeft="10dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/Scheduling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Scheduling"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+
+                <TextView
+                    android:id="@+id/TvUser"
+                    android:layout_below="@+id/Scheduling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/User"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:id="@+id/TvCommand"
+                    android:layout_below="@+id/Scheduling"
+                    android:layout_toRightOf="@+id/TvUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Command"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
+                <ImageView
+                    android:id="@+id/overflow"
+                    android:layout_width="30dp"
+                    android:layout_height="@dimen/ic_album_overflow_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:foregroundGravity="right"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

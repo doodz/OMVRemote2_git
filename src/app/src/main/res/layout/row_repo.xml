@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/IsEnable"
+        android:text="Enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Switch
+        android:layout_below="@+id/IsEnable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/SwitchEnable"
+        android:enabled="true"
+        android:clickable="false" />
+
+    <RelativeLayout
+        android:layout_toRightOf="@+id/SwitchEnable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:layout_marginLeft="10dp"
+        >
+
+
+        <TextView
+            android:id="@+id/Repo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repo"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+
+        <TextView
+            android:id="@+id/Description"
+            android:layout_below="@+id/Repo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

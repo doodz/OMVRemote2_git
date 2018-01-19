@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.doods.base.Fragment.NetworkFragment"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:elevation="6dp"
+        android:visibility="visible"
+        android:background="@color/white"
+        android:id="@+id/app_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|end"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="5dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/etHostName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hostname"
+            android:imeActionId="@+id/etHostName"
+            android:imeActionLabel="Hostname"
+            android:imeOptions="actionUnspecified"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:text=" The hostname is a label that identifies the system to the network."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTimeoutInfo"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/etDomainName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DomainName"
+            android:imeActionId="@+id/etDomainName"
+            android:imeActionLabel="DomainName"
+            android:imeOptions="actionUnspecified"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:clickable="true"
+        card_view:fabSize="normal"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="60dp"
+        card_view:srcCompat="@drawable/ic_save_black_24dp"
+        android:id="@+id/fab_Save" />
+</FrameLayout>
