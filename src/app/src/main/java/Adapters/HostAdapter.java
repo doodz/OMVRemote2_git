@@ -123,7 +123,11 @@ public class HostAdapter   extends RecyclerView.Adapter<HostAdapter.MyViewHolder
                 }
                 else {
                     try {
-                        Wol.wakeup(h.getAddr(), h.getMacAddr(), h.getWolport());
+                        String addr = h.getAddrBroadcast();
+                        if(addr== null || addr.equals(""))
+                            addr= h.getAddr();
+                        Wol.wakeup(addr,h.getMacAddr(),h.getWolport());
+
 
                     }catch(IllegalArgumentException iae) {
                         Snackbar.make(mView, mContext.getString(R.string.send_failed)+":\n"+iae.getMessage(), Snackbar.LENGTH_LONG)

@@ -48,6 +48,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
     private CardView mCardWol;
     private EditText mWolPortView;
     private EditText mMacView;
+    private EditText mAddrBroadcastView;
     private Host mHost;
     private int mState = 0;
     private Boolean mCanSAve = false;
@@ -106,6 +107,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
         mSSLView.setChecked(mHost.getSll());
         mWolPortView.setText(Integer.toString(mHost.getWolport()));
         mMacView.setText(mHost.getMacAddr());
+        mAddrBroadcastView.setText(mHost.getAddrBroadcast());
     }
     private void BindViews()
     {
@@ -126,6 +128,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
         mWolPortView = (EditText) findViewById(R.id.etWolPort);
         mWolPortView.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
         mMacView = (EditText) findViewById(R.id.etMac);
+        mAddrBroadcastView= (EditText) findViewById(R.id.AddrBroadcast);
     }
 
 
@@ -293,7 +296,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
         String password = mPasswordView.getText().toString();
         Integer wolport = Integer.parseInt(mWolPortView.getText().toString());
         String macaddr =  mMacView.getText().toString();
-
+        String addrBroadcastView =  mAddrBroadcastView.getText().toString();
 
 
         HostsDAO datasource = new HostsDAO(getApplicationContext());
@@ -307,7 +310,7 @@ public class LoginByStepActivity extends AppCompatActivity implements IYesNoList
         mHost.setSll(ssl);
         mHost.setWolport(wolport);
         mHost.setMacAddr(macaddr);
-
+        mHost.setAddrBroadcast(addrBroadcastView);
         JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
         jsonRpc.SetHost(mHost);
 

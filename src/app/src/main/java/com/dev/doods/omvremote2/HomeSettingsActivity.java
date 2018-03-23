@@ -20,15 +20,19 @@ import java.util.List;
 
 import Client.Call;
 import Client.Callback;
+import Client.CallbackImpl;
+import Client.Host;
+import Client.JSONRPCClient;
 import Client.Response;
 import Controllers.HomeController;
 import Models.Certificate;
 import Models.Errors;
 import Models.Result;
 import Models.WebSettings;
+import OMV.Base.AppCompatBaseActivity;
 import utils.InputFilterMinMax;
 
-public class HomeSettingsActivity extends AppCompatActivity {
+public class HomeSettingsActivity extends AppCompatBaseActivity {
 
     private Switch _SwithEnableSSL;
     private Switch _SwithForceSSL;
@@ -67,17 +71,7 @@ public class HomeSettingsActivity extends AppCompatActivity {
     private void GetSettings()
     {
 
-        controller.GetSettings(new Callback() {
-            @Override
-            public void onFailure(Call call, Exception e) {
-
-            }
-
-            @Override
-            public void OnOMVServeurError(Call call, Errors error) {
-
-            }
-
+        controller.GetSettings(new CallbackImpl(this) {
             @Override
             public void onResponse(Call call, Response response) throws IOException, InterruptedException {
                 final WebSettings res = response.GetResultObject(new TypeToken<WebSettings>(){});
@@ -89,16 +83,7 @@ public class HomeSettingsActivity extends AppCompatActivity {
             }
         });
 
-        controller.GetCertificate(new Callback() {
-            @Override
-            public void onFailure(Call call, Exception e) {
-
-            }
-
-            @Override
-            public void OnOMVServeurError(Call call, Errors error) {
-
-            }
+        controller.GetCertificate(new CallbackImpl(this) {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException, InterruptedException {
@@ -134,8 +119,6 @@ public class HomeSettingsActivity extends AppCompatActivity {
     private void InitSettings(final WebSettings settings)
     {
 
-
-
         _SwithEnableSSL.setChecked(settings.getEnablessl());
         _SwithEnableSSL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -166,27 +149,23 @@ public class HomeSettingsActivity extends AppCompatActivity {
                 handler.post(new Runnable(){
                     public void run() {
 
-                        WebSettings settings = new WebSettings();
+                        final WebSettings settings = new WebSettings();
                         settings.setEnablessl(_SwithEnableSSL.isChecked());
                         settings.setForcesslonly(_SwithForceSSL.isChecked());
                         settings.setPort(Integer.parseInt(_TextViewPort.getText().toString()));
                         settings.setSslcertificateref("");
                         settings.setSslport(Integer.parseInt(_TextViewPortSSL.getText().toString()));
                         settings.setTimeout(Integer.parseInt(_TextViewTimeout.getText().toString()));
-                        controller.SetSettings(settings, new Callback() {
-                            @Override
-                            public void onFailure(Call call, Exception e) {
-
-                            }
-
-                            @Override
-                            public void OnOMVServeurError(Call call, Errors error) {
-
-                            }
-
+                        controller.SetSettings(settings, new CallbackImpl(HomeSettingsActivity.this) {
                             @Override
                             public void onResponse(Call call, Response response) throws IOException, InterruptedException {
-
+                                /*
+                                JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
+                                Host curHost = jsonRpc.GetHost();
+                                curHost.setSll(settings.getEnablessl());
+                                curHost.setPort(settings.getPort());
+                                curHost.
+                                */
                             }
                         });
                     }

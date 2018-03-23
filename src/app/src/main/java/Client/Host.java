@@ -109,6 +109,22 @@ public class Host implements Serializable {
         _addr= addr;
     }
 
+
+    /**
+     * IP address or host name of the Wol
+     */
+    private String _addrBroadcast ;
+
+    public String getAddrBroadcast()
+    {
+        return _addrBroadcast;
+
+    }
+    public void setAddrBroadcast(String addrBroadcast)
+    {
+        _addrBroadcast= addrBroadcast;
+    }
+
     /**
      * User name of in case of HTTP authentication
      */

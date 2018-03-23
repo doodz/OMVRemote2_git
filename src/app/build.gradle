@@ -8,8 +8,8 @@ android {
         applicationId "com.dev.doods.omvremote2"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 50
-        versionName "1.1.40"
+        versionCode 51
+        versionName "1.2.0"
         vectorDrawables.useSupportLibrary = true
 
         //manifestPlaceholders = [DOODS_APP_ID: "light"]

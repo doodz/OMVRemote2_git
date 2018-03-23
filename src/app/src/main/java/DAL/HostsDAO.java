@@ -107,10 +107,12 @@ public class HostsDAO {
 
 
     private String[] ColumnsWithoutId = { HostsTable.COLUMN_Name,HostsTable.COLUMN_ADDR,
-            HostsTable.COLUMN_USER,HostsTable.COLUMN_PASS,HostsTable.COLUMN_Port,HostsTable.COLUMN_SSL,HostsTable.COLUMN_MACADDR,HostsTable.COLUMN_WOLPORT};
+            HostsTable.COLUMN_USER,HostsTable.COLUMN_PASS,HostsTable.COLUMN_Port,HostsTable.COLUMN_SSL,HostsTable.COLUMN_MACADDR,HostsTable.COLUMN_WOLPORT
+            ,HostsTable.COLUMN_ADDR_BROADCAST};
 
     private String[] allColumns = { HostsTable.COLUMN_ID, HostsTable.COLUMN_Name,HostsTable.COLUMN_ADDR,
-            HostsTable.COLUMN_USER,HostsTable.COLUMN_PASS,HostsTable.COLUMN_Port,HostsTable.COLUMN_SSL,HostsTable.COLUMN_MACADDR,HostsTable.COLUMN_WOLPORT};
+            HostsTable.COLUMN_USER,HostsTable.COLUMN_PASS,HostsTable.COLUMN_Port,HostsTable.COLUMN_SSL,HostsTable.COLUMN_MACADDR,HostsTable.COLUMN_WOLPORT
+            ,HostsTable.COLUMN_ADDR_BROADCAST};
 
     private ContentValues HostToContentValues(Host host)
     {
@@ -124,6 +126,7 @@ public class HostsDAO {
         values.put(HostsTable.COLUMN_SSL, host.getSll()?1:0);
         values.put(HostsTable.COLUMN_MACADDR, host.getMacAddr());
         values.put(HostsTable.COLUMN_WOLPORT, host.getWolport());
+        values.put(HostsTable.COLUMN_ADDR_BROADCAST,host.getAddrBroadcast());
         return values;
     }
 
@@ -138,6 +141,7 @@ public class HostsDAO {
         host.setSll(cursor.getInt(6)==1);
         host.setMacAddr(cursor.getString(7));
         host.setWolport(cursor.getInt(8));
+        host.setAddrBroadcast(cursor.getString(9));
         return host;
     }
 

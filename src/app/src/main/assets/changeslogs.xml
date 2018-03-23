@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <changelog>
+    <release version="1.2.0" versioncode="51" date="23/03/2017">
+        <change>It's possible to configure a destination client (broadcast) for WOL</change>
+    </release>
     <release version="1.1.40" versioncode="49" date="19/01/2017">
         <change>Now you can use other port than 443 for HTTPS connection like : https://MyOMV.com:37443.</change>
         <change>WakeUp is up again ... I hope.</change>

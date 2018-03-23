@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class OmvDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "omvtable.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     public OmvDatabaseHelper(Context context) {
         super(context,DATABASE_NAME, null, DATABASE_VERSION);

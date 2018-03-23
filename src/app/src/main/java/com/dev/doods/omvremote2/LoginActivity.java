@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private EditText WolPortView;
     private EditText MacView;
-
+    private EditText mAddrBroadcastView;
     private Button mEmailSignInButton;
 
     private Host mHost;
@@ -196,7 +196,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         WolPortView = (EditText) findViewById(R.id.etWolPort);
         WolPortView.setFilters(new InputFilter[]{ new InputFilterMinMax(1, 99999) });
         MacView = (EditText) findViewById(R.id.etMac);
-
+        mAddrBroadcastView= (EditText) findViewById(R.id.AddrBroadcast);
         Bundle bundle = getIntent().getExtras();
         if(bundle != null && bundle.containsKey("host"))
         {
@@ -218,6 +218,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mPasswordView.setText(sharedPref.getString("password", null));
             mPortView.setText(Integer.toString(sharedPref.getInt("port", 80)));
             mSSLView.setChecked(sharedPref.getBoolean("ssl", false));
+
         }
         else
         {
@@ -229,6 +230,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mSSLView.setChecked(mHost.getSll());
             WolPortView.setText(Integer.toString(mHost.getWolport()));
             MacView.setText(mHost.getMacAddr());
+            mAddrBroadcastView.setText(mHost.getAddrBroadcast());
         }
 
     }
@@ -565,7 +567,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 mHost.setSll(mSSLView.isChecked());
                 mHost.setWolport(Integer.parseInt(WolPortView.getText().toString()));
                 mHost.setMacAddr(MacView.getText().toString());
-
+                mHost.setAddrBroadcast(mAddrBroadcastView.getText().toString());
                 if(mHost.getId() == 0)
                     datasource.createHost(mHost);
                 else

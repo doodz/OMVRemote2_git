@@ -205,7 +205,10 @@ public class SystemController extends Abstractcontroller{
 
             if(h != null)
             {
-                Wol.wakeup(h.getAddr(),h.getMacAddr(),h.getWolport());
+                String addr = h.getAddrBroadcast();
+                if(addr== null || addr.equals(""))
+                    addr= h.getAddr();
+                Wol.wakeup(addr,h.getMacAddr(),h.getWolport());
             }
 
         }
