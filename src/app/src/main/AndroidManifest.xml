@@ -33,7 +33,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
         <meta-data
             android:name="omg.doods.dev.omremote.base.appIdentifier"
             android:value="light" />

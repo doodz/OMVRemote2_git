@@ -81,6 +81,7 @@ public class MyApplicationBase extends Application {
        // if(light) {
             MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/4711179794");
             MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/7664646197");
+            MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/3076009396");
             mAdRequest = new AdRequest.Builder().build();
 
             mAdViewSmall = new AdView(this);
