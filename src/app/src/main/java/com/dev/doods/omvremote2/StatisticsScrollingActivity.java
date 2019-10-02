@@ -117,7 +117,31 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
             setTitle(str);
 
             mUuid = bundle.getString("uuid");
+            boolean isroot = false;
 
+
+            if(bundle.containsKey("isRoot"))
+            {
+                isroot = bundle.getBoolean("isRoot");
+            }
+            if(isroot)
+            {
+                prepareRootStatisticItems();
+            }
+            else if( bundle.containsKey("label"))
+            {
+                prepareStatisticItemsByLabel(bundle.getString("label"));
+            }
+            else if(bundle.containsKey("serialnumber"))
+            {
+                prepareStatisticItemsById(bundle.getString("serialnumber"));
+            }
+            else if(bundle.containsKey("fileName"))
+            {
+                prepareStatisticItemsByFileName(bundle.getString("fileName"));
+            }
+
+            else
             prepareStatisticItems(mUuid);
         }
         else
@@ -154,25 +178,147 @@ public class StatisticsScrollingActivity extends AppCompatBaseActivity implement
         android.app.FragmentManager fm = getFragmentManager();
         mOutputDialogFragment.show(fm, "OutputDialogFragment");
     }
+    private void prepareStatisticItemsByFileName(String fileName)
+    {
+
+        StatisticItem item = new StatisticItem(fileName+"-hour.png");
+        mStatisticItemList.add(item);
+
+        item = new StatisticItem(fileName+"-day.png");
+        mStatisticItemList.add(item);
+        item = new StatisticItem(fileName+"-week.png");
+        mStatisticItemList.add(item);
+        item = new StatisticItem(fileName+"-month.png");
+        mStatisticItemList.add(item);
+        item = new StatisticItem(fileName+"-year.png");
+        mStatisticItemList.add(item);
+        adapter.notifyDataSetChanged();
+    }
+
+    private void prepareRootStatisticItems()
+    {
+
+        StatisticItem item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_media_root_hour);
+        mStatisticItemList.add(item);
+
+        item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_media_root_day);
+        mStatisticItemList.add(item);
+        item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_media_root_week);
+        mStatisticItemList.add(item);
+        item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_media_root_month);
+        mStatisticItemList.add(item);
+        item = new StatisticItem(DaignostiquesSystemeController.Diagnostique_media_root_year);
+        mStatisticItemList.add(item);
+        adapter.notifyDataSetChanged();
+    }
+
+    private void prepareStatisticItemsByLabel(String label)
+    {
+
+        // StatisticItem item = new StatisticItem("df-media-"+uuid+"-hour.png");
+        String str = DaignostiquesSystemeController.Diagnostique_media_ByLabel_hour;
+        str = str.replace("xxxx",label);
+        StatisticItem item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-day.png");
+
+        str = DaignostiquesSystemeController.Diagnostique_media_ByLabel_day;
+        str = str.replace("xxxx",label);
+        item = new StatisticItem(str);
+
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-week.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_ByLabel_week;
+        str = str.replace("xxxx",label);
+        item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-month.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_ByLabel_month;
+        str = str.replace("xxxx",label);
+        item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-year.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_ByLabel_year;
+        str = str.replace("xxxx",label);
+        item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+        adapter.notifyDataSetChanged();
+    }
+
+    private void prepareStatisticItemsById(String serialnumber)
+    {
+
+        // StatisticItem item = new StatisticItem("df-media-"+uuid+"-hour.png");
+        String str = DaignostiquesSystemeController.Diagnostique_media_ById_hour;
+        str = str.replace("xxxx",serialnumber);
+        StatisticItem item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-day.png");
+
+        str = DaignostiquesSystemeController.Diagnostique_media_ById_day;
+        str = str.replace("xxxx",serialnumber);
+        item = new StatisticItem(str);
+
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-week.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_ById_week;
+        str = str.replace("xxxx",serialnumber);
+        item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-month.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_ById_month;
+        str = str.replace("xxxx",serialnumber);
+        item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+
+        //item = new StatisticItem("df-media-"+uuid+"-year.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_ById_year;
+        str = str.replace("xxxx",serialnumber);
+        item = new StatisticItem(str);
+        mStatisticItemList.add(item);
+        adapter.notifyDataSetChanged();
+    }
 
     private void prepareStatisticItems(String uuid)
     {
 
-        StatisticItem item = new StatisticItem("df-media-"+uuid+"-hour.png");
+       // StatisticItem item = new StatisticItem("df-media-"+uuid+"-hour.png");
+        String str = DaignostiquesSystemeController.Diagnostique_media_xxxx_hour;
+        str = str.replace("xxxx",uuid);
+        StatisticItem item = new StatisticItem(str);
+        mStatisticItemList.add(item);
 
+        //item = new StatisticItem("df-media-"+uuid+"-day.png");
+
+        str = DaignostiquesSystemeController.Diagnostique_media_xxxx_day;
+        str = str.replace("xxxx",uuid);
+        item = new StatisticItem(str);
 
         mStatisticItemList.add(item);
 
-        item = new StatisticItem("df-media-"+uuid+"-day.png");
+        //item = new StatisticItem("df-media-"+uuid+"-week.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_xxxx_week;
+        str = str.replace("xxxx",uuid);
+        item = new StatisticItem(str);
         mStatisticItemList.add(item);
 
-        item = new StatisticItem("df-media-"+uuid+"-week.png");
+        //item = new StatisticItem("df-media-"+uuid+"-month.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_xxxx_month;
+        str = str.replace("xxxx",uuid);
+        item = new StatisticItem(str);
         mStatisticItemList.add(item);
 
-        item = new StatisticItem("df-media-"+uuid+"-month.png");
-        mStatisticItemList.add(item);
-
-        item = new StatisticItem("df-media-"+uuid+"-year.png");
+        //item = new StatisticItem("df-media-"+uuid+"-year.png");
+        str = DaignostiquesSystemeController.Diagnostique_media_xxxx_year;
+        str = str.replace("xxxx",uuid);
+        item = new StatisticItem(str);
         mStatisticItemList.add(item);
         adapter.notifyDataSetChanged();
     }

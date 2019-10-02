@@ -238,7 +238,7 @@ public class SearchHostActivity extends AppCompatActivity {
             InetAddress host;
             try
             {
-                host = InetAddress.getByName(Util.intToIp(d.dns1));
+                host = InetAddress.getByName(Util.intToIp(d.ipAddress));
                 byte[] ip = host.getAddress();
                 int j =0;
                 for(int i = 1; i <= 254; i++)

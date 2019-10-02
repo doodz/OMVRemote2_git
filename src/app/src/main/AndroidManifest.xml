@@ -23,7 +23,9 @@
         android:icon="@drawable/logo4"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -36,6 +38,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4922361220283829~3234446599"/>
         <meta-data
             android:name="omg.doods.dev.omremote.base.appIdentifier"
             android:value="light" />

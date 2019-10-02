@@ -72,7 +72,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             app:adSize="360x132"
-            app:adUnitId="ca-app-pub-4922361220283829/7664646197"
+            app:adUnitId="ca-app-pub-4922361220283829/5000067790"
             />
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.CardView>

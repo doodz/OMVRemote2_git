@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <changelog>
-    <release version="1.2.0" versioncode="51" date="23/03/2017">
+    <release version="1.2.2" versioncode="53" date="06/05/2019">
+        <change>Ads comeback.</change>
+        <change>Set android:usesCleartextTraffic to true.</change>
+    </release>
+    <release version="1.2.1" versioncode="52" date="02/05/2019">
+        <change>New rrd name for file systems.</change>
+        <change>Update tools with pain, I hope haven't broken anything.</change>
+    </release>
+    <release version="1.2.0" versioncode="51" date="23/03/2018">
         <change>It's possible to configure a destination client (broadcast) for WOL</change>
     </release>
-    <release version="1.1.40" versioncode="49" date="19/01/2017">
+    <release version="1.1.40" versioncode="49" date="19/01/2018">
         <change>Now you can use other port than 443 for HTTPS connection like : https://MyOMV.com:37443.</change>
         <change>WakeUp is up again ... I hope.</change>
         <change>Code improvement.</change>

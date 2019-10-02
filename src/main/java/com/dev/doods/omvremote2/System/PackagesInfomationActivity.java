@@ -59,8 +59,8 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         mBanner = (NativeExpressAdView)findViewById(R.id.banner);
         if(MyApplicationBase.light)
         {
-            AdRequest request = new AdRequest.Builder().build();
-            mBanner.loadAd(request);
+
+            mBanner.loadAd(MyApplicationBase.mAdRequest);
             mCardViewAds.setVisibility(View.VISIBLE);
         }
 

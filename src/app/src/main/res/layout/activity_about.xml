@@ -39,6 +39,11 @@
                 android:text="@string/Label_get_Unloker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/ShowAdBtn"
+                android:text="@string/Label_get_ShowAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

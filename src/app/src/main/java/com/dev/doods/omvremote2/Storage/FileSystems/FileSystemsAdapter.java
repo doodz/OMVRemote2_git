@@ -28,6 +28,7 @@ import java.util.List;
 
 import Client.Call;
 import Client.Callback;
+import Client.JSONRPCClient;
 import Client.Response;
 import Interfaces.IUpdateActivity;
 import Models.Errors;
@@ -223,19 +224,63 @@ public class FileSystemsAdapter  extends RecyclerView.Adapter<FileSystemsAdapter
 
                 final FileSystem data = mFileSystemList.get(mPosition);
 
+                JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
+                int version =jsonRpc.GetHost().getVersion();
                 Bundle extras = new Bundle();
-                extras.putString("uuid", data.getUuid());
-
-                String str = data.getLabel();
-
-                if(str == null || str.isEmpty())
-                    extras.putString("title", data.getDevicefile());
-                else
-                    extras.putString("title", str);
 
 
+                    extras.putString("uuid", data.getUuid());
+
+                    String str = data.getLabel();
+
+                    if (str == null || str.isEmpty())
+                        extras.putString("title", data.getDevicefile());
+                    else
+                        extras.putString("title", str);
+
+
+
+
+                if(version == 4)
+                {
+                    String mountpoint = data.getMountpoint();
+                   boolean isRoot =  mountpoint.equalsIgnoreCase("/");
+                    extras.putBoolean("isRoot", isRoot);
+
+
+                    if(mountpoint.contains("disk-by-id"))
+                    {
+                        String[] separated = mountpoint.split("/");
+
+                        String folder =  separated[separated.length-2];
+                        String id =  separated[separated.length-1];
+
+                        String fileName = "df-"+folder+"-"+id;
+                        extras.putString("fileName",  fileName);
+                    }
+                    if(mountpoint.contains("disk-by-label"))
+                    {
+                        String[] separated = mountpoint.split("/");
+
+                        String folder =  separated[separated.length-2];
+                        String id =  separated[separated.length-1];
+
+                        String fileName = "df-"+folder+"-"+id;
+                        extras.putString("fileName",  fileName);
+                    }
+
+
+                    //extras.putBoolean("isRoot", data.getIsRoot());
+                    //extras.putBoolean("isRoot", data.getIsRoot());
+                    //String label = data.getLabel();
+                    //if(label != null)
+                    //{
+                    //    extras.putString("label", str);
+                    //}
+
+                    //extras.putString("serialnumber",  data.getSerialnumber());
+                }
                 intent.putExtras(extras);
-
                 mContext.startActivity(intent);
                 return true;
             }

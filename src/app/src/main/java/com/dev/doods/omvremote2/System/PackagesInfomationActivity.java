@@ -34,6 +34,8 @@ import Models.PackageInformation;
 import OMV.Base.NavigationBaseActivity;
 import OMVFragment.Dialogs.OutputDialogFragment;
 
+import static com.dev.doods.omvremote2.MyApplicationBase.mAdRequest;
+
 public class PackagesInfomationActivity extends NavigationBaseActivity
         implements OutputListener {
 
@@ -59,8 +61,8 @@ public class PackagesInfomationActivity extends NavigationBaseActivity
         mBanner = (NativeExpressAdView)findViewById(R.id.banner);
         if(MyApplicationBase.light)
         {
-            AdRequest request = new AdRequest.Builder().build();
-            mBanner.loadAd(request);
+
+            mBanner.loadAd(mAdRequest);
             mCardViewAds.setVisibility(View.VISIBLE);
         }
 

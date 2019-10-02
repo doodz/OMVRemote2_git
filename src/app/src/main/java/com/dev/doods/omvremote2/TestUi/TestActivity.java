@@ -2,6 +2,7 @@ package com.dev.doods.omvremote2.TestUi;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 import com.dev.doods.omvremote2.MyApplicationBase;
 import com.dev.doods.omvremote2.R;
 import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.gson.Gson;
@@ -28,12 +30,16 @@ import Models.SharedFolderNFS;
 import Models.Shares;
 import utils.Util;
 
+import static com.dev.doods.omvremote2.MyApplicationBase.mAdRequest;
+
 public class TestActivity extends AppCompatActivity {
 
     Button SharesDeserializerBtn ;
     Button SharedFolderNFSBtn ;
     Button LongParsingBtn;
     LinearLayout LinearLayoutTest;
+    private CardView mCardViewAds;
+    private NativeExpressAdView mBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +96,17 @@ public class TestActivity extends AppCompatActivity {
         adView1.loadAd(MyApplicationBase.mAdRequest);
         final NativeExpressAdView adView2 = (NativeExpressAdView) findViewById(R.id.banner2);
         adView2.loadAd(MyApplicationBase.mAdRequest);
+
+
+
+        mCardViewAds = (CardView)findViewById(R.id.card_view_ads);
+        mBanner = (NativeExpressAdView)findViewById(R.id.banner);
+        if(MyApplicationBase.light)
+        {
+
+            mBanner.loadAd(mAdRequest);
+            mCardViewAds.setVisibility(View.VISIBLE);
+        }
 
     }
     private String SharesDeserializerStr = "{\"response\":{\"enable\":false,\"workgroup\":\"WORKGROUP\",\"serverstring\":\"%h server\",\"loglevel\":0,\"usesendfile\":true,\"aio\":true,\"nullpasswords\":false,\"localmaster\":true,\"timeserver\":false,\"winssupport\":false,\"winsserver\":\"\",\"homesenable\":false,\"homesbrowseable\":true,\"extraoptions\":\"\",\"shares\":\"\"},\"error\":null}";

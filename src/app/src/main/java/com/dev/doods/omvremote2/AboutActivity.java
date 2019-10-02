@@ -1,5 +1,6 @@
 package com.dev.doods.omvremote2;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -8,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.os.Bundle;
@@ -27,6 +29,11 @@ import com.dev.doods.omvremote2.Billing.IabHelper;
 import com.dev.doods.omvremote2.Billing.IabResult;
 import com.dev.doods.omvremote2.Billing.Inventory;
 import com.dev.doods.omvremote2.Billing.Purchase;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import net.hockeyapp.android.FeedbackManager;
 import net.hockeyapp.android.Tracking;
@@ -54,6 +61,8 @@ import utils.CallBackAsyncTask;
 import utils.CallBackTask;
 import utils.SendLogsTask;
 import utils.SnackBarError;
+
+import static com.dev.doods.omvremote2.MyApplicationBase.mAdRequest;
 //import static org.acra.ACRA.LOG_TAG;
 
 public class AboutActivity extends AppCompatBaseActivity implements IabBroadcastReceiver.IabBroadcastListener {
@@ -62,7 +71,7 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
     IabHelper mHelper;
     // Provides purchase notification while this app is running
     IabBroadcastReceiver mBroadcastReceiver;
-
+    private RewardedAd rewardedAd;
     private Button tryToPurchaseBtn;
     // Does the user have the premium upgrade?
     boolean mIsPremium = false;
@@ -79,6 +88,7 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
     private TextView mVersionCodeView;
     private Button mSendLogBtn;
     private Button mSendFeedbackBtn;
+    private Button mShowAdBtn;
     private WebView mWebView;
     Handler handler = new Handler();
     @Override
@@ -94,7 +104,7 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
         mVersionCodeView= (TextView)  findViewById(R.id.tvCodeVersion);
         mSendLogBtn = (Button) findViewById(R.id.SendLogBtn);
         mSendFeedbackBtn =(Button) findViewById(R.id.SendFeedbackBtn);
-
+        mShowAdBtn = (Button) findViewById(R.id.ShowAdBtn);
         tryToPurchaseBtn =(Button) findViewById(R.id.tryToPurchaseBtn);
         tryToPurchaseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,10 +134,65 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-
+        rewardedAd = createAndLoadRewardedAd();
         setClickableSpan();
         FindVersionCode();
         ParsingChangeLogs();
+
+        mShowAdBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rewardedAd.isLoaded()) {
+                    Activity activityContext = AboutActivity.this;
+                    RewardedAdCallback adCallback = new RewardedAdCallback() {
+                        @Override
+                        public void onRewardedAdOpened() {
+                            // Ad opened.
+                        }
+
+                        @Override
+                        public void onRewardedAdClosed() {
+                            // Ad closed.
+                        }
+
+                        @Override
+                        public void onUserEarnedReward(@NonNull RewardItem reward) {
+                            // User earned reward.
+                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                            LocalDate localDate = LocalDate.now();
+                            System.out.println(dtf.format(localDate)); //2016/11/16
+                        }
+
+                        @Override
+                        public void onRewardedAdFailedToShow(int errorCode) {
+                            // Ad failed to display
+                        }
+                    };
+                    rewardedAd.show(activityContext, adCallback);
+                } else {
+                    Log.d("TAG", "The rewarded ad wasn't loaded yet.");
+                }
+            }
+        });
+    }
+
+    public RewardedAd createAndLoadRewardedAd() {
+        RewardedAd rewardedAd = new RewardedAd(this,
+                "ca-app-pub-4922361220283829/1589678144");
+
+        RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
+            @Override
+            public void onRewardedAdLoaded() {
+                // Ad successfully loaded.
+            }
+
+            @Override
+            public void onRewardedAdFailedToLoad(int errorCode) {
+                // Ad failed to load.
+            }
+        };
+        rewardedAd.loadAd(mAdRequest, adLoadCallback);
+        return rewardedAd;
     }
 
     /***
@@ -309,6 +374,7 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
         catch (Exception e) {e.printStackTrace();}
 
     }
+
     protected void init() {
         // Create the helper, passing it our context and the public key to verify signatures with
         Log.d(TAG, "Creating IAB helper.");
@@ -470,11 +536,12 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
             complain("Error querying inventory. Another async operation in progress.");
         }
     }
+
     // We're being destroyed. It's important to dispose of the helper here!
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+        //rewardedAd.destroy(this);
         // very important:
         if (mBroadcastReceiver != null) {
             unregisterReceiver(mBroadcastReceiver);
@@ -488,4 +555,15 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
         }
     }
 
+    @Override
+    public void onResume() {
+        //rewardedAd.resume(this);
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        //rewardedAd.pause(this);
+        super.onPause();
+    }
 }

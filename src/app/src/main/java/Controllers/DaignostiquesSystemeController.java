@@ -75,7 +75,33 @@ public class DaignostiquesSystemeController extends Abstractcontroller{
 
 
     // Disque usage ?!?
+    public static String Diagnostique_media_xxxx_hour = "df-media-xxxx-hour.png";
+    public static String Diagnostique_media_xxxx_day = "df-media-xxxx-day.png";
+    public static String Diagnostique_media_xxxx_week = "df-media-xxxx-week.png";
+    public static String Diagnostique_media_xxxx_month = "df-media-xxxx-month.png";
+    public static String Diagnostique_media_xxxx_year = "df-media-xxxx-year.png";
 
+
+    public static String Diagnostique_media_root_hour = "df-root-hour.png";
+    public static String Diagnostique_media_root_day = "df-root-day.png";
+    public static String Diagnostique_media_root_week = "df-root-week.png";
+    public static String Diagnostique_media_root_month = "df-root-month.png";
+    public static String Diagnostique_media_root_year = "df-root-year.png";
+
+    public static String Diagnostique_media_ById_hour = "df-srv-dev-disk-by-id-wwn-XXXX-part1-hour.png";
+    public static String Diagnostique_media_ById_day = "df-srv-dev-disk-by-id-wwn-XXXX-part1-day.png";
+    public static String Diagnostique_media_ById_week = "df-srv-dev-disk-by-id-wwn-XXXX-part1-week.png";
+    public static String Diagnostique_media_ById_month = "df-srv-dev-disk-by-id-wwn-XXXX-part1-month.png";
+    public static String Diagnostique_media_ById_year = "df-srv-dev-disk-by-id-wwn-XXXX-part1-year.png";
+
+    public static String Diagnostique_media_ByLabel_hour = "df-srv-dev-disk-by-label-XXXX-part1-hour.png";
+    public static String Diagnostique_media_ByLabel_day = "df-srv-dev-disk-by-label-XXXX-part1-day.png";
+    public static String Diagnostique_media_ByLabel_week = "df-srv-dev-disk-by-label-XXXX-part1-week.png";
+    public static String Diagnostique_media_ByLabel_month = "df-srv-dev-disk-by-label-XXXX-part1-month.png";
+    public static String Diagnostique_media_ByLabel_year = "df-srv-dev-disk-by-label-XXXX-part1-year.png";
+
+    //df-srv-dev-disk-by-id-wwn-0x6001405d8739d35d78fcd44afd863fdf-part1-year.png&time=1556780271746
+//df-srv-dev-disk-by-label-LEDISCKC-hour.png&time=1556780271747
     public DaignostiquesSystemeController(Activity activity) {
         super(activity);
     }

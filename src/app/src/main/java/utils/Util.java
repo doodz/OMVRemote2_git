@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
 
-import com.android.internal.util.Predicate;
+import java.util.function.Predicate;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
@@ -177,7 +177,7 @@ public  class Util {
             final Process process =  new ProcessBuilder().command(commandLine).redirectErrorStream(true).start();
             final Pattern p = Pattern.compile(pattern);
 
-
+            /*
             logcat = streamToString(process.getInputStream(), new Predicate<String>() {
                 @Override
                 public boolean apply(String s) {
@@ -214,6 +214,7 @@ public  class Util {
                     return false;
                 }
             }, 100);
+            */
             process.destroy();
 
         } catch (IOException e) {
@@ -236,7 +237,7 @@ public  class Util {
     @NonNull
     private static String streamToString(@NonNull InputStream input, Predicate<String> filter, int limit) throws IOException {
 
-        return IOUtils.streamToString(input, filter, limit);
+        return   "";//IOUtils.streamToString(input, filter, limit);
 
     }
 

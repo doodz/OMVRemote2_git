@@ -69,6 +69,98 @@ public class FileSystem {
     @Expose
     private Integer status;
 
+
+    @SerializedName("israid")
+    @Expose
+    private Boolean israid;
+
+
+    @SerializedName("toto")
+    @Expose
+    private Boolean toto;
+    /**
+     *
+     * @return
+     *  toto
+     */
+    public Boolean getToto() {
+        return toto;
+    }
+
+    /**
+     *
+     * @param toto
+     * The toto
+     */
+    public void setToto(Boolean toto) {
+        this.toto = toto;
+    }
+
+
+
+    @SerializedName("serialnumber")
+    @Expose
+    private String serialnumber;
+
+    /**
+     *
+     * @return
+     * The serialnumber
+     */
+    public String getSerialnumber() {
+        return serialnumber;
+    }
+
+    /**
+     *
+     * @param serialnumber
+     * The serialnumber
+     */
+    public void setSerialnumber(String serialnumber) {
+        this.serialnumber = serialnumber;
+    }
+
+    /**
+     *
+     * @return
+     *  israid
+     */
+    public Boolean getIsRaid() {
+        return israid;
+    }
+
+    /**
+     *
+     * @param israid
+     * The mounted
+     */
+    public void setIsRaid(Boolean israid) {
+        this.israid = israid;
+    }
+
+    @SerializedName("isroot")
+    @Expose
+    private Boolean isroot;
+
+    /**
+     *
+     * @return
+     * The mounted
+     */
+    public Boolean getIsRoot() {
+        return isroot;
+    }
+
+    /**
+     *
+     * @param isroot
+     * The mounted
+     */
+    public void setIsRoot(Boolean isroot) {
+        this.isroot = isroot;
+    }
+
+
     /**
      *
      * @return

@@ -53,7 +53,7 @@ public class MyApplicationBase extends Application {
     public static AdRequest mAdRequest;
     public static AdView mAdViewSmall;
     public static AdView mAdViewSmallHaeder;
-    public static boolean light;
+    public static boolean light = true;
     public boolean mIsPremium;
     public static NativeExpressAdView mNativeExpressAdView;
     @Override
@@ -78,26 +78,31 @@ public class MyApplicationBase extends Application {
         MetricsManager.register(this);
         MetricsManager.trackEvent("GET_LOGS_FILE");
 
+
        // if(light) {
-            MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/4711179794");
-            MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/7664646197");
-            MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/3076009396");
-            mAdRequest = new AdRequest.Builder().build();
+        mAdRequest =new AdRequest.Builder()
+                .addTestDevice("4A01ED74DABC5CAC8812F6C6F8A34180")  // An example device ID
+                .build();
+            MobileAds.initialize(getApplicationContext(),"ca-app-pub-4922361220283829~3234446599");//AdMob app ID
+            //MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/4711179794");
+            //MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/7664646197");
+            //MobileAds.initialize(getApplicationContext(), "ca-app-pub-4922361220283829/3076009396");
+
 
             mAdViewSmall = new AdView(this);
             mAdViewSmall.setAdSize(AdSize.BANNER);
             mAdViewSmall.setAdUnitId("ca-app-pub-4922361220283829/4711179794");
-            mAdViewSmall.loadAd(new AdRequest.Builder().build());
+            mAdViewSmall.loadAd(mAdRequest);
 
             mAdViewSmallHaeder = new AdView(this);
             mAdViewSmallHaeder.setAdSize(AdSize.BANNER);
             mAdViewSmallHaeder.setAdUnitId("ca-app-pub-4922361220283829/3076009396");
-            mAdViewSmallHaeder.loadAd(new AdRequest.Builder().build());
+            mAdViewSmallHaeder.loadAd(mAdRequest);
 
             mNativeExpressAdView = new NativeExpressAdView(this);
             mNativeExpressAdView.setAdSize(new AdSize(360, 132));
-            mNativeExpressAdView.setAdUnitId("ca-app-pub-4922361220283829/7664646197");
-            mNativeExpressAdView.loadAd(new AdRequest.Builder().build());
+            mNativeExpressAdView.setAdUnitId("ca-app-pub-4922361220283829/5000067790");
+            mNativeExpressAdView.loadAd(mAdRequest);
        // }
     }
 

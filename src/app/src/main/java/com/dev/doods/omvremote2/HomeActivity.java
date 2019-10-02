@@ -389,7 +389,11 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
             case "Version":
                 tv = (TextView)findViewById(R.id.Version);
                 JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
-                jsonRpc.GetHost().setVersion(val.contains("(Erasmus)")? 3 : 2);
+
+                int version = 2;
+                if(val.contains("(Erasmus)")) version =3;
+                if(val.contains("(Arrakis)")) version =4;
+                jsonRpc.GetHost().setVersion(version);
 
                 tv.setText(val);
                 break;

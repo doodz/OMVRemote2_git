@@ -3,11 +3,9 @@ package OMV.Classe;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.android.internal.util.Predicate;
-
+import java.util.function.Predicate;
 import net.hockeyapp.android.CrashManagerListener;
 import net.hockeyapp.android.utils.Util;
-
 //import org.acra.ACRA;
 import org.acra.util.IOUtils;
 
@@ -45,7 +43,7 @@ public class MyCustomCrashManagerListener extends CrashManagerListener {
     @NonNull
     private String streamToString(@NonNull InputStream input, Predicate<String> filter, int limit) throws IOException {
 
-            return IOUtils.streamToString(input, filter, limit);
+            return   "";//IOUtils.streamToString(input, filter, limit);
 
     }
 }

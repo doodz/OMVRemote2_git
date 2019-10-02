@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-import com.android.internal.util.Predicate;
+import java.util.function.Predicate;
 import com.dev.doods.omvremote2.R;
 
 import net.hockeyapp.android.Constants;
@@ -137,7 +137,7 @@ public class SendLogsTask  extends AsyncTask<CallBackTask, Void, Errors> {
     @NonNull
     private String streamToString(@NonNull InputStream input, Predicate<String> filter, int limit) throws IOException {
 
-        return IOUtils.streamToString(input, filter, limit);
+        return "";//IOUtils.streamToString(input, filter, limit);
 
     }
     @Override

@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import static com.dev.doods.omvremote2.MyApplicationBase.mAdRequest;
+
 public class AdMobActivity extends AppCompatActivity {
     // Remove the below line after defining your own ad unit ID.
 
@@ -88,12 +90,14 @@ public class AdMobActivity extends AppCompatActivity {
                 goToNextLevel();
             }
         });
+        interstitialAd.loadAd(mAdRequest);
         return interstitialAd;
     }
 
     private void showInterstitial() {
         // Show the ad if it's ready. Otherwise toast and reload the ad.
         if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+
             mInterstitialAd.show();
         } else {
             Toast.makeText(this, "Ad did not load", Toast.LENGTH_SHORT).show();

@@ -482,6 +482,8 @@
     <string name="info_LetsEncrypt_WebRoot">The root directory of the files served by your internet facing webserver.</string>
     <string name="WebRoot">WebRoot</string>
     <string name="Saved">Saved</string>
+
+    <string name="Label_get_ShowAd">Get unlocker for 2 weeks</string>
     <string name="Label_get_Unloker">Get unlocker</string>
     <string name="Unlocker_info">Unlocker allows you to :\n
         Remove advertisements.\n
