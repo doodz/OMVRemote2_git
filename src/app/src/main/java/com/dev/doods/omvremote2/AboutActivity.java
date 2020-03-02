@@ -50,6 +50,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.InputStream;
+import java.time.LocalDate;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -158,9 +159,9 @@ public class AboutActivity extends AppCompatBaseActivity implements IabBroadcast
                         @Override
                         public void onUserEarnedReward(@NonNull RewardItem reward) {
                             // User earned reward.
-                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-                            LocalDate localDate = LocalDate.now();
-                            System.out.println(dtf.format(localDate)); //2016/11/16
+                            //java.time.format.DateTimeFormatter dtf = 	java.time.format.DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                            //LocalDate localDate = LocalDate.now();
+                            //System.out.println(dtf.format(localDate)); //2016/11/16
                         }
 
                         @Override

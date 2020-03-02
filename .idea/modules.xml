@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OMVRemote2_git.iml" filepath="$PROJECT_DIR$/.idea/modules/OMVRemote2_git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OMVRemote2_git.iml" filepath="$PROJECT_DIR$/OMVRemote2_git.iml" />
     </modules>
   </component>
 </project>

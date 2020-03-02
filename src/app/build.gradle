@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 29
     dataBinding.enabled = true
     defaultConfig {
         applicationId "com.dev.doods.omvremote2"
         minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 53
-        versionName "1.2.2"
+        targetSdkVersion 29
+        versionCode 54
+        versionName "1.3.0"
         vectorDrawables.useSupportLibrary = true
 
         //manifestPlaceholders = [DOODS_APP_ID: "light"]

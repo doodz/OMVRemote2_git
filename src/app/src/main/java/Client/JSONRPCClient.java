@@ -196,9 +196,17 @@ public class JSONRPCClient implements Runnable {
             dStream.flush(); // Flushes the data output stream.
             dStream.close(); // Closing the output stream.
 
-            //urlConnection.connect();
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            responseCode = urlConnection.getResponseCode();
+            InputStream in =null;
+            if(responseCode>=300 || responseCode<200)
+            {
 
+                in = new BufferedInputStream(urlConnection.getErrorStream());
+            }
+            else {
+                //urlConnection.connect();
+                in = new BufferedInputStream(urlConnection.getInputStream());
+            }
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
             String line;
@@ -206,7 +214,8 @@ public class JSONRPCClient implements Runnable {
                 result.append(line);
             }
 
-            responseCode = urlConnection.getResponseCode();
+
+
             Log.i("JSONRPCClient", result.toString());
             if (responseCode == HttpsURLConnection.HTTP_OK)
             {
@@ -276,7 +285,8 @@ public class JSONRPCClient implements Runnable {
            if(err.getCode() == 5001) {
                Log.i("JSONRPCClient", "Session expired, try to connect");
            }
-           if(err.getCode() == 5001 || err.getCode() == 5000)
+
+           if(err.getCode() == 5001 || err.getCode() == 5000 ||(  responseCode == HttpsURLConnection.HTTP_UNAUTHORIZED && err.getCode() ==0))
            {
                JSONRPCParamsBuilder params = new JSONRPCParamsBuilder();
                //set parameters

@@ -45,6 +45,7 @@ import Controllers.HomeController;
 import Controllers.SystemController;
 import DAL.HostsDAO;
 import Interfaces.IYesNoListenerDialog;
+import Models.AllSystemInformation;
 import Models.Datum;
 import Models.Errors;
 import Models.Result;
@@ -298,10 +299,28 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
                     TypeToken tt = new TypeToken<ArrayList<SystemInformation>>(){};
                     Type t =  tt.getType();
                     // ArrayList<LinkedTreeMap<String,String>> oo =Util.FromJson(j,Object.class);
-                    final  ArrayList<SystemInformation> res = gson.fromJson(j,t);
+                final ArrayList<SystemInformation> res = new ArrayList<>();
+                AllSystemInformation info = new AllSystemInformation();
+                if (j.isJsonArray()) {
+                    ArrayList<SystemInformation> res2 =gson.fromJson(j, t);
+                    res.addAll(res2);
+
+                }
+                else
+                {
+                    info = response.GetResultObject(new TypeToken<AllSystemInformation>(){});
+                }
+
+                final AllSystemInformation finalclass = info;
                 mHandler.post(new Runnable(){
                         public void run() {
+
+                            if(res.size()>0)
                             showSystemInformation(res);
+                            else
+                            {
+                                showSystemInformation(finalclass);
+                            }
                             fab.clearAnimation();
                         }
                     });
@@ -376,6 +395,52 @@ public class HomeActivity extends NavigationBaseActivity implements View.OnClick
 
     }
 
+
+
+    private void showSystemInformation(AllSystemInformation res)
+    {
+        TextView tv = null;
+        tv = (TextView)findViewById(R.id.HostName);
+        tv.setText(res.getHostname());
+        String v = res.getVersion();
+        tv = (TextView)findViewById(R.id.Version);
+        JSONRPCClient jsonRpc = JSONRPCClient.getInstance();
+
+                int version = 2;
+                if(v.contains("(Erasmus)")) version =3;
+                if(v.contains("(Arrakis)")) version =4;
+                if(v.contains("Usul"))version =4;
+                jsonRpc.GetHost().setVersion(version);
+
+                tv.setText(v);
+            //case "Processor":
+                //tv = (TextView)findViewById(R.id.Processor);
+
+                //tv.setText(val);
+                //break;
+
+                tv = (TextView)findViewById(R.id.Kernel);
+                tv.setText(res.getKernel());
+
+                tv = (TextView)findViewById(R.id.System_time);
+                tv.setText(res.getTime());
+
+                tv = (TextView)findViewById(R.id.Uptime);
+                tv.setText(res.getUptime());
+
+                tv = (TextView)findViewById(R.id.Load_average);
+                tv.setText(res.getLoadAverage());
+
+                tv = (TextView)findViewById(R.id.CPU_usage);
+                tv.setText(String.valueOf(res.getCPUUsage()));
+
+                tv = (TextView)findViewById(R.id.Memory_usage);
+                tv.setText(res.getMemUsed());
+
+
+
+
+    }
     private void populateTexboxForSystemInformation(String tb,Object obj)
     {
         String val = obj.toString();
